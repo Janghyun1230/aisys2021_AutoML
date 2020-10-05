@@ -1,15 +1,15 @@
 import torchprof
 import argparse
-from model import EfficientNet
-from utils import round_filters
-from utils import BlockDecoder
-from utils import GlobalParams
+from efficientnet import EfficientNet
+from efficientnet_utils import round_filters
+from efficientnet_utils import BlockDecoder
+from efficientnet_utils import GlobalParams
 from data import dataloader
 import torch
-import time
 from torchprof.display import _flatten_tree, _build_measure_tuple, group_by
 from collections import OrderedDict
 import yaml
+
 
 def latencyTraces(model, traces, trace_events):
     tree = OrderedDict()
@@ -22,16 +22,18 @@ def latencyTraces(model, traces, trace_events):
             if name not in current_tree:
                 current_tree[name] = OrderedDict()
             if depth == len(path) and (leaf):
-                for event_name, event_group in group_by(events, lambda e: e.name):
+                for event_name, event_group in group_by(
+                        events, lambda e: e.name):
                     event_group = list(event_group)
                     current_tree[name][event_name] = {
-                        None: _build_measure_tuple(event_group, len(event_group))
+                        None: _build_measure_tuple(event_group,
+                                                   len(event_group))
                     }
             current_tree = current_tree[name]
     tree_lines = _flatten_tree(tree)
 
     #format_lines = []
-    candidates={}
+    candidates = {}
     for mod in model.modules():
         for chs, chm in mod.named_children():
             if "block" in chs:
@@ -56,6 +58,7 @@ def latencyTraces(model, traces, trace_events):
         value += measures.cpu_total if measures else 0
         value += measures.cuda_total if measures else 0
     return latency_dic
+
 
 def latency_efficientnet(width_coefficient=None,
                          depth_coefficient=1.0,
@@ -91,6 +94,7 @@ def latency_efficientnet(width_coefficient=None,
 
     return blocks_args, global_params
 
+
 def latencyTest(model, dataloader, device):
     model.eval()
     if device == "cuda":
@@ -99,12 +103,15 @@ def latencyTest(model, dataloader, device):
         for inputs, targets in dataloader:
             inputs = inputs.to(device)
             targets = targets.to(device)
-            with torchprof.Profile(model, use_cuda=True, profile_memory=True) as prof:
+            with torchprof.Profile(model, use_cuda=True,
+                                   profile_memory=True) as prof:
                 logits = model(inputs)
                 preds = logits.softmax(dim=1)
 
             if prof.exited:
-                return latencyTraces(model, prof.traces, prof.trace_profile_events)
+                return latencyTraces(model, prof.traces,
+                                     prof.trace_profile_events)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -112,33 +119,35 @@ if __name__ == "__main__":
     parser.add_argument('-p', "--processor", type=str, default="CPU")
     args = parser.parse_args()
     print(args)
-    for image in range(32,224,4):
-        latency_dic={}
-        for wc in range(10,51,1):
-            block_args, global_params = latency_efficientnet(width_coefficient=wc/10,
-                                                             image_size=image)
+    for image in range(32, 224, 4):
+        latency_dic = {}
+        for wc in range(10, 51, 1):
+            block_args, global_params = latency_efficientnet(
+                width_coefficient=wc / 10, image_size=image)
             model = EfficientNet(block_args, global_params).to(args.processor)
             final_filters = 1280
             new_filters = round_filters(final_filters, model._global_params)
-            model._fc = torch.nn.Linear(new_filters, 100, bias=True).to(args.processor)
-            trainloader, validloader, testloader = dataloader(batch_size=64,
-                                                              input_resolution=image,
-                                                              n_valid=9999)
+            model._fc = torch.nn.Linear(new_filters, 100,
+                                        bias=True).to(args.processor)
+            trainloader, validloader, testloader = dataloader(
+                batch_size=64, input_resolution=image, n_valid=9999)
             cur_latency_dic_list = []
             for i in range(5):
-                cur_latency_dic_list.append(latencyTest(model, testloader, args.processor))
+                cur_latency_dic_list.append(
+                    latencyTest(model, testloader, args.processor))
             for k in cur_latency_dic_list[0].keys():
                 for i in range(5):
                     if k in latency_dic.keys():
                         latency_dic[k]['value'] = (
-                                (latency_dic[k]['value']*latency_dic[k]['count']) 
-                                + cur_latency_dic_list[i][k])/(latency_dic[k]['count'] + 1)
-                        latency_dic[k]['count'] += 1 
+                            (latency_dic[k]['value'] * latency_dic[k]['count'])
+                            + cur_latency_dic_list[i][k]) / (
+                                latency_dic[k]['count'] + 1)
+                        latency_dic[k]['count'] += 1
                     else:
                         latency_dic[k] = {}
                         latency_dic[k]['value'] = cur_latency_dic_list[i][k]
-                        latency_dic[k]['count'] = 1 
+                        latency_dic[k]['count'] = 1
             print("image: ", image, ", wc: ", wc)
-        f = open(args.device + '/image_'+str(image)+'.yaml', 'w')
-        yaml.dump(latency_dic,f)
+        f = open(args.device + '/image_' + str(image) + '.yaml', 'w')
+        yaml.dump(latency_dic, f)
         f.close()

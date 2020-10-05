@@ -7,10 +7,7 @@ from torch.autograd import Variable
 
 import sys, os
 import numpy as np
-import random
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-import time
-from existing_models.utils import to_one_hot
 
 act = torch.nn.ReLU()
 
@@ -98,11 +95,8 @@ class Wide_ResNet(nn.Module):
 
         return nn.Sequential(*layers)
 
-    def forward(self, x, target=None, profile=None):
+    def forward(self, x, profile=None):
         out = x
-
-        if target is not None:
-            target_reweighted = to_one_hot(target, self.num_classes)
 
         out = self.conv1(out)
         out = self.layer1(out)
@@ -113,10 +107,7 @@ class Wide_ResNet(nn.Module):
         out = out.view(out.size(0), -1)
         out = self.linear(out)
 
-        if target is not None:
-            return out, target_reweighted
-        else:
-            return out
+        return out
 
 
 def wrn28_10(num_classes=10, dropout=False, stride=1):

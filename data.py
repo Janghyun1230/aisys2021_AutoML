@@ -3,9 +3,11 @@ import torch
 import torchvision
 
 
-def dataloader(batch_size=64, input_resolution=32, n_train=5000, n_valid=5000):
+def dataloader(batch_size=64, input_resolution=32, n_train=50000,
+               n_valid=5000):
     mean = [x / 255 for x in [129.3, 124.1, 112.4]]
     std = [x / 255 for x in [68.2, 65.4, 70.4]]
+
     train_transform = transforms.Compose([
         transforms.RandomHorizontalFlip(),
         transforms.Resize(input_resolution),
@@ -13,7 +15,6 @@ def dataloader(batch_size=64, input_resolution=32, n_train=5000, n_valid=5000):
         transforms.ToTensor(),
         transforms.Normalize(mean, std)
     ])
-
     test_transform = transforms.Compose([
         transforms.Resize(input_resolution),
         transforms.ToTensor(),
@@ -26,7 +27,6 @@ def dataloader(batch_size=64, input_resolution=32, n_train=5000, n_valid=5000):
                                              download=True,
                                              transform=train_transform)
     small_trainset = torch.utils.data.Subset(trainset, indices)
-
     trainloader = torch.utils.data.DataLoader(small_trainset,
                                               batch_size=batch_size,
                                               shuffle=True,
@@ -37,13 +37,14 @@ def dataloader(batch_size=64, input_resolution=32, n_train=5000, n_valid=5000):
                                             download=True,
                                             transform=test_transform)
     indices = torch.arange(n_valid)
-    validset = torch.utils.data.Subset(trainset, indices)
+    validset = torch.utils.data.Subset(testset, indices)
     validloader = torch.utils.data.DataLoader(validset,
                                               batch_size=batch_size,
                                               shuffle=False,
                                               num_workers=0)
+
     indices = torch.arange(n_valid, len(testset))
-    testsubset = torch.utils.data.Subset(trainset, indices)
+    testsubset = torch.utils.data.Subset(testset, indices)
     testloader = torch.utils.data.DataLoader(testsubset,
                                              batch_size=batch_size,
                                              shuffle=False,

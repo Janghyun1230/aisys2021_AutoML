@@ -1,8 +1,8 @@
 import torch
-import os, sys, shutil, time, random
+import time
 from torch.autograd import Variable
-from existing_models.load_data import load_data_subset
-from existing_models.logger import plotting, copy_script_to_folder, AverageMeter, RecorderMeter, time_string, convert_secs2time
+from logger import AverageMeter
+
 
 def accuracy(output, target, topk=(1, )):
     """Computes the precision@k for the specified values of k"""
@@ -32,28 +32,16 @@ def train(train_loader, model, optimizer, device, loss_fn, eval_fn):
     model.train()
     end = time.time()
 
-    if device == "cuda":
-        bce_loss = torch.nn.BCELoss().cuda()
-        softmax = torch.nn.Softmax(dim=1).cuda()
-    else:
-        bce_loss = torch.nn.BCELoss()
-        softmax = torch.nn.Softmax(dim=1)
-
-    for i, (input, target) in enumerate(train_loader):
+    for input, target in train_loader:
         data_time.update(time.time() - end)
         optimizer.zero_grad()
 
-        if device == "cuda":
-            input = input.cuda()
-            target = target.long().cuda()
-        else:
-            input = input
-            target = target.long()
+        input = input.to(device)
+        target = target.long().to(device)
 
         # train with clean images
-        input_var, target_var = Variable(input), Variable(target)
-        output, reweighted_target = model(input_var, target_var)
-        loss = loss_fn(output, target_var)
+        output = model(input)
+        loss = loss_fn(output, target)
 
         # measure accuracy and record loss
         prec1, prec5 = eval_fn(output, target, topk=(1, 5))
@@ -69,23 +57,10 @@ def train(train_loader, model, optimizer, device, loss_fn, eval_fn):
         batch_time.update(time.time() - end)
         end = time.time()
 
-    print(
-        '  **Train** Prec@1 {top1.avg:.3f} Prec@5 {top5.avg:.3f} Error@1 {error1:.3f}'
-        .format(top1=top1, top5=top5, error1=100 - top1.avg))
-
     return top1.avg, top5.avg, losses.avg
 
 
-def validate(val_loader,
-             model,
-             device,
-             loss_fn,
-             eval_fn,
-             fgsm=False,
-             eps=4,
-             rand_init=False,
-             mean=None,
-             std=None):
+def validate(val_loader, model, device, loss_fn, eval_fn):
     '''evaluate trained model'''
     losses = AverageMeter()
     top1 = AverageMeter()
@@ -94,10 +69,9 @@ def validate(val_loader,
     # switch to evaluate mode
     model.eval()
 
-    for i, (input, target) in enumerate(val_loader):
-        if device == "cuda":
-            input = input.cuda()
-            target = target.cuda()
+    for input, target in val_loader:
+        input = input.to(device)
+        target = target.long().to(device)
 
         with torch.no_grad():
             input_var = Variable(input)
@@ -113,10 +87,4 @@ def validate(val_loader,
         top1.update(prec1.item(), input.size(0))
         top5.update(prec5.item(), input.size(0))
 
-    print(
-            '  **Test** Prec@1 {top1.avg:.3f} Prec@5 {top5.avg:.3f} Error@1 {error1:.3f} Loss: {losses.avg:.3f} '
-            .format(top1=top1, top5=top5, error1=100 - top1.avg,
-                    losses=losses))
-
-    print(top1.avg, top5.avg)
     return top1.avg, top5.avg, losses.avg
