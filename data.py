@@ -24,27 +24,25 @@ def dataloader(batch_size=64, input_resolution=32, n_train=5000, n_valid=5000):
                                              train=True,
                                              download=True,
                                              transform=train_transform)
-    n_train = min(n_train, 50000 - n_valid)
-    indices = torch.arange(n_train)
-    small_trainset = torch.utils.data.Subset(trainset, indices)
-    trainloader = torch.utils.data.DataLoader(small_trainset,
+    trainloader = torch.utils.data.DataLoader(trainset,
                                               batch_size=batch_size,
                                               shuffle=True,
                                               num_workers=0)
-    indices = torch.arange(50000 - n_valid, 50000)
+    testset = torchvision.datasets.CIFAR100(root='./data',
+                                            train=False,
+                                            download=True,
+                                            transform=test_transform)
+    indices = torch.arange(n_valid)
     validset = torch.utils.data.Subset(trainset, indices)
     validloader = torch.utils.data.DataLoader(validset,
                                               batch_size=batch_size,
                                               shuffle=False,
                                               num_workers=0)
-
-    testset = torchvision.datasets.CIFAR100(root='./data',
-                                            train=False,
-                                            download=True,
-                                            transform=test_transform)
-    testloader = torch.utils.data.DataLoader(testset,
+    indices = torch.arange(n_valid, len(testset))
+    testsubset = torch.utils.data.Subset(trainset, indices)
+    testloader = torch.utils.data.DataLoader(testsubset,
                                              batch_size=batch_size,
-                                             shuffle=True,
+                                             shuffle=False,
                                              num_workers=0)
 
     print("\nDataloader is defined!")
