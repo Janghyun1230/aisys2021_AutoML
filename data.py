@@ -4,8 +4,8 @@ import torchvision
 
 
 def dataloader(batch_size=64, input_resolution=32, n_train=5000, n_valid=5000):
-    mean = [0.485, 0.456, 0.406]
-    std = [0.229, 0.224, 0.225]
+    mean = [x / 255 for x in [129.3, 124.1, 112.4]]
+    std = [x / 255 for x in [68.2, 65.4, 70.4]]
     train_transform = transforms.Compose([
         transforms.RandomHorizontalFlip(),
         transforms.Resize(input_resolution),
