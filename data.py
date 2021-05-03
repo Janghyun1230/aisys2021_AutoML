@@ -47,6 +47,6 @@ def dataloader(batch_size=64, input_resolution=32, n_train=5000, n_valid=5000):
 
     print("\nDataloader is defined!")
     print(
-        f"=> train {len(small_trainset)}, valid {len(validset)}, test {len(testset)}"
+        f"=> train {len(trainset)}, valid {len(validset)}, test {len(testsubset)}"
     )
     return trainloader, validloader, testloader
