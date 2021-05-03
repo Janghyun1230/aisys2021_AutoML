@@ -70,7 +70,7 @@ class NasEnv():
             _print_model(model, self.resolution, device=self.device)
         mem = self.eval_mem(model)
         acc = self.eval_acc(model)
-        latency = self.eval_latency(model)
+        latency = self.eval_latency(inp_arg)
 
         return mem, acc, latency
 
@@ -83,7 +83,7 @@ class NasEnv():
         estimated_mem = float(report.split('\n')[-3].split(' ')[-1])  # (MB)
         return estimated_mem
 
-    def eval_latency(self, model):
+    def eval_latency(self, inp_arg):
         '''
         TODO
         '''
