@@ -1,4 +1,5 @@
 import torchprof
+import argparse
 from model import EfficientNet
 from utils import round_filters
 from utils import BlockDecoder
@@ -8,8 +9,7 @@ import torch
 import time
 from torchprof.display import _flatten_tree, _build_measure_tuple, group_by
 from collections import OrderedDict
-from itertools import chain
-from collections import defaultdict
+import yaml
 
 def latencyTraces(model, traces, trace_events):
     tree = OrderedDict()
@@ -47,7 +47,7 @@ def latencyTraces(model, traces, trace_events):
         depth, name, measures = tree_line
         if name in candidates.keys() and int(depth) < 3:
             if candidate != '':
-                latency_dic[candidates[candidate]] = value
+                latency_dic[repr(candidates[candidate])] = value
                 value = 0
             candidate = name
         #cpu_total = measures.cpu_total if measures else None
@@ -107,22 +107,26 @@ def latencyTest(model, dataloader, device):
                 return latencyTraces(model, prof.traces, prof.trace_profile_events)
 
 if __name__ == "__main__":
-    latency_dic={}
-    device = 'cuda'
-    for wc in range(10,50,1):
-        for image in range(32,224,8):
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-d', "--device", type=str, default="desktop")
+    parser.add_argument('-p', "--processor", type=str, default="CPU")
+    args = parser.parse_args()
+    print(args)
+    for image in range(32,224,4):
+        latency_dic={}
+        for wc in range(10,51,1):
             block_args, global_params = latency_efficientnet(width_coefficient=wc/10,
                                                              image_size=image)
-            model = EfficientNet(block_args, global_params).to(device)
+            model = EfficientNet(block_args, global_params).to(args.processor)
             final_filters = 1280
             new_filters = round_filters(final_filters, model._global_params)
-            model._fc = torch.nn.Linear(new_filters, 100, bias=True).to(device)
+            model._fc = torch.nn.Linear(new_filters, 100, bias=True).to(args.processor)
             trainloader, validloader, testloader = dataloader(batch_size=64,
                                                               input_resolution=image,
                                                               n_valid=9999)
             cur_latency_dic_list = []
             for i in range(5):
-                cur_latency_dic_list.append(latencyTest(model, testloader, device))
+                cur_latency_dic_list.append(latencyTest(model, testloader, args.processor))
             for k in cur_latency_dic_list[0].keys():
                 for i in range(5):
                     if k in latency_dic.keys():
@@ -134,5 +138,7 @@ if __name__ == "__main__":
                         latency_dic[k] = {}
                         latency_dic[k]['value'] = cur_latency_dic_list[i][k]
                         latency_dic[k]['count'] = 1 
-            print(latency_dic)
-            time.sleep(5)
+            print("image: ", image, ", wc: ", wc)
+        f = open(args.device + '/image_'+str(image)+'.yaml', 'w')
+        yaml.dump(latency_dic,f)
+        f.close()
