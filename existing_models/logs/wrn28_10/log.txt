@@ -1,0 +1,1650 @@
+save path : experiments/cifar100_arch_wrn28_10_train_vanilla_eph_400_bs_100_lr_0.1_mom_0.9_decay_0.0001_data_aug_1_job_id__seed_0
+{'add_name': '', 'adv_unpre': False, 'arch': 'wrn28_10', 'augmix': False, 'batch_size': 100, 'beta': 1.2, 'beta_c': 0.0, 'block_num': -1, 'box': False, 'cutout': 16, 'data_aug': 1, 'data_dir': '../data/cifar100/', 'dataset': 'cifar100', 'decay': 0.0001, 'delay': 0, 'dim': 2, 'dropout': False, 'emd': False, 'epochs': 400, 'eta': 0.2, 'evaluate': False, 'gamma': 1.0, 'gammas': [0.1, 0.1], 'graph': False, 'in_batch': False, 'initial_channels': 64, 'itermax': 10, 'job_id': '', 'jsd': False, 'jsd_lam': 12, 'label_cost': 'l2', 'label_inter': False, 'labels_per_class': 500, 'learning_rate': 0.1, 'log_off': False, 'method': 'mix', 'mixup_alpha': None, 'momentum': 0.9, 'n_labels': 3, 'neigh_size': 16, 'ngpu': 1, 'print_freq': 100, 'prob': 1.0, 'proximal': True, 'reg': 1e-05, 'resume': '', 'root_dir': 'experiments/', 'schedule': [200, 300], 'seed': 0, 'sigma': 2.0, 'start_epoch': 0, 'train': 'vanilla', 'use_cuda': True, 'valid_labels_per_class': 0, 'warp': 0.0, 'workers': 2}
+Random Seed: 0
+python version : 3.6.8 |Anaconda, Inc.| (default, Dec 30 2018, 01:22:34)  [GCC 7.3.0]
+torch  version : 1.1.0
+cudnn  version : 7501
+=> creating model 'wrn28_10'
+=> do not use any checkpoint for wrn28_10 model
+
+==>>[2020-01-08 11:45:21] [Epoch=000/400] [Need: 00:00:00] [learning_rate=0.1000] [Best : Accuracy=0.00, Error=100.00]
+average mixing weight: 1.000
+  **Train** Prec@1 6.506 Prec@5 21.466 Error@1 93.494
+  **Test** Prec@1 9.870 Prec@5 28.500 Error@1 90.130 Loss: 4.088 
+
+==>>[2020-01-08 11:50:18] [Epoch=001/400] [Need: 16:07:31] [learning_rate=0.1000] [Best : Accuracy=9.87, Error=90.13]
+  **Train** Prec@1 11.240 Prec@5 31.948 Error@1 88.760
+  **Test** Prec@1 13.760 Prec@5 35.250 Error@1 86.240 Loss: 3.837 
+
+==>>[2020-01-08 11:53:29] [Epoch=002/400] [Need: 24:05:34] [learning_rate=0.1000] [Best : Accuracy=13.76, Error=86.24]
+  **Train** Prec@1 14.254 Prec@5 38.022 Error@1 85.746
+  **Test** Prec@1 15.900 Prec@5 40.570 Error@1 84.100 Loss: 3.617 
+
+==>>[2020-01-08 11:59:44] [Epoch=003/400] [Need: 23:12:15] [learning_rate=0.1000] [Best : Accuracy=15.90, Error=84.10]
+  **Train** Prec@1 17.368 Prec@5 43.992 Error@1 82.632
+  **Test** Prec@1 17.890 Prec@5 45.260 Error@1 82.110 Loss: 3.433 
+
+==>>[2020-01-08 12:03:30] [Epoch=004/400] [Need: 27:34:49] [learning_rate=0.1000] [Best : Accuracy=17.89, Error=82.11]
+  **Train** Prec@1 20.898 Prec@5 50.422 Error@1 79.102
+  **Test** Prec@1 21.470 Prec@5 50.680 Error@1 78.530 Loss: 3.228 
+
+==>>[2020-01-08 12:07:05] [Epoch=005/400] [Need: 26:58:00] [learning_rate=0.1000] [Best : Accuracy=21.47, Error=78.53]
+  **Train** Prec@1 25.402 Prec@5 56.056 Error@1 74.598
+  **Test** Prec@1 24.800 Prec@5 56.230 Error@1 75.200 Loss: 3.018 
+
+==>>[2020-01-08 12:11:01] [Epoch=006/400] [Need: 26:21:20] [learning_rate=0.1000] [Best : Accuracy=24.80, Error=75.20]
+  **Train** Prec@1 29.056 Prec@5 60.584 Error@1 70.944
+  **Test** Prec@1 29.130 Prec@5 61.450 Error@1 70.870 Loss: 2.789 
+
+==>>[2020-01-08 12:14:48] [Epoch=007/400] [Need: 26:12:22] [learning_rate=0.1000] [Best : Accuracy=29.13, Error=70.87]
+  **Train** Prec@1 32.668 Prec@5 65.206 Error@1 67.332
+  **Test** Prec@1 32.610 Prec@5 65.180 Error@1 67.390 Loss: 2.684 
+
+==>>[2020-01-08 12:18:18] [Epoch=008/400] [Need: 25:57:49] [learning_rate=0.1000] [Best : Accuracy=32.61, Error=67.39]
+  **Train** Prec@1 36.512 Prec@5 69.384 Error@1 63.488
+  **Test** Prec@1 34.690 Prec@5 67.220 Error@1 65.310 Loss: 2.584 
+
+==>>[2020-01-08 12:21:54] [Epoch=009/400] [Need: 25:33:32] [learning_rate=0.1000] [Best : Accuracy=34.69, Error=65.31]
+  **Train** Prec@1 40.004 Prec@5 73.042 Error@1 59.996
+  **Test** Prec@1 37.920 Prec@5 70.740 Error@1 62.080 Loss: 2.420 
+
+==>>[2020-01-08 12:26:17] [Epoch=010/400] [Need: 25:17:24] [learning_rate=0.1000] [Best : Accuracy=37.92, Error=62.08]
+average mixing weight: 1.000
+  **Train** Prec@1 43.072 Prec@5 75.900 Error@1 56.928
+  **Test** Prec@1 40.260 Prec@5 72.220 Error@1 59.740 Loss: 2.332 
+
+==>>[2020-01-08 12:29:45] [Epoch=011/400] [Need: 25:30:45] [learning_rate=0.1000] [Best : Accuracy=40.26, Error=59.74]
+  **Train** Prec@1 46.270 Prec@5 78.324 Error@1 53.730
+  **Test** Prec@1 43.860 Prec@5 76.650 Error@1 56.140 Loss: 2.162 
+
+==>>[2020-01-08 12:33:27] [Epoch=012/400] [Need: 25:11:38] [learning_rate=0.1000] [Best : Accuracy=43.86, Error=56.14]
+  **Train** Prec@1 48.946 Prec@5 80.296 Error@1 51.054
+  **Test** Prec@1 44.350 Prec@5 76.000 Error@1 55.650 Loss: 2.108 
+
+==>>[2020-01-08 12:37:29] [Epoch=013/400] [Need: 25:01:49] [learning_rate=0.1000] [Best : Accuracy=44.35, Error=55.65]
+  **Train** Prec@1 51.340 Prec@5 82.098 Error@1 48.660
+  **Test** Prec@1 45.880 Prec@5 76.890 Error@1 54.120 Loss: 2.051 
+
+==>>[2020-01-08 12:41:10] [Epoch=014/400] [Need: 25:02:03] [learning_rate=0.1000] [Best : Accuracy=45.88, Error=54.12]
+  **Train** Prec@1 54.024 Prec@5 83.562 Error@1 45.976
+  **Test** Prec@1 50.690 Prec@5 79.510 Error@1 49.310 Loss: 1.937 
+
+==>>[2020-01-08 12:45:02] [Epoch=015/400] [Need: 24:53:01] [learning_rate=0.1000] [Best : Accuracy=50.69, Error=49.31]
+  **Train** Prec@1 56.230 Prec@5 85.104 Error@1 43.770
+  **Test** Prec@1 50.290 Prec@5 79.510 Error@1 49.710 Loss: 1.904 
+
+==>>[2020-01-08 12:47:54] [Epoch=016/400] [Need: 24:48:27] [learning_rate=0.1000] [Best : Accuracy=50.69, Error=49.31]
+  **Train** Prec@1 58.326 Prec@5 86.116 Error@1 41.674
+  **Test** Prec@1 52.210 Prec@5 80.360 Error@1 47.790 Loss: 1.852 
+
+==>>[2020-01-08 12:51:04] [Epoch=017/400] [Need: 24:22:15] [learning_rate=0.1000] [Best : Accuracy=52.21, Error=47.79]
+  **Train** Prec@1 60.244 Prec@5 87.246 Error@1 39.756
+  **Test** Prec@1 51.900 Prec@5 81.540 Error@1 48.100 Loss: 1.814 
+
+==>>[2020-01-08 12:53:40] [Epoch=018/400] [Need: 24:04:37] [learning_rate=0.1000] [Best : Accuracy=52.21, Error=47.79]
+  **Train** Prec@1 61.826 Prec@5 87.952 Error@1 38.174
+  **Test** Prec@1 55.930 Prec@5 83.090 Error@1 44.070 Loss: 1.689 
+
+==>>[2020-01-08 12:56:56] [Epoch=019/400] [Need: 23:37:42] [learning_rate=0.1000] [Best : Accuracy=55.93, Error=44.07]
+  **Train** Prec@1 63.552 Prec@5 88.948 Error@1 36.448
+  **Test** Prec@1 57.150 Prec@5 85.200 Error@1 42.850 Loss: 1.597 
+
+==>>[2020-01-08 13:00:09] [Epoch=020/400] [Need: 23:24:54] [learning_rate=0.1000] [Best : Accuracy=57.15, Error=42.85]
+average mixing weight: 1.000
+  **Train** Prec@1 65.058 Prec@5 89.672 Error@1 34.942
+  **Test** Prec@1 56.780 Prec@5 83.870 Error@1 43.220 Loss: 1.637 
+
+==>>[2020-01-08 13:03:02] [Epoch=021/400] [Need: 23:12:27] [learning_rate=0.1000] [Best : Accuracy=57.15, Error=42.85]
+  **Train** Prec@1 66.356 Prec@5 90.406 Error@1 33.644
+  **Test** Prec@1 60.380 Prec@5 86.680 Error@1 39.620 Loss: 1.485 
+
+==>>[2020-01-08 13:06:04] [Epoch=022/400] [Need: 22:55:34] [learning_rate=0.1000] [Best : Accuracy=60.38, Error=39.62]
+  **Train** Prec@1 67.584 Prec@5 91.004 Error@1 32.416
+  **Test** Prec@1 56.650 Prec@5 84.350 Error@1 43.350 Loss: 1.631 
+
+==>>[2020-01-08 13:09:38] [Epoch=023/400] [Need: 22:41:45] [learning_rate=0.1000] [Best : Accuracy=60.38, Error=39.62]
+  **Train** Prec@1 68.864 Prec@5 91.506 Error@1 31.136
+  **Test** Prec@1 59.180 Prec@5 85.590 Error@1 40.820 Loss: 1.551 
+
+==>>[2020-01-08 13:12:25] [Epoch=024/400] [Need: 22:37:11] [learning_rate=0.1000] [Best : Accuracy=60.38, Error=39.62]
+  **Train** Prec@1 69.828 Prec@5 91.980 Error@1 30.172
+  **Test** Prec@1 62.080 Prec@5 86.860 Error@1 37.920 Loss: 1.432 
+
+==>>[2020-01-08 13:15:48] [Epoch=025/400] [Need: 22:21:35] [learning_rate=0.1000] [Best : Accuracy=62.08, Error=37.92]
+  **Train** Prec@1 71.256 Prec@5 92.384 Error@1 28.744
+  **Test** Prec@1 58.770 Prec@5 86.060 Error@1 41.230 Loss: 1.545 
+
+==>>[2020-01-08 13:18:42] [Epoch=026/400] [Need: 22:14:53] [learning_rate=0.1000] [Best : Accuracy=62.08, Error=37.92]
+  **Train** Prec@1 71.990 Prec@5 92.808 Error@1 28.010
+  **Test** Prec@1 59.760 Prec@5 86.480 Error@1 40.240 Loss: 1.533 
+
+==>>[2020-01-08 13:22:01] [Epoch=027/400] [Need: 22:02:21] [learning_rate=0.1000] [Best : Accuracy=62.08, Error=37.92]
+  **Train** Prec@1 73.112 Prec@5 93.244 Error@1 26.888
+  **Test** Prec@1 63.330 Prec@5 88.150 Error@1 36.670 Loss: 1.372 
+
+==>>[2020-01-08 13:25:31] [Epoch=028/400] [Need: 21:55:30] [learning_rate=0.1000] [Best : Accuracy=63.33, Error=36.67]
+  **Train** Prec@1 74.134 Prec@5 93.654 Error@1 25.866
+  **Test** Prec@1 62.930 Prec@5 87.850 Error@1 37.070 Loss: 1.390 
+
+==>>[2020-01-08 13:28:15] [Epoch=029/400] [Need: 21:51:36] [learning_rate=0.1000] [Best : Accuracy=63.33, Error=36.67]
+  **Train** Prec@1 74.792 Prec@5 93.812 Error@1 25.208
+  **Test** Prec@1 63.300 Prec@5 88.300 Error@1 36.700 Loss: 1.368 
+
+==>>[2020-01-08 13:31:28] [Epoch=030/400] [Need: 21:38:10] [learning_rate=0.1000] [Best : Accuracy=63.33, Error=36.67]
+average mixing weight: 1.000
+  **Train** Prec@1 75.674 Prec@5 94.232 Error@1 24.326
+  **Test** Prec@1 62.800 Prec@5 86.840 Error@1 37.200 Loss: 1.428 
+
+==>>[2020-01-08 13:34:45] [Epoch=031/400] [Need: 21:31:10] [learning_rate=0.1000] [Best : Accuracy=63.33, Error=36.67]
+  **Train** Prec@1 76.468 Prec@5 94.548 Error@1 23.532
+  **Test** Prec@1 63.810 Prec@5 88.070 Error@1 36.190 Loss: 1.381 
+
+==>>[2020-01-08 13:39:44] [Epoch=032/400] [Need: 21:25:17] [learning_rate=0.1000] [Best : Accuracy=63.81, Error=36.19]
+  **Train** Prec@1 76.990 Prec@5 94.740 Error@1 23.010
+  **Test** Prec@1 64.080 Prec@5 87.680 Error@1 35.920 Loss: 1.389 
+
+==>>[2020-01-08 13:43:02] [Epoch=033/400] [Need: 21:38:06] [learning_rate=0.1000] [Best : Accuracy=64.08, Error=35.92]
+  **Train** Prec@1 77.686 Prec@5 94.792 Error@1 22.314
+  **Test** Prec@1 63.750 Prec@5 88.390 Error@1 36.250 Loss: 1.370 
+
+==>>[2020-01-08 13:46:21] [Epoch=034/400] [Need: 21:32:07] [learning_rate=0.1000] [Best : Accuracy=64.08, Error=35.92]
+  **Train** Prec@1 78.140 Prec@5 95.070 Error@1 21.860
+  **Test** Prec@1 65.330 Prec@5 88.780 Error@1 34.670 Loss: 1.351 
+
+==>>[2020-01-08 13:50:29] [Epoch=035/400] [Need: 21:26:21] [learning_rate=0.1000] [Best : Accuracy=65.33, Error=34.67]
+  **Train** Prec@1 78.846 Prec@5 95.322 Error@1 21.154
+  **Test** Prec@1 65.280 Prec@5 87.850 Error@1 34.720 Loss: 1.350 
+
+==>>[2020-01-08 13:53:13] [Epoch=036/400] [Need: 21:28:56] [learning_rate=0.1000] [Best : Accuracy=65.33, Error=34.67]
+  **Train** Prec@1 79.042 Prec@5 95.196 Error@1 20.958
+  **Test** Prec@1 64.180 Prec@5 87.190 Error@1 35.820 Loss: 1.413 
+
+==>>[2020-01-08 13:55:55] [Epoch=037/400] [Need: 21:17:37] [learning_rate=0.1000] [Best : Accuracy=65.33, Error=34.67]
+  **Train** Prec@1 79.970 Prec@5 95.606 Error@1 20.030
+  **Test** Prec@1 64.590 Prec@5 88.280 Error@1 35.410 Loss: 1.403 
+
+==>>[2020-01-08 13:58:47] [Epoch=038/400] [Need: 21:06:19] [learning_rate=0.1000] [Best : Accuracy=65.33, Error=34.67]
+  **Train** Prec@1 80.360 Prec@5 95.762 Error@1 19.640
+  **Test** Prec@1 66.210 Prec@5 88.670 Error@1 33.790 Loss: 1.331 
+
+==>>[2020-01-08 14:01:48] [Epoch=039/400] [Need: 20:56:57] [learning_rate=0.1000] [Best : Accuracy=66.21, Error=33.79]
+  **Train** Prec@1 80.852 Prec@5 95.934 Error@1 19.148
+  **Test** Prec@1 66.500 Prec@5 89.140 Error@1 33.500 Loss: 1.327 
+
+==>>[2020-01-08 14:05:07] [Epoch=040/400] [Need: 20:49:39] [learning_rate=0.1000] [Best : Accuracy=66.50, Error=33.50]
+average mixing weight: 1.000
+  **Train** Prec@1 80.956 Prec@5 95.900 Error@1 19.044
+  **Test** Prec@1 64.650 Prec@5 87.300 Error@1 35.350 Loss: 1.404 
+
+==>>[2020-01-08 14:07:39] [Epoch=041/400] [Need: 20:44:28] [learning_rate=0.1000] [Best : Accuracy=66.50, Error=33.50]
+  **Train** Prec@1 81.630 Prec@5 96.160 Error@1 18.370
+  **Test** Prec@1 64.960 Prec@5 88.260 Error@1 35.040 Loss: 1.373 
+
+==>>[2020-01-08 14:10:40] [Epoch=042/400] [Need: 20:33:06] [learning_rate=0.1000] [Best : Accuracy=66.50, Error=33.50]
+  **Train** Prec@1 81.986 Prec@5 96.150 Error@1 18.014
+  **Test** Prec@1 65.470 Prec@5 87.770 Error@1 34.530 Loss: 1.386 
+
+==>>[2020-01-08 14:13:26] [Epoch=043/400] [Need: 20:26:10] [learning_rate=0.1000] [Best : Accuracy=66.50, Error=33.50]
+  **Train** Prec@1 82.348 Prec@5 96.342 Error@1 17.652
+  **Test** Prec@1 64.940 Prec@5 88.130 Error@1 35.060 Loss: 1.392 
+
+==>>[2020-01-08 14:16:04] [Epoch=044/400] [Need: 20:17:26] [learning_rate=0.1000] [Best : Accuracy=66.50, Error=33.50]
+  **Train** Prec@1 82.442 Prec@5 96.432 Error@1 17.558
+  **Test** Prec@1 61.150 Prec@5 85.330 Error@1 38.850 Loss: 1.570 
+
+==>>[2020-01-08 14:19:08] [Epoch=045/400] [Need: 20:07:40] [learning_rate=0.1000] [Best : Accuracy=66.50, Error=33.50]
+  **Train** Prec@1 82.980 Prec@5 96.494 Error@1 17.020
+  **Test** Prec@1 66.700 Prec@5 88.220 Error@1 33.300 Loss: 1.344 
+
+==>>[2020-01-08 14:22:10] [Epoch=046/400] [Need: 20:01:42] [learning_rate=0.1000] [Best : Accuracy=66.70, Error=33.30]
+  **Train** Prec@1 83.346 Prec@5 96.634 Error@1 16.654
+  **Test** Prec@1 67.450 Prec@5 88.380 Error@1 32.550 Loss: 1.323 
+
+==>>[2020-01-08 14:25:06] [Epoch=047/400] [Need: 19:55:32] [learning_rate=0.1000] [Best : Accuracy=67.45, Error=32.55]
+  **Train** Prec@1 83.622 Prec@5 96.724 Error@1 16.378
+  **Test** Prec@1 63.830 Prec@5 86.650 Error@1 36.170 Loss: 1.463 
+
+==>>[2020-01-08 14:27:37] [Epoch=048/400] [Need: 19:48:50] [learning_rate=0.1000] [Best : Accuracy=67.45, Error=32.55]
+  **Train** Prec@1 84.130 Prec@5 96.880 Error@1 15.870
+  **Test** Prec@1 66.480 Prec@5 88.030 Error@1 33.520 Loss: 1.358 
+
+==>>[2020-01-08 14:30:11] [Epoch=049/400] [Need: 19:39:20] [learning_rate=0.1000] [Best : Accuracy=67.45, Error=32.55]
+  **Train** Prec@1 84.480 Prec@5 97.032 Error@1 15.520
+  **Test** Prec@1 66.320 Prec@5 87.720 Error@1 33.680 Loss: 1.373 
+
+==>>[2020-01-08 14:33:17] [Epoch=050/400] [Need: 19:30:30] [learning_rate=0.1000] [Best : Accuracy=67.45, Error=32.55]
+average mixing weight: 1.000
+  **Train** Prec@1 84.968 Prec@5 97.044 Error@1 15.032
+  **Test** Prec@1 67.800 Prec@5 88.600 Error@1 32.200 Loss: 1.309 
+
+==>>[2020-01-08 14:36:29] [Epoch=051/400] [Need: 19:25:26] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 84.970 Prec@5 97.182 Error@1 15.030
+  **Test** Prec@1 66.180 Prec@5 88.250 Error@1 33.820 Loss: 1.372 
+
+==>>[2020-01-08 14:39:01] [Epoch=052/400] [Need: 19:21:01] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 85.374 Prec@5 97.328 Error@1 14.626
+  **Test** Prec@1 65.600 Prec@5 87.580 Error@1 34.400 Loss: 1.402 
+
+==>>[2020-01-08 14:41:42] [Epoch=053/400] [Need: 19:12:37] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 85.352 Prec@5 97.292 Error@1 14.648
+  **Test** Prec@1 64.620 Prec@5 87.370 Error@1 35.380 Loss: 1.428 
+
+==>>[2020-01-08 14:44:25] [Epoch=054/400] [Need: 19:05:09] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 85.682 Prec@5 97.392 Error@1 14.318
+  **Test** Prec@1 67.200 Prec@5 88.890 Error@1 32.800 Loss: 1.323 
+
+==>>[2020-01-08 14:47:09] [Epoch=055/400] [Need: 18:58:07] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 86.424 Prec@5 97.546 Error@1 13.576
+  **Test** Prec@1 64.960 Prec@5 86.830 Error@1 35.040 Loss: 1.448 
+
+==>>[2020-01-08 14:49:41] [Epoch=056/400] [Need: 18:51:21] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 86.694 Prec@5 97.594 Error@1 13.306
+  **Test** Prec@1 65.930 Prec@5 88.630 Error@1 34.070 Loss: 1.378 
+
+==>>[2020-01-08 14:52:17] [Epoch=057/400] [Need: 18:43:34] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 86.406 Prec@5 97.554 Error@1 13.594
+  **Test** Prec@1 65.240 Prec@5 87.590 Error@1 34.760 Loss: 1.429 
+
+==>>[2020-01-08 14:55:06] [Epoch=058/400] [Need: 18:36:54] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 86.776 Prec@5 97.700 Error@1 13.224
+  **Test** Prec@1 65.410 Prec@5 87.460 Error@1 34.590 Loss: 1.404 
+
+==>>[2020-01-08 14:57:48] [Epoch=059/400] [Need: 18:30:50] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 86.982 Prec@5 97.750 Error@1 13.018
+  **Test** Prec@1 65.790 Prec@5 87.640 Error@1 34.210 Loss: 1.400 
+
+==>>[2020-01-08 15:00:31] [Epoch=060/400] [Need: 18:23:57] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+average mixing weight: 1.000
+  **Train** Prec@1 87.286 Prec@5 97.738 Error@1 12.714
+  **Test** Prec@1 65.540 Prec@5 87.090 Error@1 34.460 Loss: 1.435 
+
+==>>[2020-01-08 15:03:07] [Epoch=061/400] [Need: 18:17:44] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 87.608 Prec@5 97.900 Error@1 12.392
+  **Test** Prec@1 67.690 Prec@5 89.110 Error@1 32.310 Loss: 1.321 
+
+==>>[2020-01-08 15:05:47] [Epoch=062/400] [Need: 18:11:04] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 88.082 Prec@5 97.912 Error@1 11.918
+  **Test** Prec@1 66.950 Prec@5 88.370 Error@1 33.050 Loss: 1.368 
+
+==>>[2020-01-08 15:08:23] [Epoch=063/400] [Need: 18:04:53] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 87.870 Prec@5 97.906 Error@1 12.130
+  **Test** Prec@1 66.380 Prec@5 88.230 Error@1 33.620 Loss: 1.378 
+
+==>>[2020-01-08 15:11:08] [Epoch=064/400] [Need: 17:58:25] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 88.006 Prec@5 97.986 Error@1 11.994
+  **Test** Prec@1 65.550 Prec@5 86.920 Error@1 34.450 Loss: 1.439 
+
+==>>[2020-01-08 15:14:05] [Epoch=065/400] [Need: 17:52:44] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 88.156 Prec@5 98.090 Error@1 11.844
+  **Test** Prec@1 66.600 Prec@5 88.490 Error@1 33.400 Loss: 1.380 
+
+==>>[2020-01-08 15:16:43] [Epoch=066/400] [Need: 17:48:13] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 88.616 Prec@5 98.156 Error@1 11.384
+  **Test** Prec@1 66.930 Prec@5 87.670 Error@1 33.070 Loss: 1.379 
+
+==>>[2020-01-08 15:19:21] [Epoch=067/400] [Need: 17:42:17] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 88.764 Prec@5 98.198 Error@1 11.236
+  **Test** Prec@1 67.590 Prec@5 88.670 Error@1 32.410 Loss: 1.338 
+
+==>>[2020-01-08 15:22:06] [Epoch=068/400] [Need: 17:36:24] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 88.518 Prec@5 98.214 Error@1 11.482
+  **Test** Prec@1 66.260 Prec@5 87.460 Error@1 33.740 Loss: 1.434 
+
+==>>[2020-01-08 15:24:38] [Epoch=069/400] [Need: 17:31:07] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 88.980 Prec@5 98.292 Error@1 11.020
+  **Test** Prec@1 65.800 Prec@5 87.970 Error@1 34.200 Loss: 1.396 
+
+==>>[2020-01-08 15:27:22] [Epoch=070/400] [Need: 17:24:56] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+average mixing weight: 1.000
+  **Train** Prec@1 89.060 Prec@5 98.250 Error@1 10.940
+  **Test** Prec@1 65.630 Prec@5 87.490 Error@1 34.370 Loss: 1.449 
+
+==>>[2020-01-08 15:30:06] [Epoch=071/400] [Need: 17:19:46] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 88.806 Prec@5 98.328 Error@1 11.194
+  **Test** Prec@1 67.040 Prec@5 88.830 Error@1 32.960 Loss: 1.365 
+
+==>>[2020-01-08 15:32:43] [Epoch=072/400] [Need: 17:14:35] [learning_rate=0.1000] [Best : Accuracy=67.80, Error=32.20]
+  **Train** Prec@1 89.198 Prec@5 98.404 Error@1 10.802
+  **Test** Prec@1 68.360 Prec@5 89.160 Error@1 31.640 Loss: 1.317 
+
+==>>[2020-01-08 15:35:34] [Epoch=073/400] [Need: 17:09:07] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 89.704 Prec@5 98.424 Error@1 10.296
+  **Test** Prec@1 67.020 Prec@5 88.260 Error@1 32.980 Loss: 1.380 
+
+==>>[2020-01-08 15:38:16] [Epoch=074/400] [Need: 17:04:39] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 89.760 Prec@5 98.552 Error@1 10.240
+  **Test** Prec@1 68.040 Prec@5 89.310 Error@1 31.960 Loss: 1.336 
+
+==>>[2020-01-08 15:40:47] [Epoch=075/400] [Need: 16:59:32] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 89.604 Prec@5 98.426 Error@1 10.396
+  **Test** Prec@1 67.740 Prec@5 88.700 Error@1 32.260 Loss: 1.351 
+
+==>>[2020-01-08 15:43:32] [Epoch=076/400] [Need: 16:53:51] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 89.982 Prec@5 98.536 Error@1 10.018
+  **Test** Prec@1 65.960 Prec@5 88.130 Error@1 34.040 Loss: 1.452 
+
+==>>[2020-01-08 15:46:14] [Epoch=077/400] [Need: 16:49:06] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 89.876 Prec@5 98.564 Error@1 10.124
+  **Test** Prec@1 68.100 Prec@5 88.490 Error@1 31.900 Loss: 1.337 
+
+==>>[2020-01-08 15:48:52] [Epoch=078/400] [Need: 16:44:12] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 90.382 Prec@5 98.596 Error@1 9.618
+  **Test** Prec@1 65.170 Prec@5 86.450 Error@1 34.830 Loss: 1.497 
+
+==>>[2020-01-08 15:51:22] [Epoch=079/400] [Need: 16:39:09] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 89.986 Prec@5 98.596 Error@1 10.014
+  **Test** Prec@1 67.610 Prec@5 88.750 Error@1 32.390 Loss: 1.364 
+
+==>>[2020-01-08 15:54:05] [Epoch=080/400] [Need: 16:33:33] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+average mixing weight: 1.000
+  **Train** Prec@1 90.228 Prec@5 98.582 Error@1 9.772
+  **Test** Prec@1 68.280 Prec@5 88.530 Error@1 31.720 Loss: 1.357 
+
+==>>[2020-01-08 15:56:39] [Epoch=081/400] [Need: 16:28:53] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 90.344 Prec@5 98.644 Error@1 9.656
+  **Test** Prec@1 66.890 Prec@5 88.030 Error@1 33.110 Loss: 1.395 
+
+==>>[2020-01-08 15:59:11] [Epoch=082/400] [Need: 16:23:46] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 90.462 Prec@5 98.620 Error@1 9.538
+  **Test** Prec@1 68.290 Prec@5 88.850 Error@1 31.710 Loss: 1.343 
+
+==>>[2020-01-08 16:01:54] [Epoch=083/400] [Need: 16:18:33] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 90.872 Prec@5 98.748 Error@1 9.128
+  **Test** Prec@1 67.500 Prec@5 88.050 Error@1 32.500 Loss: 1.412 
+
+==>>[2020-01-08 16:04:27] [Epoch=084/400] [Need: 16:14:04] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 90.394 Prec@5 98.684 Error@1 9.606
+  **Test** Prec@1 67.390 Prec@5 88.260 Error@1 32.610 Loss: 1.383 
+
+==>>[2020-01-08 16:06:57] [Epoch=085/400] [Need: 16:09:00] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 90.406 Prec@5 98.746 Error@1 9.594
+  **Test** Prec@1 66.370 Prec@5 87.400 Error@1 33.630 Loss: 1.447 
+
+==>>[2020-01-08 16:09:35] [Epoch=086/400] [Need: 16:03:46] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 90.588 Prec@5 98.670 Error@1 9.412
+  **Test** Prec@1 67.630 Prec@5 88.410 Error@1 32.370 Loss: 1.389 
+
+==>>[2020-01-08 16:12:05] [Epoch=087/400] [Need: 15:59:10] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 90.940 Prec@5 98.776 Error@1 9.060
+  **Test** Prec@1 67.200 Prec@5 88.190 Error@1 32.800 Loss: 1.383 
+
+==>>[2020-01-08 16:14:48] [Epoch=088/400] [Need: 15:54:10] [learning_rate=0.1000] [Best : Accuracy=68.36, Error=31.64]
+  **Train** Prec@1 90.964 Prec@5 98.868 Error@1 9.036
+  **Test** Prec@1 68.740 Prec@5 88.980 Error@1 31.260 Loss: 1.317 
+
+==>>[2020-01-08 16:17:29] [Epoch=089/400] [Need: 15:49:52] [learning_rate=0.1000] [Best : Accuracy=68.74, Error=31.26]
+  **Train** Prec@1 91.092 Prec@5 98.822 Error@1 8.908
+  **Test** Prec@1 68.870 Prec@5 89.470 Error@1 31.130 Loss: 1.327 
+
+==>>[2020-01-08 16:20:28] [Epoch=090/400] [Need: 15:45:32] [learning_rate=0.1000] [Best : Accuracy=68.87, Error=31.13]
+average mixing weight: 1.000
+  **Train** Prec@1 91.122 Prec@5 98.820 Error@1 8.878
+  **Test** Prec@1 65.700 Prec@5 87.230 Error@1 34.300 Loss: 1.446 
+
+==>>[2020-01-08 16:22:59] [Epoch=091/400] [Need: 15:42:14] [learning_rate=0.1000] [Best : Accuracy=68.87, Error=31.13]
+  **Train** Prec@1 91.012 Prec@5 98.770 Error@1 8.988
+  **Test** Prec@1 67.050 Prec@5 88.470 Error@1 32.950 Loss: 1.411 
+
+==>>[2020-01-08 16:25:32] [Epoch=092/400] [Need: 15:37:22] [learning_rate=0.1000] [Best : Accuracy=68.87, Error=31.13]
+  **Train** Prec@1 90.888 Prec@5 98.844 Error@1 9.112
+  **Test** Prec@1 66.910 Prec@5 88.200 Error@1 33.090 Loss: 1.398 
+
+==>>[2020-01-08 16:28:08] [Epoch=093/400] [Need: 15:32:43] [learning_rate=0.1000] [Best : Accuracy=68.87, Error=31.13]
+  **Train** Prec@1 91.388 Prec@5 98.878 Error@1 8.612
+  **Test** Prec@1 68.240 Prec@5 88.850 Error@1 31.760 Loss: 1.341 
+
+==>>[2020-01-08 16:30:36] [Epoch=094/400] [Need: 15:28:16] [learning_rate=0.1000] [Best : Accuracy=68.87, Error=31.13]
+  **Train** Prec@1 91.244 Prec@5 98.920 Error@1 8.756
+  **Test** Prec@1 65.880 Prec@5 87.450 Error@1 34.120 Loss: 1.466 
+
+==>>[2020-01-08 16:33:10] [Epoch=095/400] [Need: 15:23:28] [learning_rate=0.1000] [Best : Accuracy=68.87, Error=31.13]
+  **Train** Prec@1 91.714 Prec@5 98.888 Error@1 8.286
+  **Test** Prec@1 67.690 Prec@5 88.720 Error@1 32.310 Loss: 1.377 
+
+==>>[2020-01-08 16:35:45] [Epoch=096/400] [Need: 15:18:57] [learning_rate=0.1000] [Best : Accuracy=68.87, Error=31.13]
+  **Train** Prec@1 91.332 Prec@5 98.944 Error@1 8.668
+  **Test** Prec@1 69.220 Prec@5 89.240 Error@1 30.780 Loss: 1.318 
+
+==>>[2020-01-08 16:38:26] [Epoch=097/400] [Need: 15:14:32] [learning_rate=0.1000] [Best : Accuracy=69.22, Error=30.78]
+  **Train** Prec@1 92.200 Prec@5 99.024 Error@1 7.800
+  **Test** Prec@1 68.010 Prec@5 88.570 Error@1 31.990 Loss: 1.377 
+
+==>>[2020-01-08 16:40:56] [Epoch=098/400] [Need: 15:10:28] [learning_rate=0.1000] [Best : Accuracy=69.22, Error=30.78]
+  **Train** Prec@1 91.792 Prec@5 99.022 Error@1 8.208
+  **Test** Prec@1 67.550 Prec@5 88.890 Error@1 32.450 Loss: 1.381 
+
+==>>[2020-01-08 16:43:25] [Epoch=099/400] [Need: 15:05:53] [learning_rate=0.1000] [Best : Accuracy=69.22, Error=30.78]
+  **Train** Prec@1 91.354 Prec@5 98.912 Error@1 8.646
+  **Test** Prec@1 68.530 Prec@5 88.830 Error@1 31.470 Loss: 1.343 
+
+==>>[2020-01-08 16:45:59] [Epoch=100/400] [Need: 15:01:21] [learning_rate=0.1000] [Best : Accuracy=69.22, Error=30.78]
+average mixing weight: 1.000
+  **Train** Prec@1 91.648 Prec@5 98.974 Error@1 8.352
+  **Test** Prec@1 67.560 Prec@5 88.390 Error@1 32.440 Loss: 1.419 
+
+==>>[2020-01-08 16:48:48] [Epoch=101/400] [Need: 14:57:02] [learning_rate=0.1000] [Best : Accuracy=69.22, Error=30.78]
+  **Train** Prec@1 91.614 Prec@5 98.946 Error@1 8.386
+  **Test** Prec@1 65.350 Prec@5 87.700 Error@1 34.650 Loss: 1.497 
+
+==>>[2020-01-08 16:51:18] [Epoch=102/400] [Need: 14:53:30] [learning_rate=0.1000] [Best : Accuracy=69.22, Error=30.78]
+  **Train** Prec@1 91.794 Prec@5 99.006 Error@1 8.206
+  **Test** Prec@1 66.190 Prec@5 87.320 Error@1 33.810 Loss: 1.454 
+
+==>>[2020-01-08 16:53:58] [Epoch=103/400] [Need: 14:49:05] [learning_rate=0.1000] [Best : Accuracy=69.22, Error=30.78]
+  **Train** Prec@1 91.782 Prec@5 98.964 Error@1 8.218
+  **Test** Prec@1 66.580 Prec@5 88.320 Error@1 33.420 Loss: 1.454 
+
+==>>[2020-01-08 16:56:31] [Epoch=104/400] [Need: 14:45:07] [learning_rate=0.1000] [Best : Accuracy=69.22, Error=30.78]
+  **Train** Prec@1 92.064 Prec@5 99.024 Error@1 7.936
+  **Test** Prec@1 68.350 Prec@5 89.080 Error@1 31.650 Loss: 1.337 
+
+==>>[2020-01-08 16:59:11] [Epoch=105/400] [Need: 14:40:53] [learning_rate=0.1000] [Best : Accuracy=69.22, Error=30.78]
+  **Train** Prec@1 91.738 Prec@5 99.014 Error@1 8.262
+  **Test** Prec@1 65.570 Prec@5 87.170 Error@1 34.430 Loss: 1.491 
+
+==>>[2020-01-08 17:01:51] [Epoch=106/400] [Need: 14:37:03] [learning_rate=0.1000] [Best : Accuracy=69.22, Error=30.78]
+  **Train** Prec@1 91.868 Prec@5 99.042 Error@1 8.132
+  **Test** Prec@1 67.630 Prec@5 88.910 Error@1 32.370 Loss: 1.370 
+
+==>>[2020-01-08 17:04:28] [Epoch=107/400] [Need: 14:33:10] [learning_rate=0.1000] [Best : Accuracy=69.22, Error=30.78]
+  **Train** Prec@1 91.932 Prec@5 99.008 Error@1 8.068
+  **Test** Prec@1 70.430 Prec@5 89.820 Error@1 29.570 Loss: 1.286 
+
+==>>[2020-01-08 17:07:34] [Epoch=108/400] [Need: 14:29:13] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.192 Prec@5 99.102 Error@1 7.808
+  **Test** Prec@1 67.100 Prec@5 88.820 Error@1 32.900 Loss: 1.410 
+
+==>>[2020-01-08 17:10:13] [Epoch=109/400] [Need: 14:26:36] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 91.846 Prec@5 98.976 Error@1 8.154
+  **Test** Prec@1 66.300 Prec@5 87.640 Error@1 33.700 Loss: 1.474 
+
+==>>[2020-01-08 17:12:42] [Epoch=110/400] [Need: 14:22:42] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+average mixing weight: 1.000
+  **Train** Prec@1 92.464 Prec@5 99.116 Error@1 7.536
+  **Test** Prec@1 65.890 Prec@5 86.840 Error@1 34.110 Loss: 1.503 
+
+==>>[2020-01-08 17:15:27] [Epoch=111/400] [Need: 14:18:28] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 91.782 Prec@5 99.048 Error@1 8.218
+  **Test** Prec@1 66.490 Prec@5 87.440 Error@1 33.510 Loss: 1.476 
+
+==>>[2020-01-08 17:18:11] [Epoch=112/400] [Need: 14:14:55] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.312 Prec@5 99.110 Error@1 7.688
+  **Test** Prec@1 65.470 Prec@5 87.090 Error@1 34.530 Loss: 1.490 
+
+==>>[2020-01-08 17:20:44] [Epoch=113/400] [Need: 14:11:20] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.032 Prec@5 99.040 Error@1 7.968
+  **Test** Prec@1 68.880 Prec@5 88.590 Error@1 31.120 Loss: 1.349 
+
+==>>[2020-01-08 17:23:47] [Epoch=114/400] [Need: 14:07:20] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.572 Prec@5 99.184 Error@1 7.428
+  **Test** Prec@1 66.060 Prec@5 87.260 Error@1 33.940 Loss: 1.474 
+
+==>>[2020-01-08 17:26:25] [Epoch=115/400] [Need: 14:04:35] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.744 Prec@5 99.160 Error@1 7.256
+  **Test** Prec@1 67.960 Prec@5 87.840 Error@1 32.040 Loss: 1.402 
+
+==>>[2020-01-08 17:28:58] [Epoch=116/400] [Need: 14:00:51] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.472 Prec@5 99.142 Error@1 7.528
+  **Test** Prec@1 68.450 Prec@5 89.430 Error@1 31.550 Loss: 1.338 
+
+==>>[2020-01-08 17:31:31] [Epoch=117/400] [Need: 13:56:52] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.542 Prec@5 99.058 Error@1 7.458
+  **Test** Prec@1 69.340 Prec@5 89.510 Error@1 30.660 Loss: 1.317 
+
+==>>[2020-01-08 17:34:01] [Epoch=118/400] [Need: 13:52:56] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.412 Prec@5 99.130 Error@1 7.588
+  **Test** Prec@1 68.810 Prec@5 88.920 Error@1 31.190 Loss: 1.363 
+
+==>>[2020-01-08 17:36:40] [Epoch=119/400] [Need: 13:48:56] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.626 Prec@5 99.116 Error@1 7.374
+  **Test** Prec@1 67.700 Prec@5 88.650 Error@1 32.300 Loss: 1.388 
+
+==>>[2020-01-08 17:39:19] [Epoch=120/400] [Need: 13:45:17] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+average mixing weight: 1.000
+  **Train** Prec@1 92.648 Prec@5 99.164 Error@1 7.352
+  **Test** Prec@1 67.420 Prec@5 88.420 Error@1 32.580 Loss: 1.439 
+
+==>>[2020-01-08 17:41:55] [Epoch=121/400] [Need: 13:41:38] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.480 Prec@5 99.160 Error@1 7.520
+  **Test** Prec@1 66.260 Prec@5 87.270 Error@1 33.740 Loss: 1.476 
+
+==>>[2020-01-08 17:44:28] [Epoch=122/400] [Need: 13:37:54] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.512 Prec@5 99.108 Error@1 7.488
+  **Test** Prec@1 66.470 Prec@5 88.110 Error@1 33.530 Loss: 1.447 
+
+==>>[2020-01-08 17:47:13] [Epoch=123/400] [Need: 13:34:03] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.894 Prec@5 99.226 Error@1 7.106
+  **Test** Prec@1 68.860 Prec@5 88.520 Error@1 31.140 Loss: 1.373 
+
+==>>[2020-01-08 17:49:57] [Epoch=124/400] [Need: 13:30:43] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.656 Prec@5 99.178 Error@1 7.344
+  **Test** Prec@1 67.930 Prec@5 88.930 Error@1 32.070 Loss: 1.387 
+
+==>>[2020-01-08 17:52:35] [Epoch=125/400] [Need: 13:27:21] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.406 Prec@5 99.204 Error@1 7.594
+  **Test** Prec@1 68.580 Prec@5 88.940 Error@1 31.420 Loss: 1.363 
+
+==>>[2020-01-08 17:55:27] [Epoch=126/400] [Need: 13:23:43] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.650 Prec@5 99.124 Error@1 7.350
+  **Test** Prec@1 68.830 Prec@5 89.200 Error@1 31.170 Loss: 1.344 
+
+==>>[2020-01-08 17:58:34] [Epoch=127/400] [Need: 13:20:40] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.064 Prec@5 99.168 Error@1 6.936
+  **Test** Prec@1 66.690 Prec@5 88.120 Error@1 33.310 Loss: 1.451 
+
+==>>[2020-01-08 18:01:58] [Epoch=128/400] [Need: 13:18:17] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.430 Prec@5 99.140 Error@1 7.570
+  **Test** Prec@1 67.090 Prec@5 88.000 Error@1 32.910 Loss: 1.417 
+
+==>>[2020-01-08 18:05:20] [Epoch=129/400] [Need: 13:16:07] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.996 Prec@5 99.218 Error@1 7.004
+  **Test** Prec@1 68.250 Prec@5 89.550 Error@1 31.750 Loss: 1.362 
+
+==>>[2020-01-08 18:07:54] [Epoch=130/400] [Need: 13:14:09] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+average mixing weight: 1.000
+  **Train** Prec@1 93.004 Prec@5 99.262 Error@1 6.996
+  **Test** Prec@1 68.120 Prec@5 88.590 Error@1 31.880 Loss: 1.400 
+
+==>>[2020-01-08 18:10:34] [Epoch=131/400] [Need: 13:10:23] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.746 Prec@5 99.204 Error@1 7.254
+  **Test** Prec@1 67.640 Prec@5 88.140 Error@1 32.360 Loss: 1.417 
+
+==>>[2020-01-08 18:13:27] [Epoch=132/400] [Need: 13:06:55] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.704 Prec@5 99.190 Error@1 7.296
+  **Test** Prec@1 67.820 Prec@5 87.930 Error@1 32.180 Loss: 1.396 
+
+==>>[2020-01-08 18:16:01] [Epoch=133/400] [Need: 13:03:53] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.174 Prec@5 99.296 Error@1 6.826
+  **Test** Prec@1 67.540 Prec@5 88.430 Error@1 32.460 Loss: 1.420 
+
+==>>[2020-01-08 18:18:43] [Epoch=134/400] [Need: 13:00:11] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.838 Prec@5 99.342 Error@1 7.162
+  **Test** Prec@1 68.500 Prec@5 88.860 Error@1 31.500 Loss: 1.364 
+
+==>>[2020-01-08 18:21:21] [Epoch=135/400] [Need: 12:56:51] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.750 Prec@5 99.244 Error@1 7.250
+  **Test** Prec@1 68.400 Prec@5 88.960 Error@1 31.600 Loss: 1.362 
+
+==>>[2020-01-08 18:24:04] [Epoch=136/400] [Need: 12:53:18] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.916 Prec@5 99.164 Error@1 7.084
+  **Test** Prec@1 68.490 Prec@5 88.620 Error@1 31.510 Loss: 1.382 
+
+==>>[2020-01-08 18:26:44] [Epoch=137/400] [Need: 12:50:00] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.134 Prec@5 99.264 Error@1 6.866
+  **Test** Prec@1 69.120 Prec@5 88.960 Error@1 30.880 Loss: 1.356 
+
+==>>[2020-01-08 18:29:35] [Epoch=138/400] [Need: 12:46:32] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.972 Prec@5 99.216 Error@1 7.028
+  **Test** Prec@1 68.100 Prec@5 88.750 Error@1 31.900 Loss: 1.401 
+
+==>>[2020-01-08 18:32:13] [Epoch=139/400] [Need: 12:43:28] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.810 Prec@5 99.224 Error@1 7.190
+  **Test** Prec@1 68.240 Prec@5 88.850 Error@1 31.760 Loss: 1.384 
+
+==>>[2020-01-08 18:34:52] [Epoch=140/400] [Need: 12:40:02] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+average mixing weight: 1.000
+  **Train** Prec@1 93.372 Prec@5 99.366 Error@1 6.628
+  **Test** Prec@1 70.020 Prec@5 89.620 Error@1 29.980 Loss: 1.311 
+
+==>>[2020-01-08 18:37:21] [Epoch=141/400] [Need: 12:36:37] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.142 Prec@5 99.328 Error@1 6.858
+  **Test** Prec@1 68.050 Prec@5 88.760 Error@1 31.950 Loss: 1.381 
+
+==>>[2020-01-08 18:40:08] [Epoch=142/400] [Need: 12:32:54] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.126 Prec@5 99.260 Error@1 6.874
+  **Test** Prec@1 67.760 Prec@5 87.980 Error@1 32.240 Loss: 1.416 
+
+==>>[2020-01-08 18:42:43] [Epoch=143/400] [Need: 12:29:43] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.140 Prec@5 99.238 Error@1 6.860
+  **Test** Prec@1 68.460 Prec@5 89.270 Error@1 31.540 Loss: 1.356 
+
+==>>[2020-01-08 18:45:28] [Epoch=144/400] [Need: 12:26:12] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.334 Prec@5 99.276 Error@1 6.666
+  **Test** Prec@1 67.790 Prec@5 88.290 Error@1 32.210 Loss: 1.415 
+
+==>>[2020-01-08 18:48:38] [Epoch=145/400] [Need: 12:23:00] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.428 Prec@5 99.338 Error@1 6.572
+  **Test** Prec@1 67.770 Prec@5 88.480 Error@1 32.230 Loss: 1.412 
+
+==>>[2020-01-08 18:51:25] [Epoch=146/400] [Need: 12:20:30] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.140 Prec@5 99.298 Error@1 6.860
+  **Test** Prec@1 69.460 Prec@5 89.640 Error@1 30.540 Loss: 1.334 
+
+==>>[2020-01-08 18:54:28] [Epoch=147/400] [Need: 12:17:22] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.206 Prec@5 99.234 Error@1 6.794
+  **Test** Prec@1 67.260 Prec@5 87.680 Error@1 32.740 Loss: 1.453 
+
+==>>[2020-01-08 18:57:05] [Epoch=148/400] [Need: 12:14:41] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 92.970 Prec@5 99.274 Error@1 7.030
+  **Test** Prec@1 67.570 Prec@5 88.340 Error@1 32.430 Loss: 1.425 
+
+==>>[2020-01-08 19:00:10] [Epoch=149/400] [Need: 12:11:16] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.292 Prec@5 99.310 Error@1 6.708
+  **Test** Prec@1 66.210 Prec@5 87.820 Error@1 33.790 Loss: 1.495 
+
+==>>[2020-01-08 19:02:54] [Epoch=150/400] [Need: 12:08:38] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+average mixing weight: 1.000
+  **Train** Prec@1 93.410 Prec@5 99.326 Error@1 6.590
+  **Test** Prec@1 69.030 Prec@5 88.890 Error@1 30.970 Loss: 1.344 
+
+==>>[2020-01-08 19:05:56] [Epoch=151/400] [Need: 12:05:26] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.432 Prec@5 99.272 Error@1 6.568
+  **Test** Prec@1 63.870 Prec@5 85.760 Error@1 36.130 Loss: 1.637 
+
+==>>[2020-01-08 19:08:43] [Epoch=152/400] [Need: 12:02:41] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.156 Prec@5 99.324 Error@1 6.844
+  **Test** Prec@1 67.100 Prec@5 88.440 Error@1 32.900 Loss: 1.454 
+
+==>>[2020-01-08 19:11:15] [Epoch=153/400] [Need: 11:59:34] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.546 Prec@5 99.332 Error@1 6.454
+  **Test** Prec@1 68.790 Prec@5 88.810 Error@1 31.210 Loss: 1.382 
+
+==>>[2020-01-08 19:14:22] [Epoch=154/400] [Need: 11:56:07] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.374 Prec@5 99.330 Error@1 6.626
+  **Test** Prec@1 68.090 Prec@5 88.990 Error@1 31.910 Loss: 1.408 
+
+==>>[2020-01-08 19:17:05] [Epoch=155/400] [Need: 11:53:29] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.528 Prec@5 99.326 Error@1 6.472
+  **Test** Prec@1 69.020 Prec@5 89.030 Error@1 30.980 Loss: 1.357 
+
+==>>[2020-01-08 19:20:00] [Epoch=156/400] [Need: 11:50:16] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.574 Prec@5 99.314 Error@1 6.426
+  **Test** Prec@1 68.690 Prec@5 89.160 Error@1 31.310 Loss: 1.368 
+
+==>>[2020-01-08 19:22:38] [Epoch=157/400] [Need: 11:47:20] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.424 Prec@5 99.306 Error@1 6.576
+  **Test** Prec@1 68.460 Prec@5 88.510 Error@1 31.540 Loss: 1.390 
+
+==>>[2020-01-08 19:25:53] [Epoch=158/400] [Need: 11:44:01] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.458 Prec@5 99.384 Error@1 6.542
+  **Test** Prec@1 67.540 Prec@5 87.830 Error@1 32.460 Loss: 1.425 
+
+==>>[2020-01-08 19:28:31] [Epoch=159/400] [Need: 11:41:38] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.380 Prec@5 99.380 Error@1 6.620
+  **Test** Prec@1 68.180 Prec@5 88.420 Error@1 31.820 Loss: 1.412 
+
+==>>[2020-01-08 19:31:05] [Epoch=160/400] [Need: 11:38:18] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+average mixing weight: 1.000
+  **Train** Prec@1 93.244 Prec@5 99.350 Error@1 6.756
+  **Test** Prec@1 67.190 Prec@5 88.340 Error@1 32.810 Loss: 1.425 
+
+==>>[2020-01-08 19:33:50] [Epoch=161/400] [Need: 11:34:53] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.640 Prec@5 99.328 Error@1 6.360
+  **Test** Prec@1 66.080 Prec@5 87.900 Error@1 33.920 Loss: 1.494 
+
+==>>[2020-01-08 19:36:29] [Epoch=162/400] [Need: 11:31:45] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.410 Prec@5 99.346 Error@1 6.590
+  **Test** Prec@1 69.130 Prec@5 89.280 Error@1 30.870 Loss: 1.359 
+
+==>>[2020-01-08 19:38:58] [Epoch=163/400] [Need: 11:28:29] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.218 Prec@5 99.262 Error@1 6.782
+  **Test** Prec@1 68.470 Prec@5 89.190 Error@1 31.530 Loss: 1.373 
+
+==>>[2020-01-08 19:41:46] [Epoch=164/400] [Need: 11:24:58] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.438 Prec@5 99.370 Error@1 6.562
+  **Test** Prec@1 67.280 Prec@5 88.170 Error@1 32.720 Loss: 1.458 
+
+==>>[2020-01-08 19:44:16] [Epoch=165/400] [Need: 11:21:54] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.670 Prec@5 99.382 Error@1 6.330
+  **Test** Prec@1 67.140 Prec@5 87.800 Error@1 32.860 Loss: 1.462 
+
+==>>[2020-01-08 19:47:24] [Epoch=166/400] [Need: 11:18:26] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.744 Prec@5 99.428 Error@1 6.256
+  **Test** Prec@1 66.680 Prec@5 87.670 Error@1 33.320 Loss: 1.485 
+
+==>>[2020-01-08 19:49:58] [Epoch=167/400] [Need: 11:15:52] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.558 Prec@5 99.388 Error@1 6.442
+  **Test** Prec@1 68.180 Prec@5 89.120 Error@1 31.820 Loss: 1.411 
+
+==>>[2020-01-08 19:52:34] [Epoch=168/400] [Need: 11:12:30] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.412 Prec@5 99.318 Error@1 6.588
+  **Test** Prec@1 68.790 Prec@5 89.370 Error@1 31.210 Loss: 1.353 
+
+==>>[2020-01-08 19:55:09] [Epoch=169/400] [Need: 11:09:12] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.760 Prec@5 99.364 Error@1 6.240
+  **Test** Prec@1 68.730 Prec@5 88.950 Error@1 31.270 Loss: 1.387 
+
+==>>[2020-01-08 19:57:42] [Epoch=170/400] [Need: 11:05:52] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+average mixing weight: 1.000
+  **Train** Prec@1 93.438 Prec@5 99.322 Error@1 6.562
+  **Test** Prec@1 67.930 Prec@5 88.960 Error@1 32.070 Loss: 1.392 
+
+==>>[2020-01-08 20:00:11] [Epoch=171/400] [Need: 11:02:30] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.728 Prec@5 99.398 Error@1 6.272
+  **Test** Prec@1 68.190 Prec@5 88.680 Error@1 31.810 Loss: 1.392 
+
+==>>[2020-01-08 20:02:43] [Epoch=172/400] [Need: 10:59:04] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.418 Prec@5 99.414 Error@1 6.582
+  **Test** Prec@1 65.900 Prec@5 87.480 Error@1 34.100 Loss: 1.520 
+
+==>>[2020-01-08 20:05:22] [Epoch=173/400] [Need: 10:55:43] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.204 Prec@5 99.378 Error@1 6.796
+  **Test** Prec@1 68.970 Prec@5 88.990 Error@1 31.030 Loss: 1.352 
+
+==>>[2020-01-08 20:07:56] [Epoch=174/400] [Need: 10:52:31] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.692 Prec@5 99.424 Error@1 6.308
+  **Test** Prec@1 68.830 Prec@5 89.330 Error@1 31.170 Loss: 1.366 
+
+==>>[2020-01-08 20:10:28] [Epoch=175/400] [Need: 10:49:14] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.732 Prec@5 99.364 Error@1 6.268
+  **Test** Prec@1 67.060 Prec@5 87.600 Error@1 32.940 Loss: 1.459 
+
+==>>[2020-01-08 20:13:06] [Epoch=176/400] [Need: 10:45:53] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.864 Prec@5 99.398 Error@1 6.136
+  **Test** Prec@1 66.200 Prec@5 87.800 Error@1 33.800 Loss: 1.498 
+
+==>>[2020-01-08 20:15:35] [Epoch=177/400] [Need: 10:42:41] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.708 Prec@5 99.364 Error@1 6.292
+  **Test** Prec@1 65.800 Prec@5 87.360 Error@1 34.200 Loss: 1.542 
+
+==>>[2020-01-08 20:18:36] [Epoch=178/400] [Need: 10:39:18] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.728 Prec@5 99.408 Error@1 6.272
+  **Test** Prec@1 67.790 Prec@5 88.340 Error@1 32.210 Loss: 1.425 
+
+==>>[2020-01-08 20:21:05] [Epoch=179/400] [Need: 10:36:35] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.428 Prec@5 99.306 Error@1 6.572
+  **Test** Prec@1 68.410 Prec@5 88.820 Error@1 31.590 Loss: 1.381 
+
+==>>[2020-01-08 20:23:43] [Epoch=180/400] [Need: 10:33:13] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+average mixing weight: 1.000
+  **Train** Prec@1 93.592 Prec@5 99.390 Error@1 6.408
+  **Test** Prec@1 68.640 Prec@5 88.960 Error@1 31.360 Loss: 1.354 
+
+==>>[2020-01-08 20:26:12] [Epoch=181/400] [Need: 10:30:02] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 94.220 Prec@5 99.404 Error@1 5.780
+  **Test** Prec@1 67.810 Prec@5 88.490 Error@1 32.190 Loss: 1.432 
+
+==>>[2020-01-08 20:28:44] [Epoch=182/400] [Need: 10:26:42] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.756 Prec@5 99.348 Error@1 6.244
+  **Test** Prec@1 67.890 Prec@5 88.680 Error@1 32.110 Loss: 1.406 
+
+==>>[2020-01-08 20:31:26] [Epoch=183/400] [Need: 10:23:25] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.760 Prec@5 99.424 Error@1 6.240
+  **Test** Prec@1 68.860 Prec@5 89.180 Error@1 31.140 Loss: 1.368 
+
+==>>[2020-01-08 20:34:00] [Epoch=184/400] [Need: 10:20:20] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.486 Prec@5 99.384 Error@1 6.514
+  **Test** Prec@1 67.440 Prec@5 88.590 Error@1 32.560 Loss: 1.399 
+
+==>>[2020-01-08 20:36:28] [Epoch=185/400] [Need: 10:17:07] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.504 Prec@5 99.328 Error@1 6.496
+  **Test** Prec@1 68.880 Prec@5 89.100 Error@1 31.120 Loss: 1.369 
+
+==>>[2020-01-08 20:39:00] [Epoch=186/400] [Need: 10:13:46] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.676 Prec@5 99.418 Error@1 6.324
+  **Test** Prec@1 68.950 Prec@5 88.640 Error@1 31.050 Loss: 1.362 
+
+==>>[2020-01-08 20:41:46] [Epoch=187/400] [Need: 10:10:50] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.804 Prec@5 99.410 Error@1 6.196
+  **Test** Prec@1 69.220 Prec@5 89.240 Error@1 30.780 Loss: 1.335 
+
+==>>[2020-01-08 20:44:35] [Epoch=188/400] [Need: 10:07:32] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.812 Prec@5 99.482 Error@1 6.188
+  **Test** Prec@1 67.660 Prec@5 88.220 Error@1 32.340 Loss: 1.439 
+
+==>>[2020-01-08 20:47:10] [Epoch=189/400] [Need: 10:04:37] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.764 Prec@5 99.404 Error@1 6.236
+  **Test** Prec@1 69.320 Prec@5 89.250 Error@1 30.680 Loss: 1.372 
+
+==>>[2020-01-08 20:49:53] [Epoch=190/400] [Need: 10:01:26] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+average mixing weight: 1.000
+  **Train** Prec@1 94.050 Prec@5 99.434 Error@1 5.950
+  **Test** Prec@1 67.570 Prec@5 88.250 Error@1 32.430 Loss: 1.425 
+
+==>>[2020-01-08 20:52:39] [Epoch=191/400] [Need: 09:58:25] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.472 Prec@5 99.316 Error@1 6.528
+  **Test** Prec@1 68.120 Prec@5 88.580 Error@1 31.880 Loss: 1.416 
+
+==>>[2020-01-08 20:55:11] [Epoch=192/400] [Need: 09:55:26] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 94.174 Prec@5 99.438 Error@1 5.826
+  **Test** Prec@1 68.980 Prec@5 89.280 Error@1 31.020 Loss: 1.368 
+
+==>>[2020-01-08 20:58:02] [Epoch=193/400] [Need: 09:52:13] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.910 Prec@5 99.462 Error@1 6.090
+  **Test** Prec@1 68.080 Prec@5 89.320 Error@1 31.920 Loss: 1.419 
+
+==>>[2020-01-08 21:00:35] [Epoch=194/400] [Need: 09:49:21] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 94.110 Prec@5 99.436 Error@1 5.890
+  **Test** Prec@1 69.250 Prec@5 88.830 Error@1 30.750 Loss: 1.361 
+
+==>>[2020-01-08 21:03:17] [Epoch=195/400] [Need: 09:46:09] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.872 Prec@5 99.404 Error@1 6.128
+  **Test** Prec@1 68.700 Prec@5 88.750 Error@1 31.300 Loss: 1.374 
+
+==>>[2020-01-08 21:05:52] [Epoch=196/400] [Need: 09:43:09] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 94.262 Prec@5 99.460 Error@1 5.738
+  **Test** Prec@1 68.480 Prec@5 89.380 Error@1 31.520 Loss: 1.383 
+
+==>>[2020-01-08 21:08:22] [Epoch=197/400] [Need: 09:40:00] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 94.030 Prec@5 99.418 Error@1 5.970
+  **Test** Prec@1 65.900 Prec@5 87.700 Error@1 34.100 Loss: 1.505 
+
+==>>[2020-01-08 21:10:48] [Epoch=198/400] [Need: 09:36:47] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.548 Prec@5 99.304 Error@1 6.452
+  **Test** Prec@1 69.070 Prec@5 89.610 Error@1 30.930 Loss: 1.346 
+
+==>>[2020-01-08 21:13:22] [Epoch=199/400] [Need: 09:33:30] [learning_rate=0.1000] [Best : Accuracy=70.43, Error=29.57]
+  **Train** Prec@1 93.962 Prec@5 99.418 Error@1 6.038
+  **Test** Prec@1 67.520 Prec@5 88.580 Error@1 32.480 Loss: 1.440 
+
+==>>[2020-01-08 21:15:50] [Epoch=200/400] [Need: 09:30:21] [learning_rate=0.0100] [Best : Accuracy=70.43, Error=29.57]
+average mixing weight: 1.000
+  **Train** Prec@1 98.462 Prec@5 99.902 Error@1 1.538
+  **Test** Prec@1 76.840 Prec@5 93.660 Error@1 23.160 Loss: 0.985 
+
+==>>[2020-01-08 21:18:50] [Epoch=201/400] [Need: 09:27:07] [learning_rate=0.0100] [Best : Accuracy=76.84, Error=23.16]
+  **Train** Prec@1 99.532 Prec@5 99.948 Error@1 0.468
+  **Test** Prec@1 77.680 Prec@5 93.790 Error@1 22.320 Loss: 0.978 
+
+==>>[2020-01-08 21:21:26] [Epoch=202/400] [Need: 09:24:25] [learning_rate=0.0100] [Best : Accuracy=77.68, Error=22.32]
+  **Train** Prec@1 99.720 Prec@5 99.964 Error@1 0.280
+  **Test** Prec@1 77.730 Prec@5 94.020 Error@1 22.270 Loss: 0.973 
+
+==>>[2020-01-08 21:24:05] [Epoch=203/400] [Need: 09:21:19] [learning_rate=0.0100] [Best : Accuracy=77.73, Error=22.27]
+  **Train** Prec@1 99.764 Prec@5 99.966 Error@1 0.236
+  **Test** Prec@1 77.730 Prec@5 93.750 Error@1 22.270 Loss: 0.971 
+
+==>>[2020-01-08 21:26:46] [Epoch=204/400] [Need: 09:18:18] [learning_rate=0.0100] [Best : Accuracy=77.73, Error=22.27]
+  **Train** Prec@1 99.800 Prec@5 99.972 Error@1 0.200
+  **Test** Prec@1 77.740 Prec@5 94.010 Error@1 22.260 Loss: 0.973 
+
+==>>[2020-01-08 21:29:17] [Epoch=205/400] [Need: 09:15:17] [learning_rate=0.0100] [Best : Accuracy=77.74, Error=22.26]
+  **Train** Prec@1 99.830 Prec@5 99.978 Error@1 0.170
+  **Test** Prec@1 77.740 Prec@5 93.890 Error@1 22.260 Loss: 0.978 
+
+==>>[2020-01-08 21:31:45] [Epoch=206/400] [Need: 09:12:07] [learning_rate=0.0100] [Best : Accuracy=77.74, Error=22.26]
+  **Train** Prec@1 99.854 Prec@5 99.974 Error@1 0.146
+  **Test** Prec@1 78.040 Prec@5 93.790 Error@1 21.960 Loss: 0.978 
+
+==>>[2020-01-08 21:34:26] [Epoch=207/400] [Need: 09:08:55] [learning_rate=0.0100] [Best : Accuracy=78.04, Error=21.96]
+  **Train** Prec@1 99.870 Prec@5 99.972 Error@1 0.130
+  **Test** Prec@1 77.840 Prec@5 93.670 Error@1 22.160 Loss: 0.983 
+
+==>>[2020-01-08 21:36:59] [Epoch=208/400] [Need: 09:05:56] [learning_rate=0.0100] [Best : Accuracy=78.04, Error=21.96]
+  **Train** Prec@1 99.866 Prec@5 99.982 Error@1 0.134
+  **Test** Prec@1 78.100 Prec@5 93.810 Error@1 21.900 Loss: 0.977 
+
+==>>[2020-01-08 21:39:38] [Epoch=209/400] [Need: 09:02:49] [learning_rate=0.0100] [Best : Accuracy=78.10, Error=21.90]
+  **Train** Prec@1 99.866 Prec@5 99.972 Error@1 0.134
+  **Test** Prec@1 77.880 Prec@5 93.770 Error@1 22.120 Loss: 0.983 
+
+==>>[2020-01-08 21:42:08] [Epoch=210/400] [Need: 08:59:48] [learning_rate=0.0100] [Best : Accuracy=78.10, Error=21.90]
+average mixing weight: 1.000
+  **Train** Prec@1 99.882 Prec@5 99.986 Error@1 0.118
+  **Test** Prec@1 78.110 Prec@5 93.750 Error@1 21.890 Loss: 0.989 
+
+==>>[2020-01-08 21:44:41] [Epoch=211/400] [Need: 08:56:39] [learning_rate=0.0100] [Best : Accuracy=78.11, Error=21.89]
+  **Train** Prec@1 99.882 Prec@5 99.984 Error@1 0.118
+  **Test** Prec@1 78.090 Prec@5 93.700 Error@1 21.910 Loss: 0.985 
+
+==>>[2020-01-08 21:47:14] [Epoch=212/400] [Need: 08:53:33] [learning_rate=0.0100] [Best : Accuracy=78.11, Error=21.89]
+  **Train** Prec@1 99.888 Prec@5 99.986 Error@1 0.112
+  **Test** Prec@1 78.150 Prec@5 93.820 Error@1 21.850 Loss: 0.988 
+
+==>>[2020-01-08 21:50:12] [Epoch=213/400] [Need: 08:50:28] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.892 Prec@5 99.988 Error@1 0.108
+  **Test** Prec@1 77.990 Prec@5 93.630 Error@1 22.010 Loss: 0.996 
+
+==>>[2020-01-08 21:52:47] [Epoch=214/400] [Need: 08:47:44] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.898 Prec@5 99.986 Error@1 0.102
+  **Test** Prec@1 77.770 Prec@5 93.590 Error@1 22.230 Loss: 1.004 
+
+==>>[2020-01-08 21:55:20] [Epoch=215/400] [Need: 08:44:41] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.904 Prec@5 99.992 Error@1 0.096
+  **Test** Prec@1 77.850 Prec@5 93.520 Error@1 22.150 Loss: 1.000 
+
+==>>[2020-01-08 21:57:45] [Epoch=216/400] [Need: 08:41:36] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.900 Prec@5 99.990 Error@1 0.100
+  **Test** Prec@1 77.920 Prec@5 93.660 Error@1 22.080 Loss: 0.998 
+
+==>>[2020-01-08 22:00:19] [Epoch=217/400] [Need: 08:38:26] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.910 Prec@5 99.992 Error@1 0.090
+  **Test** Prec@1 77.900 Prec@5 93.600 Error@1 22.100 Loss: 1.005 
+
+==>>[2020-01-08 22:02:50] [Epoch=218/400] [Need: 08:35:22] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.920 Prec@5 99.986 Error@1 0.080
+  **Test** Prec@1 77.880 Prec@5 93.750 Error@1 22.120 Loss: 0.994 
+
+==>>[2020-01-08 22:05:18] [Epoch=219/400] [Need: 08:32:16] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.932 Prec@5 99.992 Error@1 0.068
+  **Test** Prec@1 78.000 Prec@5 93.710 Error@1 22.000 Loss: 1.004 
+
+==>>[2020-01-08 22:07:52] [Epoch=220/400] [Need: 08:29:08] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+average mixing weight: 1.000
+  **Train** Prec@1 99.924 Prec@5 99.996 Error@1 0.076
+  **Test** Prec@1 77.730 Prec@5 93.450 Error@1 22.270 Loss: 1.006 
+
+==>>[2020-01-08 22:10:18] [Epoch=221/400] [Need: 08:26:06] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.920 Prec@5 99.988 Error@1 0.080
+  **Test** Prec@1 77.940 Prec@5 93.560 Error@1 22.060 Loss: 1.012 
+
+==>>[2020-01-08 22:12:48] [Epoch=222/400] [Need: 08:22:57] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.928 Prec@5 99.996 Error@1 0.072
+  **Test** Prec@1 77.740 Prec@5 93.440 Error@1 22.260 Loss: 1.028 
+
+==>>[2020-01-08 22:15:19] [Epoch=223/400] [Need: 08:19:52] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.922 Prec@5 99.992 Error@1 0.078
+  **Test** Prec@1 78.030 Prec@5 93.370 Error@1 21.970 Loss: 1.014 
+
+==>>[2020-01-08 22:17:54] [Epoch=224/400] [Need: 08:16:49] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.930 Prec@5 99.994 Error@1 0.070
+  **Test** Prec@1 77.870 Prec@5 93.450 Error@1 22.130 Loss: 1.014 
+
+==>>[2020-01-08 22:20:21] [Epoch=225/400] [Need: 08:13:48] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.930 Prec@5 99.992 Error@1 0.070
+  **Test** Prec@1 77.710 Prec@5 93.530 Error@1 22.290 Loss: 1.016 
+
+==>>[2020-01-08 22:22:50] [Epoch=226/400] [Need: 08:10:42] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.938 Prec@5 99.996 Error@1 0.062
+  **Test** Prec@1 77.740 Prec@5 93.440 Error@1 22.260 Loss: 1.021 
+
+==>>[2020-01-08 22:25:25] [Epoch=227/400] [Need: 08:07:37] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.940 Prec@5 99.992 Error@1 0.060
+  **Test** Prec@1 77.680 Prec@5 93.390 Error@1 22.320 Loss: 1.025 
+
+==>>[2020-01-08 22:27:55] [Epoch=228/400] [Need: 08:04:37] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.940 Prec@5 99.994 Error@1 0.060
+  **Test** Prec@1 77.810 Prec@5 93.350 Error@1 22.190 Loss: 1.022 
+
+==>>[2020-01-08 22:30:28] [Epoch=229/400] [Need: 08:01:34] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.934 Prec@5 99.996 Error@1 0.066
+  **Test** Prec@1 77.550 Prec@5 93.420 Error@1 22.450 Loss: 1.023 
+
+==>>[2020-01-08 22:33:01] [Epoch=230/400] [Need: 07:58:33] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+average mixing weight: 1.000
+  **Train** Prec@1 99.940 Prec@5 99.998 Error@1 0.060
+  **Test** Prec@1 77.770 Prec@5 93.500 Error@1 22.230 Loss: 1.026 
+
+==>>[2020-01-08 22:35:35] [Epoch=231/400] [Need: 07:55:35] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.936 Prec@5 99.996 Error@1 0.064
+  **Test** Prec@1 77.540 Prec@5 93.410 Error@1 22.460 Loss: 1.033 
+
+==>>[2020-01-08 22:38:03] [Epoch=232/400] [Need: 07:52:33] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.948 Prec@5 99.996 Error@1 0.052
+  **Test** Prec@1 77.770 Prec@5 93.360 Error@1 22.230 Loss: 1.033 
+
+==>>[2020-01-08 22:40:39] [Epoch=233/400] [Need: 07:49:29] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.944 Prec@5 99.996 Error@1 0.056
+  **Test** Prec@1 77.730 Prec@5 93.440 Error@1 22.270 Loss: 1.026 
+
+==>>[2020-01-08 22:43:05] [Epoch=234/400] [Need: 07:46:31] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.942 Prec@5 99.996 Error@1 0.058
+  **Test** Prec@1 77.720 Prec@5 93.380 Error@1 22.280 Loss: 1.031 
+
+==>>[2020-01-08 22:45:33] [Epoch=235/400] [Need: 07:43:27] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.946 Prec@5 99.992 Error@1 0.054
+  **Test** Prec@1 77.560 Prec@5 93.380 Error@1 22.440 Loss: 1.027 
+
+==>>[2020-01-08 22:48:04] [Epoch=236/400] [Need: 07:40:24] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.944 Prec@5 99.994 Error@1 0.056
+  **Test** Prec@1 77.760 Prec@5 93.400 Error@1 22.240 Loss: 1.028 
+
+==>>[2020-01-08 22:50:41] [Epoch=237/400] [Need: 07:37:24] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.946 Prec@5 99.996 Error@1 0.054
+  **Test** Prec@1 77.690 Prec@5 93.200 Error@1 22.310 Loss: 1.034 
+
+==>>[2020-01-08 22:53:13] [Epoch=238/400] [Need: 07:34:27] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.950 Prec@5 100.000 Error@1 0.050
+  **Test** Prec@1 77.870 Prec@5 93.350 Error@1 22.130 Loss: 1.028 
+
+==>>[2020-01-08 22:55:43] [Epoch=239/400] [Need: 07:31:28] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.952 Prec@5 99.992 Error@1 0.048
+  **Test** Prec@1 77.700 Prec@5 93.270 Error@1 22.300 Loss: 1.036 
+
+==>>[2020-01-08 22:58:13] [Epoch=240/400] [Need: 07:28:27] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+average mixing weight: 1.000
+  **Train** Prec@1 99.948 Prec@5 99.996 Error@1 0.052
+  **Test** Prec@1 77.680 Prec@5 93.290 Error@1 22.320 Loss: 1.044 
+
+==>>[2020-01-08 23:00:46] [Epoch=241/400] [Need: 07:25:28] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.948 Prec@5 100.000 Error@1 0.052
+  **Test** Prec@1 77.900 Prec@5 93.180 Error@1 22.100 Loss: 1.032 
+
+==>>[2020-01-08 23:03:15] [Epoch=242/400] [Need: 07:22:30] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.950 Prec@5 99.998 Error@1 0.050
+  **Test** Prec@1 77.810 Prec@5 93.160 Error@1 22.190 Loss: 1.045 
+
+==>>[2020-01-08 23:05:43] [Epoch=243/400] [Need: 07:19:29] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.954 Prec@5 99.998 Error@1 0.046
+  **Test** Prec@1 77.740 Prec@5 93.230 Error@1 22.260 Loss: 1.037 
+
+==>>[2020-01-08 23:08:08] [Epoch=244/400] [Need: 07:16:29] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.954 Prec@5 99.998 Error@1 0.046
+  **Test** Prec@1 77.630 Prec@5 93.100 Error@1 22.370 Loss: 1.048 
+
+==>>[2020-01-08 23:10:37] [Epoch=245/400] [Need: 07:13:26] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.946 Prec@5 99.996 Error@1 0.054
+  **Test** Prec@1 77.810 Prec@5 93.260 Error@1 22.190 Loss: 1.038 
+
+==>>[2020-01-08 23:13:05] [Epoch=246/400] [Need: 07:10:26] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.952 Prec@5 100.000 Error@1 0.048
+  **Test** Prec@1 77.790 Prec@5 93.510 Error@1 22.210 Loss: 1.030 
+
+==>>[2020-01-08 23:15:35] [Epoch=247/400] [Need: 07:07:27] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.960 Prec@5 99.998 Error@1 0.040
+  **Test** Prec@1 77.830 Prec@5 93.310 Error@1 22.170 Loss: 1.041 
+
+==>>[2020-01-08 23:18:02] [Epoch=248/400] [Need: 07:04:28] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.952 Prec@5 100.000 Error@1 0.048
+  **Test** Prec@1 77.910 Prec@5 93.120 Error@1 22.090 Loss: 1.041 
+
+==>>[2020-01-08 23:20:28] [Epoch=249/400] [Need: 07:01:28] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.950 Prec@5 100.000 Error@1 0.050
+  **Test** Prec@1 77.730 Prec@5 93.460 Error@1 22.270 Loss: 1.040 
+
+==>>[2020-01-08 23:23:04] [Epoch=250/400] [Need: 06:58:28] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+average mixing weight: 1.000
+  **Train** Prec@1 99.954 Prec@5 99.998 Error@1 0.046
+  **Test** Prec@1 77.910 Prec@5 93.280 Error@1 22.090 Loss: 1.037 
+
+==>>[2020-01-08 23:25:32] [Epoch=251/400] [Need: 06:55:34] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.950 Prec@5 99.998 Error@1 0.050
+  **Test** Prec@1 77.930 Prec@5 93.210 Error@1 22.070 Loss: 1.045 
+
+==>>[2020-01-08 23:28:02] [Epoch=252/400] [Need: 06:52:36] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.966 Prec@5 100.000 Error@1 0.034
+  **Test** Prec@1 78.060 Prec@5 93.340 Error@1 21.940 Loss: 1.037 
+
+==>>[2020-01-08 23:30:40] [Epoch=253/400] [Need: 06:49:38] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.960 Prec@5 99.998 Error@1 0.040
+  **Test** Prec@1 78.080 Prec@5 93.320 Error@1 21.920 Loss: 1.036 
+
+==>>[2020-01-08 23:33:09] [Epoch=254/400] [Need: 06:46:45] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.956 Prec@5 100.000 Error@1 0.044
+  **Test** Prec@1 78.060 Prec@5 93.470 Error@1 21.940 Loss: 1.030 
+
+==>>[2020-01-08 23:35:34] [Epoch=255/400] [Need: 06:43:48] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.956 Prec@5 100.000 Error@1 0.044
+  **Test** Prec@1 77.990 Prec@5 93.420 Error@1 22.010 Loss: 1.038 
+
+==>>[2020-01-08 23:38:11] [Epoch=256/400] [Need: 06:40:49] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.964 Prec@5 100.000 Error@1 0.036
+  **Test** Prec@1 78.110 Prec@5 93.380 Error@1 21.890 Loss: 1.040 
+
+==>>[2020-01-08 23:40:41] [Epoch=257/400] [Need: 06:37:56] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.954 Prec@5 100.000 Error@1 0.046
+  **Test** Prec@1 78.100 Prec@5 93.410 Error@1 21.900 Loss: 1.037 
+
+==>>[2020-01-08 23:43:09] [Epoch=258/400] [Need: 06:35:00] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.960 Prec@5 100.000 Error@1 0.040
+  **Test** Prec@1 78.040 Prec@5 93.450 Error@1 21.960 Loss: 1.039 
+
+==>>[2020-01-08 23:45:35] [Epoch=259/400] [Need: 06:32:02] [learning_rate=0.0100] [Best : Accuracy=78.15, Error=21.85]
+  **Train** Prec@1 99.950 Prec@5 99.996 Error@1 0.050
+  **Test** Prec@1 78.290 Prec@5 93.370 Error@1 21.710 Loss: 1.040 
+
+==>>[2020-01-08 23:48:04] [Epoch=260/400] [Need: 06:29:04] [learning_rate=0.0100] [Best : Accuracy=78.29, Error=21.71]
+average mixing weight: 1.000
+  **Train** Prec@1 99.958 Prec@5 100.000 Error@1 0.042
+  **Test** Prec@1 78.220 Prec@5 93.330 Error@1 21.780 Loss: 1.038 
+
+==>>[2020-01-08 23:50:30] [Epoch=261/400] [Need: 06:26:08] [learning_rate=0.0100] [Best : Accuracy=78.29, Error=21.71]
+  **Train** Prec@1 99.962 Prec@5 100.000 Error@1 0.038
+  **Test** Prec@1 78.330 Prec@5 93.420 Error@1 21.670 Loss: 1.027 
+
+==>>[2020-01-08 23:53:06] [Epoch=262/400] [Need: 06:23:10] [learning_rate=0.0100] [Best : Accuracy=78.33, Error=21.67]
+  **Train** Prec@1 99.956 Prec@5 100.000 Error@1 0.044
+  **Test** Prec@1 78.120 Prec@5 93.430 Error@1 21.880 Loss: 1.037 
+
+==>>[2020-01-08 23:55:33] [Epoch=263/400] [Need: 06:20:18] [learning_rate=0.0100] [Best : Accuracy=78.33, Error=21.67]
+  **Train** Prec@1 99.964 Prec@5 100.000 Error@1 0.036
+  **Test** Prec@1 78.290 Prec@5 93.310 Error@1 21.710 Loss: 1.036 
+
+==>>[2020-01-08 23:58:00] [Epoch=264/400] [Need: 06:17:22] [learning_rate=0.0100] [Best : Accuracy=78.33, Error=21.67]
+  **Train** Prec@1 99.960 Prec@5 100.000 Error@1 0.040
+  **Test** Prec@1 78.120 Prec@5 93.370 Error@1 21.880 Loss: 1.032 
+
+==>>[2020-01-09 00:00:30] [Epoch=265/400] [Need: 06:14:25] [learning_rate=0.0100] [Best : Accuracy=78.33, Error=21.67]
+  **Train** Prec@1 99.960 Prec@5 100.000 Error@1 0.040
+  **Test** Prec@1 78.130 Prec@5 93.390 Error@1 21.870 Loss: 1.042 
+
+==>>[2020-01-09 00:02:56] [Epoch=266/400] [Need: 06:11:30] [learning_rate=0.0100] [Best : Accuracy=78.33, Error=21.67]
+  **Train** Prec@1 99.954 Prec@5 100.000 Error@1 0.046
+  **Test** Prec@1 78.130 Prec@5 93.400 Error@1 21.870 Loss: 1.032 
+
+==>>[2020-01-09 00:05:22] [Epoch=267/400] [Need: 06:08:34] [learning_rate=0.0100] [Best : Accuracy=78.33, Error=21.67]
+  **Train** Prec@1 99.966 Prec@5 100.000 Error@1 0.034
+  **Test** Prec@1 78.080 Prec@5 93.420 Error@1 21.920 Loss: 1.035 
+
+==>>[2020-01-09 00:07:47] [Epoch=268/400] [Need: 06:05:38] [learning_rate=0.0100] [Best : Accuracy=78.33, Error=21.67]
+  **Train** Prec@1 99.972 Prec@5 100.000 Error@1 0.028
+  **Test** Prec@1 78.220 Prec@5 93.460 Error@1 21.780 Loss: 1.036 
+
+==>>[2020-01-09 00:10:15] [Epoch=269/400] [Need: 06:02:41] [learning_rate=0.0100] [Best : Accuracy=78.33, Error=21.67]
+  **Train** Prec@1 99.962 Prec@5 100.000 Error@1 0.038
+  **Test** Prec@1 78.240 Prec@5 93.220 Error@1 21.760 Loss: 1.039 
+
+==>>[2020-01-09 00:12:44] [Epoch=270/400] [Need: 05:59:46] [learning_rate=0.0100] [Best : Accuracy=78.33, Error=21.67]
+average mixing weight: 1.000
+  **Train** Prec@1 99.968 Prec@5 100.000 Error@1 0.032
+  **Test** Prec@1 78.300 Prec@5 93.500 Error@1 21.700 Loss: 1.027 
+
+==>>[2020-01-09 00:15:09] [Epoch=271/400] [Need: 05:56:52] [learning_rate=0.0100] [Best : Accuracy=78.33, Error=21.67]
+  **Train** Prec@1 99.958 Prec@5 100.000 Error@1 0.042
+  **Test** Prec@1 78.420 Prec@5 93.370 Error@1 21.580 Loss: 1.034 
+
+==>>[2020-01-09 00:17:39] [Epoch=272/400] [Need: 05:53:56] [learning_rate=0.0100] [Best : Accuracy=78.42, Error=21.58]
+  **Train** Prec@1 99.962 Prec@5 100.000 Error@1 0.038
+  **Test** Prec@1 78.200 Prec@5 93.240 Error@1 21.800 Loss: 1.043 
+
+==>>[2020-01-09 00:20:19] [Epoch=273/400] [Need: 05:51:03] [learning_rate=0.0100] [Best : Accuracy=78.42, Error=21.58]
+  **Train** Prec@1 99.966 Prec@5 100.000 Error@1 0.034
+  **Test** Prec@1 78.150 Prec@5 93.330 Error@1 21.850 Loss: 1.029 
+
+==>>[2020-01-09 00:22:44] [Epoch=274/400] [Need: 05:48:14] [learning_rate=0.0100] [Best : Accuracy=78.42, Error=21.58]
+  **Train** Prec@1 99.968 Prec@5 100.000 Error@1 0.032
+  **Test** Prec@1 78.290 Prec@5 93.590 Error@1 21.710 Loss: 1.026 
+
+==>>[2020-01-09 00:25:14] [Epoch=275/400] [Need: 05:45:19] [learning_rate=0.0100] [Best : Accuracy=78.42, Error=21.58]
+  **Train** Prec@1 99.966 Prec@5 100.000 Error@1 0.034
+  **Test** Prec@1 78.410 Prec@5 93.630 Error@1 21.590 Loss: 1.029 
+
+==>>[2020-01-09 00:27:45] [Epoch=276/400] [Need: 05:42:26] [learning_rate=0.0100] [Best : Accuracy=78.42, Error=21.58]
+  **Train** Prec@1 99.974 Prec@5 100.000 Error@1 0.026
+  **Test** Prec@1 78.340 Prec@5 93.520 Error@1 21.660 Loss: 1.033 
+
+==>>[2020-01-09 00:30:10] [Epoch=277/400] [Need: 05:39:34] [learning_rate=0.0100] [Best : Accuracy=78.42, Error=21.58]
+  **Train** Prec@1 99.964 Prec@5 100.000 Error@1 0.036
+  **Test** Prec@1 78.290 Prec@5 93.450 Error@1 21.710 Loss: 1.033 
+
+==>>[2020-01-09 00:32:36] [Epoch=278/400] [Need: 05:36:40] [learning_rate=0.0100] [Best : Accuracy=78.42, Error=21.58]
+  **Train** Prec@1 99.966 Prec@5 100.000 Error@1 0.034
+  **Test** Prec@1 78.180 Prec@5 93.390 Error@1 21.820 Loss: 1.030 
+
+==>>[2020-01-09 00:35:12] [Epoch=279/400] [Need: 05:33:46] [learning_rate=0.0100] [Best : Accuracy=78.42, Error=21.58]
+  **Train** Prec@1 99.966 Prec@5 100.000 Error@1 0.034
+  **Test** Prec@1 78.430 Prec@5 93.590 Error@1 21.570 Loss: 1.030 
+
+==>>[2020-01-09 00:37:45] [Epoch=280/400] [Need: 05:30:56] [learning_rate=0.0100] [Best : Accuracy=78.43, Error=21.57]
+average mixing weight: 1.000
+  **Train** Prec@1 99.968 Prec@5 100.000 Error@1 0.032
+  **Test** Prec@1 78.460 Prec@5 93.340 Error@1 21.540 Loss: 1.025 
+
+==>>[2020-01-09 00:40:40] [Epoch=281/400] [Need: 05:28:05] [learning_rate=0.0100] [Best : Accuracy=78.46, Error=21.54]
+  **Train** Prec@1 99.970 Prec@5 100.000 Error@1 0.030
+  **Test** Prec@1 78.360 Prec@5 93.650 Error@1 21.640 Loss: 1.020 
+
+==>>[2020-01-09 00:43:25] [Epoch=282/400] [Need: 05:25:24] [learning_rate=0.0100] [Best : Accuracy=78.46, Error=21.54]
+  **Train** Prec@1 99.966 Prec@5 100.000 Error@1 0.034
+  **Test** Prec@1 78.350 Prec@5 93.490 Error@1 21.650 Loss: 1.024 
+
+==>>[2020-01-09 00:45:52] [Epoch=283/400] [Need: 05:22:38] [learning_rate=0.0100] [Best : Accuracy=78.46, Error=21.54]
+  **Train** Prec@1 99.968 Prec@5 100.000 Error@1 0.032
+  **Test** Prec@1 78.270 Prec@5 93.480 Error@1 21.730 Loss: 1.026 
+
+==>>[2020-01-09 00:48:19] [Epoch=284/400] [Need: 05:19:45] [learning_rate=0.0100] [Best : Accuracy=78.46, Error=21.54]
+  **Train** Prec@1 99.964 Prec@5 100.000 Error@1 0.036
+  **Test** Prec@1 78.380 Prec@5 93.470 Error@1 21.620 Loss: 1.019 
+
+==>>[2020-01-09 00:50:44] [Epoch=285/400] [Need: 05:16:52] [learning_rate=0.0100] [Best : Accuracy=78.46, Error=21.54]
+  **Train** Prec@1 99.962 Prec@5 100.000 Error@1 0.038
+  **Test** Prec@1 78.400 Prec@5 93.350 Error@1 21.600 Loss: 1.023 
+
+==>>[2020-01-09 00:53:16] [Epoch=286/400] [Need: 05:13:59] [learning_rate=0.0100] [Best : Accuracy=78.46, Error=21.54]
+  **Train** Prec@1 99.966 Prec@5 100.000 Error@1 0.034
+  **Test** Prec@1 78.550 Prec@5 93.530 Error@1 21.450 Loss: 1.021 
+
+==>>[2020-01-09 00:55:46] [Epoch=287/400] [Need: 05:11:08] [learning_rate=0.0100] [Best : Accuracy=78.55, Error=21.45]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.400 Prec@5 93.320 Error@1 21.600 Loss: 1.023 
+
+==>>[2020-01-09 00:58:17] [Epoch=288/400] [Need: 05:08:17] [learning_rate=0.0100] [Best : Accuracy=78.55, Error=21.45]
+  **Train** Prec@1 99.966 Prec@5 100.000 Error@1 0.034
+  **Test** Prec@1 78.410 Prec@5 93.300 Error@1 21.590 Loss: 1.028 
+
+==>>[2020-01-09 01:00:44] [Epoch=289/400] [Need: 05:05:27] [learning_rate=0.0100] [Best : Accuracy=78.55, Error=21.45]
+  **Train** Prec@1 99.964 Prec@5 100.000 Error@1 0.036
+  **Test** Prec@1 78.340 Prec@5 93.310 Error@1 21.660 Loss: 1.021 
+
+==>>[2020-01-09 01:03:16] [Epoch=290/400] [Need: 05:02:35] [learning_rate=0.0100] [Best : Accuracy=78.55, Error=21.45]
+average mixing weight: 1.000
+  **Train** Prec@1 99.968 Prec@5 100.000 Error@1 0.032
+  **Test** Prec@1 78.520 Prec@5 93.490 Error@1 21.480 Loss: 1.014 
+
+==>>[2020-01-09 01:05:45] [Epoch=291/400] [Need: 04:59:44] [learning_rate=0.0100] [Best : Accuracy=78.55, Error=21.45]
+  **Train** Prec@1 99.966 Prec@5 100.000 Error@1 0.034
+  **Test** Prec@1 78.700 Prec@5 93.380 Error@1 21.300 Loss: 1.015 
+
+==>>[2020-01-09 01:08:17] [Epoch=292/400] [Need: 04:56:54] [learning_rate=0.0100] [Best : Accuracy=78.70, Error=21.30]
+  **Train** Prec@1 99.966 Prec@5 100.000 Error@1 0.034
+  **Test** Prec@1 78.660 Prec@5 93.600 Error@1 21.340 Loss: 1.011 
+
+==>>[2020-01-09 01:10:47] [Epoch=293/400] [Need: 04:54:04] [learning_rate=0.0100] [Best : Accuracy=78.70, Error=21.30]
+  **Train** Prec@1 99.974 Prec@5 100.000 Error@1 0.026
+  **Test** Prec@1 78.450 Prec@5 93.530 Error@1 21.550 Loss: 1.013 
+
+==>>[2020-01-09 01:13:16] [Epoch=294/400] [Need: 04:51:14] [learning_rate=0.0100] [Best : Accuracy=78.70, Error=21.30]
+  **Train** Prec@1 99.972 Prec@5 100.000 Error@1 0.028
+  **Test** Prec@1 78.750 Prec@5 93.550 Error@1 21.250 Loss: 1.008 
+
+==>>[2020-01-09 01:15:49] [Epoch=295/400] [Need: 04:48:23] [learning_rate=0.0100] [Best : Accuracy=78.75, Error=21.25]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.430 Prec@5 93.410 Error@1 21.570 Loss: 1.018 
+
+==>>[2020-01-09 01:18:25] [Epoch=296/400] [Need: 04:45:34] [learning_rate=0.0100] [Best : Accuracy=78.75, Error=21.25]
+  **Train** Prec@1 99.982 Prec@5 100.000 Error@1 0.018
+  **Test** Prec@1 78.650 Prec@5 93.380 Error@1 21.350 Loss: 1.019 
+
+==>>[2020-01-09 01:20:57] [Epoch=297/400] [Need: 04:42:47] [learning_rate=0.0100] [Best : Accuracy=78.75, Error=21.25]
+  **Train** Prec@1 99.970 Prec@5 100.000 Error@1 0.030
+  **Test** Prec@1 78.570 Prec@5 93.580 Error@1 21.430 Loss: 1.012 
+
+==>>[2020-01-09 01:23:23] [Epoch=298/400] [Need: 04:39:58] [learning_rate=0.0100] [Best : Accuracy=78.75, Error=21.25]
+  **Train** Prec@1 99.974 Prec@5 100.000 Error@1 0.026
+  **Test** Prec@1 78.810 Prec@5 93.690 Error@1 21.190 Loss: 1.011 
+
+==>>[2020-01-09 01:26:11] [Epoch=299/400] [Need: 04:37:07] [learning_rate=0.0100] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.966 Prec@5 100.000 Error@1 0.034
+  **Test** Prec@1 78.450 Prec@5 93.450 Error@1 21.550 Loss: 1.017 
+
+==>>[2020-01-09 01:28:37] [Epoch=300/400] [Need: 04:34:23] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+average mixing weight: 1.000
+  **Train** Prec@1 99.980 Prec@5 100.000 Error@1 0.020
+  **Test** Prec@1 78.730 Prec@5 93.670 Error@1 21.270 Loss: 1.007 
+
+==>>[2020-01-09 01:31:03] [Epoch=301/400] [Need: 04:31:32] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.972 Prec@5 100.000 Error@1 0.028
+  **Test** Prec@1 78.600 Prec@5 93.710 Error@1 21.400 Loss: 1.001 
+
+==>>[2020-01-09 01:33:35] [Epoch=302/400] [Need: 04:28:42] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.790 Prec@5 93.500 Error@1 21.210 Loss: 1.010 
+
+==>>[2020-01-09 01:36:01] [Epoch=303/400] [Need: 04:25:53] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.980 Prec@5 100.000 Error@1 0.020
+  **Test** Prec@1 78.590 Prec@5 93.390 Error@1 21.410 Loss: 1.004 
+
+==>>[2020-01-09 01:38:27] [Epoch=304/400] [Need: 04:23:03] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.720 Prec@5 93.610 Error@1 21.280 Loss: 1.006 
+
+==>>[2020-01-09 01:41:04] [Epoch=305/400] [Need: 04:20:13] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.974 Prec@5 100.000 Error@1 0.026
+  **Test** Prec@1 78.720 Prec@5 93.650 Error@1 21.280 Loss: 1.003 
+
+==>>[2020-01-09 01:43:38] [Epoch=306/400] [Need: 04:17:26] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.570 Prec@5 93.500 Error@1 21.430 Loss: 1.012 
+
+==>>[2020-01-09 01:46:07] [Epoch=307/400] [Need: 04:14:39] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.982 Prec@5 100.000 Error@1 0.018
+  **Test** Prec@1 78.720 Prec@5 93.680 Error@1 21.280 Loss: 1.001 
+
+==>>[2020-01-09 01:48:32] [Epoch=308/400] [Need: 04:11:50] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.982 Prec@5 100.000 Error@1 0.018
+  **Test** Prec@1 78.580 Prec@5 93.530 Error@1 21.420 Loss: 1.008 
+
+==>>[2020-01-09 01:51:00] [Epoch=309/400] [Need: 04:09:00] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.630 Prec@5 93.520 Error@1 21.370 Loss: 1.008 
+
+==>>[2020-01-09 01:53:37] [Epoch=310/400] [Need: 04:06:11] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+average mixing weight: 1.000
+  **Train** Prec@1 99.980 Prec@5 100.000 Error@1 0.020
+  **Test** Prec@1 78.630 Prec@5 93.480 Error@1 21.370 Loss: 1.012 
+
+==>>[2020-01-09 01:56:08] [Epoch=311/400] [Need: 04:03:25] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.984 Prec@5 100.000 Error@1 0.016
+  **Test** Prec@1 78.600 Prec@5 93.500 Error@1 21.400 Loss: 1.010 
+
+==>>[2020-01-09 01:58:35] [Epoch=312/400] [Need: 04:00:37] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.980 Prec@5 100.000 Error@1 0.020
+  **Test** Prec@1 78.710 Prec@5 93.630 Error@1 21.290 Loss: 1.008 
+
+==>>[2020-01-09 02:01:39] [Epoch=313/400] [Need: 03:57:48] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.980 Prec@5 100.000 Error@1 0.020
+  **Test** Prec@1 78.590 Prec@5 93.620 Error@1 21.410 Loss: 1.003 
+
+==>>[2020-01-09 02:04:12] [Epoch=314/400] [Need: 03:55:10] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.620 Prec@5 93.480 Error@1 21.380 Loss: 1.006 
+
+==>>[2020-01-09 02:06:57] [Epoch=315/400] [Need: 03:52:22] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.970 Prec@5 100.000 Error@1 0.030
+  **Test** Prec@1 78.770 Prec@5 93.480 Error@1 21.230 Loss: 1.007 
+
+==>>[2020-01-09 02:09:45] [Epoch=316/400] [Need: 03:49:39] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.972 Prec@5 100.000 Error@1 0.028
+  **Test** Prec@1 78.710 Prec@5 93.580 Error@1 21.290 Loss: 1.004 
+
+==>>[2020-01-09 02:12:38] [Epoch=317/400] [Need: 03:46:56] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.982 Prec@5 100.000 Error@1 0.018
+  **Test** Prec@1 78.800 Prec@5 93.710 Error@1 21.200 Loss: 1.008 
+
+==>>[2020-01-09 02:15:41] [Epoch=318/400] [Need: 03:44:14] [learning_rate=0.0010] [Best : Accuracy=78.81, Error=21.19]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.850 Prec@5 93.630 Error@1 21.150 Loss: 1.005 
+
+==>>[2020-01-09 02:19:22] [Epoch=319/400] [Need: 03:41:35] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.986 Prec@5 100.000 Error@1 0.014
+  **Test** Prec@1 78.720 Prec@5 93.510 Error@1 21.280 Loss: 1.008 
+
+==>>[2020-01-09 02:22:25] [Epoch=320/400] [Need: 03:39:06] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+average mixing weight: 1.000
+  **Train** Prec@1 99.980 Prec@5 100.000 Error@1 0.020
+  **Test** Prec@1 78.600 Prec@5 93.550 Error@1 21.400 Loss: 1.009 
+
+==>>[2020-01-09 02:25:12] [Epoch=321/400] [Need: 03:36:25] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.560 Prec@5 93.530 Error@1 21.440 Loss: 1.004 
+
+==>>[2020-01-09 02:28:18] [Epoch=322/400] [Need: 03:33:41] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.972 Prec@5 100.000 Error@1 0.028
+  **Test** Prec@1 78.800 Prec@5 93.580 Error@1 21.200 Loss: 1.009 
+
+==>>[2020-01-09 02:31:25] [Epoch=323/400] [Need: 03:31:02] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.982 Prec@5 100.000 Error@1 0.018
+  **Test** Prec@1 78.680 Prec@5 93.560 Error@1 21.320 Loss: 1.006 
+
+==>>[2020-01-09 02:34:33] [Epoch=324/400] [Need: 03:28:23] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.970 Prec@5 100.000 Error@1 0.030
+  **Test** Prec@1 78.730 Prec@5 93.650 Error@1 21.270 Loss: 1.004 
+
+==>>[2020-01-09 02:37:33] [Epoch=325/400] [Need: 03:25:44] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.530 Prec@5 93.490 Error@1 21.470 Loss: 1.005 
+
+==>>[2020-01-09 02:40:39] [Epoch=326/400] [Need: 03:23:03] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.980 Prec@5 100.000 Error@1 0.020
+  **Test** Prec@1 78.690 Prec@5 93.680 Error@1 21.310 Loss: 1.006 
+
+==>>[2020-01-09 02:44:06] [Epoch=327/400] [Need: 03:20:23] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.830 Prec@5 93.730 Error@1 21.170 Loss: 1.000 
+
+==>>[2020-01-09 02:47:55] [Epoch=328/400] [Need: 03:17:48] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.974 Prec@5 100.000 Error@1 0.026
+  **Test** Prec@1 78.790 Prec@5 93.500 Error@1 21.210 Loss: 1.009 
+
+==>>[2020-01-09 02:52:20] [Epoch=329/400] [Need: 03:15:17] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.972 Prec@5 100.000 Error@1 0.028
+  **Test** Prec@1 78.630 Prec@5 93.780 Error@1 21.370 Loss: 1.000 
+
+==>>[2020-01-09 02:55:22] [Epoch=330/400] [Need: 03:12:53] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+average mixing weight: 1.000
+  **Train** Prec@1 99.982 Prec@5 100.000 Error@1 0.018
+  **Test** Prec@1 78.740 Prec@5 93.660 Error@1 21.260 Loss: 1.005 
+
+==>>[2020-01-09 02:58:12] [Epoch=331/400] [Need: 03:10:11] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.974 Prec@5 100.000 Error@1 0.026
+  **Test** Prec@1 78.770 Prec@5 93.460 Error@1 21.230 Loss: 1.011 
+
+==>>[2020-01-09 03:01:19] [Epoch=332/400] [Need: 03:07:27] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.800 Prec@5 93.710 Error@1 21.200 Loss: 1.004 
+
+==>>[2020-01-09 03:04:01] [Epoch=333/400] [Need: 03:04:45] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.974 Prec@5 100.000 Error@1 0.026
+  **Test** Prec@1 78.630 Prec@5 93.510 Error@1 21.370 Loss: 1.004 
+
+==>>[2020-01-09 03:06:57] [Epoch=334/400] [Need: 03:01:59] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.974 Prec@5 100.000 Error@1 0.026
+  **Test** Prec@1 78.590 Prec@5 93.420 Error@1 21.410 Loss: 1.009 
+
+==>>[2020-01-09 03:09:39] [Epoch=335/400] [Need: 02:59:16] [learning_rate=0.0010] [Best : Accuracy=78.85, Error=21.15]
+  **Train** Prec@1 99.982 Prec@5 100.000 Error@1 0.018
+  **Test** Prec@1 78.930 Prec@5 93.660 Error@1 21.070 Loss: 0.999 
+
+==>>[2020-01-09 03:12:55] [Epoch=336/400] [Need: 02:56:30] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+  **Train** Prec@1 99.974 Prec@5 100.000 Error@1 0.026
+  **Test** Prec@1 78.820 Prec@5 93.550 Error@1 21.180 Loss: 1.000 
+
+==>>[2020-01-09 03:15:59] [Epoch=337/400] [Need: 02:53:50] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.700 Prec@5 93.580 Error@1 21.300 Loss: 1.002 
+
+==>>[2020-01-09 03:18:46] [Epoch=338/400] [Need: 02:51:08] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+  **Train** Prec@1 99.980 Prec@5 100.000 Error@1 0.020
+  **Test** Prec@1 78.810 Prec@5 93.510 Error@1 21.190 Loss: 1.003 
+
+==>>[2020-01-09 03:21:30] [Epoch=339/400] [Need: 02:48:22] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+  **Train** Prec@1 99.974 Prec@5 100.000 Error@1 0.026
+  **Test** Prec@1 78.710 Prec@5 93.750 Error@1 21.290 Loss: 1.002 
+
+==>>[2020-01-09 03:24:13] [Epoch=340/400] [Need: 02:45:36] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+average mixing weight: 1.000
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.820 Prec@5 93.560 Error@1 21.180 Loss: 1.017 
+
+==>>[2020-01-09 03:27:04] [Epoch=341/400] [Need: 02:42:51] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.760 Prec@5 93.580 Error@1 21.240 Loss: 1.009 
+
+==>>[2020-01-09 03:29:45] [Epoch=342/400] [Need: 02:40:06] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.900 Prec@5 93.660 Error@1 21.100 Loss: 1.006 
+
+==>>[2020-01-09 03:32:50] [Epoch=343/400] [Need: 02:37:19] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.600 Prec@5 93.650 Error@1 21.400 Loss: 1.004 
+
+==>>[2020-01-09 03:35:37] [Epoch=344/400] [Need: 02:34:37] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+  **Train** Prec@1 99.972 Prec@5 100.000 Error@1 0.028
+  **Test** Prec@1 78.790 Prec@5 93.480 Error@1 21.210 Loss: 1.007 
+
+==>>[2020-01-09 03:38:22] [Epoch=345/400] [Need: 02:31:51] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.700 Prec@5 93.390 Error@1 21.300 Loss: 1.008 
+
+==>>[2020-01-09 03:41:11] [Epoch=346/400] [Need: 02:29:06] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+  **Train** Prec@1 99.972 Prec@5 100.000 Error@1 0.028
+  **Test** Prec@1 78.780 Prec@5 93.670 Error@1 21.220 Loss: 0.999 
+
+==>>[2020-01-09 03:44:00] [Epoch=347/400] [Need: 02:26:20] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.810 Prec@5 93.520 Error@1 21.190 Loss: 1.001 
+
+==>>[2020-01-09 03:46:56] [Epoch=348/400] [Need: 02:23:35] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+  **Train** Prec@1 99.974 Prec@5 100.000 Error@1 0.026
+  **Test** Prec@1 78.790 Prec@5 93.470 Error@1 21.210 Loss: 1.010 
+
+==>>[2020-01-09 03:49:41] [Epoch=349/400] [Need: 02:20:51] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+  **Train** Prec@1 99.972 Prec@5 100.000 Error@1 0.028
+  **Test** Prec@1 78.650 Prec@5 93.730 Error@1 21.350 Loss: 1.005 
+
+==>>[2020-01-09 03:52:31] [Epoch=350/400] [Need: 02:18:05] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+average mixing weight: 1.000
+  **Train** Prec@1 99.974 Prec@5 100.000 Error@1 0.026
+  **Test** Prec@1 78.770 Prec@5 93.650 Error@1 21.230 Loss: 1.003 
+
+==>>[2020-01-09 03:55:20] [Epoch=351/400] [Need: 02:15:20] [learning_rate=0.0010] [Best : Accuracy=78.93, Error=21.07]
+  **Train** Prec@1 99.970 Prec@5 100.000 Error@1 0.030
+  **Test** Prec@1 78.970 Prec@5 93.570 Error@1 21.030 Loss: 1.007 
+
+==>>[2020-01-09 03:58:42] [Epoch=352/400] [Need: 02:12:35] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.860 Prec@5 93.590 Error@1 21.140 Loss: 1.004 
+
+==>>[2020-01-09 04:01:27] [Epoch=353/400] [Need: 02:09:54] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.964 Prec@5 100.000 Error@1 0.036
+  **Test** Prec@1 78.960 Prec@5 93.620 Error@1 21.040 Loss: 0.997 
+
+==>>[2020-01-09 04:04:12] [Epoch=354/400] [Need: 02:07:08] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.986 Prec@5 100.000 Error@1 0.014
+  **Test** Prec@1 78.900 Prec@5 93.670 Error@1 21.100 Loss: 1.001 
+
+==>>[2020-01-09 04:06:53] [Epoch=355/400] [Need: 02:04:22] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.800 Prec@5 93.450 Error@1 21.200 Loss: 1.004 
+
+==>>[2020-01-09 04:09:43] [Epoch=356/400] [Need: 02:01:36] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.860 Prec@5 93.520 Error@1 21.140 Loss: 1.001 
+
+==>>[2020-01-09 04:12:24] [Epoch=357/400] [Need: 01:58:50] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.972 Prec@5 100.000 Error@1 0.028
+  **Test** Prec@1 78.840 Prec@5 93.710 Error@1 21.160 Loss: 1.004 
+
+==>>[2020-01-09 04:15:08] [Epoch=358/400] [Need: 01:56:04] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.972 Prec@5 100.000 Error@1 0.028
+  **Test** Prec@1 78.650 Prec@5 93.400 Error@1 21.350 Loss: 1.006 
+
+==>>[2020-01-09 04:17:58] [Epoch=359/400] [Need: 01:53:18] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.972 Prec@5 100.000 Error@1 0.028
+  **Test** Prec@1 78.650 Prec@5 93.640 Error@1 21.350 Loss: 1.006 
+
+==>>[2020-01-09 04:20:36] [Epoch=360/400] [Need: 01:50:33] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+average mixing weight: 1.000
+  **Train** Prec@1 99.984 Prec@5 100.000 Error@1 0.016
+  **Test** Prec@1 78.840 Prec@5 93.500 Error@1 21.160 Loss: 1.008 
+
+==>>[2020-01-09 04:23:23] [Epoch=361/400] [Need: 01:47:46] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.982 Prec@5 100.000 Error@1 0.018
+  **Test** Prec@1 78.730 Prec@5 93.550 Error@1 21.270 Loss: 1.006 
+
+==>>[2020-01-09 04:26:04] [Epoch=362/400] [Need: 01:45:00] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.780 Prec@5 93.640 Error@1 21.220 Loss: 1.001 
+
+==>>[2020-01-09 04:28:48] [Epoch=363/400] [Need: 01:42:14] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.850 Prec@5 93.550 Error@1 21.150 Loss: 1.007 
+
+==>>[2020-01-09 04:31:21] [Epoch=364/400] [Need: 01:39:28] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.780 Prec@5 93.650 Error@1 21.220 Loss: 1.002 
+
+==>>[2020-01-09 04:34:04] [Epoch=365/400] [Need: 01:36:41] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.980 Prec@5 100.000 Error@1 0.020
+  **Test** Prec@1 78.610 Prec@5 93.400 Error@1 21.390 Loss: 1.017 
+
+==>>[2020-01-09 04:36:47] [Epoch=366/400] [Need: 01:33:55] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.940 Prec@5 93.590 Error@1 21.060 Loss: 0.998 
+
+==>>[2020-01-09 04:39:56] [Epoch=367/400] [Need: 01:31:09] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.970 Prec@5 93.680 Error@1 21.030 Loss: 1.000 
+
+==>>[2020-01-09 04:42:55] [Epoch=368/400] [Need: 01:28:25] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.974 Prec@5 100.000 Error@1 0.026
+  **Test** Prec@1 78.770 Prec@5 93.680 Error@1 21.230 Loss: 1.005 
+
+==>>[2020-01-09 04:45:42] [Epoch=369/400] [Need: 01:25:40] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.984 Prec@5 100.000 Error@1 0.016
+  **Test** Prec@1 78.860 Prec@5 93.530 Error@1 21.140 Loss: 1.008 
+
+==>>[2020-01-09 04:48:35] [Epoch=370/400] [Need: 01:22:55] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+average mixing weight: 1.000
+  **Train** Prec@1 99.980 Prec@5 100.000 Error@1 0.020
+  **Test** Prec@1 78.890 Prec@5 93.680 Error@1 21.110 Loss: 1.003 
+
+==>>[2020-01-09 04:51:20] [Epoch=371/400] [Need: 01:20:09] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.984 Prec@5 100.000 Error@1 0.016
+  **Test** Prec@1 78.780 Prec@5 93.720 Error@1 21.220 Loss: 1.000 
+
+==>>[2020-01-09 04:54:10] [Epoch=372/400] [Need: 01:17:24] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.810 Prec@5 93.590 Error@1 21.190 Loss: 1.002 
+
+==>>[2020-01-09 04:56:43] [Epoch=373/400] [Need: 01:14:38] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.780 Prec@5 93.660 Error@1 21.220 Loss: 1.001 
+
+==>>[2020-01-09 04:59:31] [Epoch=374/400] [Need: 01:11:51] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.960 Prec@5 93.570 Error@1 21.040 Loss: 1.000 
+
+==>>[2020-01-09 05:02:05] [Epoch=375/400] [Need: 01:09:06] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.982 Prec@5 100.000 Error@1 0.018
+  **Test** Prec@1 78.660 Prec@5 93.570 Error@1 21.340 Loss: 1.004 
+
+==>>[2020-01-09 05:05:13] [Epoch=376/400] [Need: 01:06:19] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.810 Prec@5 93.630 Error@1 21.190 Loss: 1.002 
+
+==>>[2020-01-09 05:09:22] [Epoch=377/400] [Need: 01:03:34] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.830 Prec@5 93.590 Error@1 21.170 Loss: 1.008 
+
+==>>[2020-01-09 05:11:55] [Epoch=378/400] [Need: 01:00:53] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.720 Prec@5 93.640 Error@1 21.280 Loss: 1.005 
+
+==>>[2020-01-09 05:14:27] [Epoch=379/400] [Need: 00:58:07] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.830 Prec@5 93.600 Error@1 21.170 Loss: 1.006 
+
+==>>[2020-01-09 05:17:16] [Epoch=380/400] [Need: 00:55:20] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+average mixing weight: 1.000
+  **Train** Prec@1 99.982 Prec@5 100.000 Error@1 0.018
+  **Test** Prec@1 78.780 Prec@5 93.460 Error@1 21.220 Loss: 1.001 
+
+==>>[2020-01-09 05:19:53] [Epoch=381/400] [Need: 00:52:34] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.980 Prec@5 100.000 Error@1 0.020
+  **Test** Prec@1 78.870 Prec@5 93.730 Error@1 21.130 Loss: 0.996 
+
+==>>[2020-01-09 05:22:25] [Epoch=382/400] [Need: 00:49:48] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.966 Prec@5 100.000 Error@1 0.034
+  **Test** Prec@1 78.870 Prec@5 93.490 Error@1 21.130 Loss: 1.005 
+
+==>>[2020-01-09 05:25:16] [Epoch=383/400] [Need: 00:47:01] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.850 Prec@5 93.720 Error@1 21.150 Loss: 0.999 
+
+==>>[2020-01-09 05:27:59] [Epoch=384/400] [Need: 00:44:15] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.986 Prec@5 100.000 Error@1 0.014
+  **Test** Prec@1 78.750 Prec@5 93.630 Error@1 21.250 Loss: 1.003 
+
+==>>[2020-01-09 05:30:45] [Epoch=385/400] [Need: 00:41:29] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.730 Prec@5 93.660 Error@1 21.270 Loss: 0.997 
+
+==>>[2020-01-09 05:34:27] [Epoch=386/400] [Need: 00:38:43] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.980 Prec@5 100.000 Error@1 0.020
+  **Test** Prec@1 78.880 Prec@5 93.740 Error@1 21.120 Loss: 0.998 
+
+==>>[2020-01-09 05:38:53] [Epoch=387/400] [Need: 00:35:59] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.976 Prec@5 100.000 Error@1 0.024
+  **Test** Prec@1 78.880 Prec@5 93.520 Error@1 21.120 Loss: 1.003 
+
+==>>[2020-01-09 05:41:28] [Epoch=388/400] [Need: 00:33:16] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.780 Prec@5 93.570 Error@1 21.220 Loss: 1.007 
+
+==>>[2020-01-09 05:44:08] [Epoch=389/400] [Need: 00:30:29] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.982 Prec@5 100.000 Error@1 0.018
+  **Test** Prec@1 78.910 Prec@5 93.650 Error@1 21.090 Loss: 1.002 
+
+==>>[2020-01-09 05:46:36] [Epoch=390/400] [Need: 00:27:43] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+average mixing weight: 1.000
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.860 Prec@5 93.670 Error@1 21.140 Loss: 1.002 
+
+==>>[2020-01-09 05:49:06] [Epoch=391/400] [Need: 00:24:56] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.880 Prec@5 93.500 Error@1 21.120 Loss: 1.000 
+
+==>>[2020-01-09 05:51:35] [Epoch=392/400] [Need: 00:22:09] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.840 Prec@5 93.610 Error@1 21.160 Loss: 0.997 
+
+==>>[2020-01-09 05:54:03] [Epoch=393/400] [Need: 00:19:23] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.710 Prec@5 93.660 Error@1 21.290 Loss: 1.000 
+
+==>>[2020-01-09 05:56:43] [Epoch=394/400] [Need: 00:16:36] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.972 Prec@5 100.000 Error@1 0.028
+  **Test** Prec@1 78.740 Prec@5 93.580 Error@1 21.260 Loss: 1.013 
+
+==>>[2020-01-09 05:59:13] [Epoch=395/400] [Need: 00:13:50] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.970 Prec@5 100.000 Error@1 0.030
+  **Test** Prec@1 78.880 Prec@5 93.560 Error@1 21.120 Loss: 1.003 
+
+==>>[2020-01-09 06:01:55] [Epoch=396/400] [Need: 00:11:04] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.920 Prec@5 93.610 Error@1 21.080 Loss: 0.998 
+
+==>>[2020-01-09 06:04:26] [Epoch=397/400] [Need: 00:08:18] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.860 Prec@5 93.630 Error@1 21.140 Loss: 1.006 
+
+==>>[2020-01-09 06:07:17] [Epoch=398/400] [Need: 00:05:32] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.980 Prec@5 100.000 Error@1 0.020
+  **Test** Prec@1 78.540 Prec@5 93.360 Error@1 21.460 Loss: 1.026 
+
+==>>[2020-01-09 06:09:48] [Epoch=399/400] [Need: 00:02:46] [learning_rate=0.0010] [Best : Accuracy=78.97, Error=21.03]
+  **Train** Prec@1 99.978 Prec@5 100.000 Error@1 0.022
+  **Test** Prec@1 78.910 Prec@5 93.490 Error@1 21.090 Loss: 1.001 
+
+final 10 epoch acc (median) : 78.86 (+- 0.32)
