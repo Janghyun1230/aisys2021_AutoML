@@ -20,14 +20,18 @@ def dataloader(batch_size=64, input_resolution=32, n_train=5000, n_valid=5000):
         transforms.Normalize(mean, std)
     ])
 
+    indices = torch.arange(n_train)
     trainset = torchvision.datasets.CIFAR100(root='./data',
                                              train=True,
                                              download=True,
                                              transform=train_transform)
-    trainloader = torch.utils.data.DataLoader(trainset,
+    small_trainset = torch.utils.data.Subset(trainset, indices)
+
+    trainloader = torch.utils.data.DataLoader(small_trainset,
                                               batch_size=batch_size,
                                               shuffle=True,
                                               num_workers=0)
+
     testset = torchvision.datasets.CIFAR100(root='./data',
                                             train=False,
                                             download=True,

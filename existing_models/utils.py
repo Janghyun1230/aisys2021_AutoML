@@ -176,9 +176,13 @@ def cost_matrix(width):
             j2 = m_j % width
             C[m_i, m_j] = abs(i1 - i2)**2 + abs(j1 - j2)**2
     C = C / (width - 1)**2
-    C = torch.tensor(C).cuda()
+    if use_cuda:
+        C = torch.tensor(C).cuda()
+    else:
+        C = torch.tensor(C)
     return C
 
+use_cuda = True
 
 cost_matrix_dict = {
     '2': cost_matrix(2).unsqueeze(0),
@@ -330,14 +334,24 @@ def barycenter_conv2d(input1,
     else:
         t = torch.linspace(0, 1, width)
         [Y, X] = torch.meshgrid(t, t)
-        xi1_init = torch.exp(-(X - Y)**2 / reg).cuda().double()
-        xi1 = torch.ones_like(xi1_init).cuda().double()
-        U1 = torch.ones_like(input1).cuda().double()
-        U2 = torch.ones_like(input2).cuda().double()
-        alpha1 = torch.ones_like(input1).cuda().double()
-        beta1 = torch.ones_like(input1).cuda().double()
-        alpha2 = torch.ones_like(input1).cuda().double()
-        beta2 = torch.ones_like(input1).cuda().double()
+        if use_cuda:
+            xi1_init = torch.exp(-(X - Y)**2 / reg).cuda().double()
+            xi1 = torch.ones_like(xi1_init).cuda().double()
+            U1 = torch.ones_like(input1).cuda().double()
+            U2 = torch.ones_like(input2).cuda().double()
+            alpha1 = torch.ones_like(input1).cuda().double()
+            beta1 = torch.ones_like(input1).cuda().double()
+            alpha2 = torch.ones_like(input1).cuda().double()
+            beta2 = torch.ones_like(input1).cuda().double()
+        else:
+            xi1_init = torch.exp(-(X - Y)**2 / reg).double()
+            xi1 = torch.ones_like(xi1_init).double()
+            U1 = torch.ones_like(input1).double()
+            U2 = torch.ones_like(input2).double()
+            alpha1 = torch.ones_like(input1).double()
+            beta1 = torch.ones_like(input1).double()
+            alpha2 = torch.ones_like(input1).double()
+            beta2 = torch.ones_like(input1).double()
 
         for t in range(numItermax):  #p_iter=1
             xi1 *= xi1_init
@@ -544,7 +558,10 @@ def mixup_data(x, y, alpha):
     else:
         lam = 1.
     batch_size = x.size()[0]
-    index = torch.randperm(batch_size).cuda()
+    if use_cuda:
+        index = torch.randperm(batch_size).cuda()
+    else:
+        index = torch.randperm(batch_size)
     mixed_x = lam * x + (1 - lam) * x[index, :]
     y_a, y_b = y, y[index]
     return mixed_x, y_a, y_b, lam
@@ -596,7 +613,10 @@ class Cutout(object):
             mask[y1:y2, x1:x2] = 0.
 
         mask = torch.from_numpy(mask)
-        mask = mask.expand_as(img).cuda()
+        if use_cuda:
+            mask = mask.expand_as(img).cuda()
+        else:
+            mask = mask.expand_as(img)
         img = img * mask
 
         return img
@@ -620,8 +640,9 @@ def get_images_edges_cvh(channel, height, width):
 
 
 _int_types = [np.int, np.intc, np.int32, np.int64, np.longlong]
-_float_types = [np.float, np.float32, np.float64, np.float128]
+#_float_types = [np.float, np.float32, np.float64, np.float128]
 
+_float_types = [np.float, np.float32, np.float64, np.float128]
 
 def cut_3d_graph(unary_cost,
                  pairwise_cost,
@@ -880,7 +901,10 @@ def mixup_box(input1, input2, grad1, grad2, method='random', alpha=0.5):
     else:
         raise AssertionError("wrong mixup method type !!")
 
-    ratio = torch.tensor(ratio, dtype=torch.float32).cuda()
+    if use_cuda:
+        ratio = torch.tensor(ratio, dtype=torch.float32).cuda()
+    else:
+        ratio = torch.tensor(ratio, dtype=torch.float32)
     return input1, ratio
 
 
@@ -948,8 +972,12 @@ def mixup_graph(input1,
             batch_size, -1).sum(1).view(batch_size, 1, 1, 1)
 
     if warp > 0:
-        row = torch.linspace(-1, 1, block_num).cuda()
-        col = torch.linspace(-1, 1, block_num).cuda()
+        if use_cuda:
+            row = torch.linspace(-1, 1, block_num).cuda()
+            col = torch.linspace(-1, 1, block_num).cuda()
+        else:
+            row = torch.linspace(-1, 1, block_num)
+            col = torch.linspace(-1, 1, block_num)
         x, y = torch.meshgrid([row, col])
         grid = torch.stack([y, x], dim=-1).unsqueeze(0)
 

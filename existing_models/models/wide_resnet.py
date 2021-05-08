@@ -10,7 +10,7 @@ import numpy as np
 import random
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import time
-from utils import to_one_hot
+from existing_models.utils import to_one_hot
 
 act = torch.nn.ReLU()
 

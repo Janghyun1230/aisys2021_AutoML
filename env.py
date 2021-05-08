@@ -4,9 +4,8 @@ import os
 import logger
 from utils import round_filters
 from time import time
-from model import MBConvBlock
-from model import EfficientNet
-from trainer import train, test, accuracy
+from existing_models import models
+from trainer import train, validate, accuracy
 from data import dataloader
 
 
@@ -17,21 +16,13 @@ def arg2model(inp_arg, device='cuda', from_pretrained=False):
         print("Load existing model: " + path)
         model = torch.load(path)
     elif from_pretrained:
-        print("From pretrained")
-        model = EfficientNet.from_pretrained('efficientnet-b0',
-                                             width_coefficient=w,
-                                             depth_coefficient=d)
+        print("Currently, no pretrained weight")
     else:
         print("Create new model")
-        model = EfficientNet.from_name('efficientnet-b0',
-                                       width_coefficient=w,
-                                       depth_coefficient=d).to(device)
-
-    final_filters = 1280  # for efficientnet-b0
-    new_filters = round_filters(final_filters,
-                                model._global_params)  # for custom model
-    model._fc = torch.nn.Linear(new_filters, 100, bias=True).to(device)
-
+        if device == "cuda":
+            model = models.__dict__['preactresnet18'](100, False, 1, w, d).cuda()
+        else:
+            model = models.__dict__['preactresnet18'](100, False, 1, w, d)
     return model
 
 
@@ -112,28 +103,28 @@ class NasEnv():
 
         for i in range(self.epoch):
             s = time()
-            train_loss, train_accuracy = self._train_epoch(model, optimizer)
-            valid_loss, valid_accuracy = self._valid(model)
-            if valid_accuracy > best_test_acc:
-                best_test_acc = valid_accuracy
+            train_top1, train_top5, train_loss = self._train_epoch(model, optimizer)
+            valid_top1, valid_top5, valid_loss = self._valid(model)
+            if valid_top1 > best_test_acc:
+                best_test_acc = valid_top1
             scheduler.step()
             print(
-                f'[epoch {i} ({time()-s:.2f})] (train) loss {train_loss:.3f}, acc {train_accuracy:.2%}',
+                f'[epoch {i} ({time()-s:.2f})] (train) loss {train_loss:.4f}, top1-acc {train_top1:.3f}%, top5-acc {train_top5:.3f}%',
                 end=' | ')
             print(
-                f'(valid) loss = {valid_loss:.3f}, acc = {valid_accuracy:.2%}')
+                f'(valid) loss = {valid_loss:.4f}, top1-acc = {valid_top1:.3f}%, top5-acc = {valid_top5:.3f}%')
         return best_test_acc
 
     def _train_epoch(self, model, optimizer):
-        train_loss, train_accuracy = train(model, optimizer, self.trainloader,
+        top1, top5, loss = train(self.trainloader, model, optimizer,
                                            self.device, self.loss_fn,
                                            self.eval_fn)
-        return train_loss, train_accuracy
+        return top1, top5, loss
 
     def _valid(self, model):
-        test_loss, test_accuracy = test(model, self.validloader, self.device,
+        top1, top5, loss = validate(self.validloader, model, self.device,
                                         self.loss_fn, self.eval_fn)
-        return test_loss, test_accuracy
+        return top1, top5, loss
 
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ import numpy as np
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import random
 import time
-from utils import to_one_hot
+from existing_models.utils import to_one_hot
 
 
 class PreActBlock(nn.Module):
@@ -94,7 +94,9 @@ class PreActResNet(nn.Module):
                  num_blocks,
                  initial_channels,
                  num_classes,
-                 stride=1):
+                 stride=1,
+                 width_multiplier=1.0,
+                 depth_multiplier=1.0):
         super(PreActResNet, self).__init__()
         self.in_planes = initial_channels
         self.num_classes = num_classes
@@ -106,22 +108,22 @@ class PreActResNet(nn.Module):
                                padding=1,
                                bias=False)
         self.layer1 = self._make_layer(block,
-                                       initial_channels,
-                                       num_blocks[0],
+                                       round_filters(initial_channels, width_multiplier),
+                                       int(depth_multiplier * num_blocks[0]),
                                        stride=1)
         self.layer2 = self._make_layer(block,
-                                       initial_channels * 2,
-                                       num_blocks[1],
+                                       round_filters(initial_channels * 2, width_multiplier),
+                                       int(num_blocks[1] * depth_multiplier),
                                        stride=2)
         self.layer3 = self._make_layer(block,
-                                       initial_channels * 4,
-                                       num_blocks[2],
+                                       round_filters(initial_channels * 4, width_multiplier),
+                                       int(num_blocks[2] * depth_multiplier),
                                        stride=2)
         self.layer4 = self._make_layer(block,
-                                       initial_channels * 8,
-                                       num_blocks[3],
+                                       round_filters(initial_channels * 8, width_multiplier),
+                                       int(num_blocks[3] * depth_multiplier),
                                        stride=2)
-        self.linear = nn.Linear(initial_channels * 8 * block.expansion,
+        self.linear = nn.Linear(round_filters(initial_channels * 8, width_multiplier) * block.expansion,
                                 num_classes)
 
     def _make_layer(self, block, planes, num_blocks, stride):
@@ -149,7 +151,7 @@ class PreActResNet(nn.Module):
         out = x
 
         if target is not None:
-            target_reweighted = to_one_hot(target, self.num_classes)
+            target_reweighted = to_one_hot(target, self.num_classes, "cuda")
 
         out = self.conv1(out)
         out = self.layer1(out)
@@ -166,39 +168,49 @@ class PreActResNet(nn.Module):
             return out
 
 
-def preactresnet18(num_classes=10, dropout=False, stride=1):
+def preactresnet18(num_classes=10, dropout=False, stride=1, width_multiplier = 1.0, depth_multiplier = 1.0):
     return PreActResNet(PreActBlock, [2, 2, 2, 2],
                         64,
                         num_classes,
-                        stride=stride)
+                        stride=stride,
+                        width_multiplier=width_multiplier,
+                        depth_multiplier=depth_multiplier)
 
 
-def preactresnet34(num_classes=10, dropout=False, stride=1):
+def preactresnet34(num_classes=10, dropout=False, stride=1, width_multiplier = 1.0, depth_multiplier = 1.0):
     return PreActResNet(PreActBlock, [3, 4, 6, 3],
                         64,
                         num_classes,
-                        stride=stride)
+                        stride=stride,
+                        width_multiplier=width_multiplier,
+                        depth_multiplier=depth_multiplier)
 
 
-def preactresnet50(num_classes=10, dropout=False, stride=1):
+def preactresnet50(num_classes=10, dropout=False, stride=1, width_multiplier = 1.0, depth_multiplier = 1.0):
     return PreActResNet(PreActBottleneck, [3, 4, 6, 3],
                         64,
                         num_classes,
-                        stride=stride)
+                        stride=stride,
+                        width_multiplier=width_multiplier,
+                        depth_multiplier=depth_multiplier)
 
 
-def preactresnet101(num_classes=10, dropout=False, stride=1):
+def preactresnet101(num_classes=10, dropout=False, stride=1, width_multiplier = 1.0, depth_multiplier = 1.0):
     return PreActResNet(PreActBottleneck, [3, 4, 23, 3],
                         64,
                         num_classes,
-                        stride=stride)
+                        stride=stride,
+                        width_multiplier=width_multiplier,
+                        depth_multiplier=depth_multiplier)
 
 
-def preactresnet152(num_classes=10, dropout=False, stride=1):
+def preactresnet152(num_classes=10, dropout=False, stride=1, width_multiplier = 1.0, depth_multiplier = 1.0):
     return PreActResNet(PreActBottleneck, [3, 8, 36, 3],
                         64,
                         num_classes,
-                        stride=stride)
+                        stride=stride,
+                        width_multiplier=width_multiplier,
+                        depth_multiplier=depth_multiplier)
 
 
 def test():
@@ -206,7 +218,33 @@ def test():
     y = net(Variable(torch.randn(1, 3, 32, 32)))
     print(y.size())
 
+def round_filters(filters, multiplier = None):
+    """Calculate and round number of filters based on width multiplier.
+    Args:
+        filters (int): Filters number to be calculated.
+        multiplier (float): multiplier for width scale.
+    Returns:
+        new_filters: New filters number after calculating.
+    """
+
+    if multiplier is None:
+        return filters
+    # TODO: modify the params names.
+    #       maybe the names (width_divisor,min_width)
+    #       are more suitable than (depth_divisor,min_depth).
+    divisor = 8 # multiples of 8
+    min_depth = None
+    filters *= multiplier
+    min_depth = min_depth or divisor  # pay attention to this line when using min_depth
+    # follow the formula transferred from official TensorFlow implementation
+    new_filters = max(min_depth,
+                      int(filters + divisor / 2) // divisor * divisor)
+    if new_filters < 0.9 * filters:  # prevent rounding by more than 10%
+        new_filters += divisor
+    return int(new_filters)
+
 
 if __name__ == "__main__":
     test()
+
 # test()
