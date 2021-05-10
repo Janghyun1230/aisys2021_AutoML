@@ -132,6 +132,6 @@ if __name__ == "__main__":
 
     inp_argument = (args.width, args.depth, args.resolution)
 
-    env = NasEnv(n_train=45000)
+    env = NasEnv(n_train=45000, resolution = args.resolution)
     mem, acc, latency = env.eval_arg(inp_argument, print_model=True)
     print(f'acc: {acc:.2f}%, mem: {mem} MB')
