@@ -31,8 +31,10 @@ def train(train_loader, model, optimizer, device, loss_fn, eval_fn):
     # switch to train mode
     model.train()
     end = time.time()
+    i = 0
 
     for input, target in train_loader:
+        print("train input index: ", i, end='\r')
         data_time.update(time.time() - end)
         optimizer.zero_grad()
 
@@ -56,6 +58,7 @@ def train(train_loader, model, optimizer, device, loss_fn, eval_fn):
         # measure elapsed time
         batch_time.update(time.time() - end)
         end = time.time()
+        i+=1
 
     return top1.avg, top5.avg, losses.avg
 
@@ -68,8 +71,10 @@ def validate(val_loader, model, device, loss_fn, eval_fn):
 
     # switch to evaluate mode
     model.eval()
+    i = 0
 
     for input, target in val_loader:
+        print("valid input index: ", i, end='\r')
         input = input.to(device)
         target = target.long().to(device)
 
@@ -86,5 +91,6 @@ def validate(val_loader, model, device, loss_fn, eval_fn):
         losses.update(loss.item(), input.size(0))
         top1.update(prec1.item(), input.size(0))
         top5.update(prec5.item(), input.size(0))
+        i+=1
 
     return top1.avg, top5.avg, losses.avg

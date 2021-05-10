@@ -1,6 +1,6 @@
 import torchprof
 import argparse
-from efficientnet import EfficientNet
+from models.efficientnet import EfficientNet
 from efficientnet_utils import round_filters
 from efficientnet_utils import BlockDecoder
 from efficientnet_utils import GlobalParams
@@ -116,10 +116,10 @@ def latencyTest(model, dataloader, device):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('-d', "--device", type=str, default="desktop")
-    parser.add_argument('-p', "--processor", type=str, default="CPU")
+    parser.add_argument('-p', "--processor", type=str, default="cpu")
     args = parser.parse_args()
     print(args)
-    for image in range(32, 224, 4):
+    for image in range(32, 225, 4):
         latency_dic = {}
         for wc in range(10, 51, 1):
             block_args, global_params = latency_efficientnet(

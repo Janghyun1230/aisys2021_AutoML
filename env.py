@@ -6,9 +6,11 @@ from time import time
 import models
 from trainer import train, validate, accuracy
 from data import dataloader
+from efficientnet_utils import round_filters
+import yaml
 
 
-def arg2model(inp_arg, device='cuda', from_pretrained=False):
+def arg2model(inp_arg, modelName='preactresnet18', device='cuda', from_pretrained=False):
     w, d, r = inp_arg
     path = "./" + str(w) + "_" + str(d) + "_" + str(r)
     if os.path.exists(path):
@@ -17,9 +19,17 @@ def arg2model(inp_arg, device='cuda', from_pretrained=False):
     elif from_pretrained:
         print("Currently, no pretrained weight")
     else:
-        print("Create new model")
-        model = models.__dict__['preactresnet18'](100, False, 1, w,
-                                                  d).to(device)
+        print("Create new model: ", modelName)
+        if 'preactresnet18' in modelName:
+            model = models.__dict__[modelName](100, False, 1, w,
+                                                      d).to(device)
+        elif 'EfficientNet' in modelName:
+            model = models.__dict__[modelName].from_name("efficientnet-b0", 
+                    width_coefficient=w, image_size=r, depth_coefficient=d).to(device)
+            final_filters = 1280
+            new_filters = round_filters(final_filters, model._global_params)
+            model._fc = torch.nn.Linear(new_filters, 100,
+                                        bias=True).to(device)
     return model
 
 
@@ -32,6 +42,9 @@ def _print_model(model, resolution, device='cuda'):
 
 class NasEnv():
     def __init__(self,
+                 modelName='preactresnet18',
+                 platform='desktop',
+                 device='default',
                  batch_size=64,
                  lr=1e-2,
                  resolution=32,
@@ -39,11 +52,16 @@ class NasEnv():
                  n_epoch=30):
         self.trainloader, self.validloader, self.testloader = dataloader(
             batch_size=batch_size, input_resolution=resolution)
+        self.modelName = modelName
+        self.platform = platform
         self.batch_size = batch_size
         self.resolution = resolution
         self.lr = lr
-        self.device = torch.device(
-            "cuda" if torch.cuda.is_available() else "cpu")
+        if device is 'default':
+            self.device = torch.device(
+                "cuda" if torch.cuda.is_available() else "cpu")
+        else:
+            self.device = device
 
         self.loss_fn = torch.nn.CrossEntropyLoss()
         self.eval_fn = accuracy
@@ -51,29 +69,51 @@ class NasEnv():
 
     def eval_arg(self, inp_arg, print_model=False):
         print("\nStart evaluating ", inp_arg)
-        model = arg2model(inp_arg, device=self.device)
+        model = arg2model(inp_arg, modelName=self.modelName, device=self.device)
         if print_model:
             _print_model(model, self.resolution, device=self.device)
         mem = self.eval_mem(model)
+        latency = self.eval_latency(model)
         acc = self.eval_acc(model)
-        latency = self.eval_latency(inp_arg)
 
         return mem, acc, latency
 
     def eval_mem(self, model):
         report, _ = logger.summary_string(
-            model, (3, self.resolutio, self.resolution),
+            model, (3, self.resolution, self.resolution),
             batch_size=self.batch_size,
             device=self.device)
 
         estimated_mem = float(report.split('\n')[-3].split(' ')[-1])  # (MB)
         return estimated_mem
 
-    def eval_latency(self, inp_arg):
-        '''
-        TODO
-        '''
-        return None
+    def eval_latency(self, model):
+        path = (self.modelName + '_latency/' 
+               + self.platform + '_' + self.device 
+               + '/image_' + str(self.resolution) + '.yaml')
+        latency = 0
+        try:
+            with open(path, 'r') as f:
+                dic = yaml.load(f, Loader=yaml.FullLoader)
+                for mod in model.modules():
+                    for chs, chm in mod.named_children():
+                        if "block" in chs:
+                            for bi, bm in chm.named_children():
+                                if repr(bm) in dic.keys():
+                                    latency = latency + dic[repr(bm)]['value']
+                                else:
+                                    print("no key: ", repr(bm))
+                        else:
+                            if repr(chm) in dic.keys():
+                                latency = latency + dic[repr(chm)]['value']
+                            else:
+                                print("no key: ", repr(chm))
+                    break
+            print("model latency is ", latency ," us")
+        except:
+            print(path,": no such file")
+
+        return latency
 
     def eval_acc(self, model):
         """
@@ -125,13 +165,17 @@ class NasEnv():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     '''Environment'''
+    parser.add_argument('-m', "--model", type=str, default='preactresnet18')
+    parser.add_argument('-p', "--platform", type=str, default='desktop')
+    parser.add_argument('-v', "--device", type=str, default='default')
     parser.add_argument('-w', "--width", type=float, default=1.0)
     parser.add_argument('-d', "--depth", type=float, default=1.0)
-    parser.add_argument('-r', "--resolution", type=float, default=32)
+    parser.add_argument('-r', "--resolution", type=int, default=32)
     args = parser.parse_args()
 
     inp_argument = (args.width, args.depth, args.resolution)
 
-    env = NasEnv(n_train=45000, resolution = args.resolution)
+    env = NasEnv(n_train=45000, modelName = args.model, 
+            platform = args.platform, device = args.device, resolution = args.resolution)
     mem, acc, latency = env.eval_arg(inp_argument, print_model=True)
-    print(f'acc: {acc:.2f}%, mem: {mem} MB')
+    print(f'acc: {acc:.2f}%, mem: {mem} MB, latency: {latency:.2f} us')
