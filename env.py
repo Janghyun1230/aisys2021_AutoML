@@ -62,8 +62,8 @@ class NasEnv():
 
     def eval_mem(self, model):
         report, _ = logger.summary_string(
-            model, (3, self.resolution, self.resolution),
-            batch_size=1,
+            model, (3, self.resolutio, self.resolution),
+            batch_size=self.batch_size,
             device=self.device)
 
         estimated_mem = float(report.split('\n')[-3].split(' ')[-1])  # (MB)
