@@ -8,7 +8,7 @@ from trainer import train, validate, accuracy
 from data import dataloader
 from efficientnet_utils import round_filters
 import yaml
-
+import copy
 
 def arg2model(inp_arg, modelName='preactresnet18', device='cuda', from_pretrained=False):
     w, d, r = inp_arg
@@ -20,11 +20,11 @@ def arg2model(inp_arg, modelName='preactresnet18', device='cuda', from_pretraine
         print("Currently, no pretrained weight")
     else:
         print("Create new model: ", modelName)
-        if 'preactresnet18' in modelName:
+        if 'preactresnet' in modelName:
             model = models.__dict__[modelName](100, False, 1, w,
                                                       d).to(device)
-        elif 'EfficientNet' in modelName:
-            model = models.__dict__[modelName].from_name("efficientnet-b0", 
+        elif 'efficientnet' in modelName:
+            model = models.__dict__["EfficientNet"].from_name("efficientnet-b0", 
                     width_coefficient=w, image_size=r, depth_coefficient=d).to(device)
             final_filters = 1280
             new_filters = round_filters(final_filters, model._global_params)
@@ -39,6 +39,35 @@ def _print_model(model, resolution, device='cuda'):
                                       device=device)
     print(report)
 
+def latency_cal(dic, module, block, strided, image_size):
+    latency = 0
+    last_image_size = image_size
+    if 'Block' in module.__class__.__name__:
+        block = True
+    if ('stride' in dir(module)) and not strided:
+        image_size = max(1,image_size/module.stride[0])
+        if block is True:
+            strided = True
+    has_children = False
+    for child_name, child_module in module.named_children():
+        image_size, strided, temp_latency = latency_cal(dic, child_module, block, strided, image_size)
+        latency = latency + temp_latency
+        has_children = True
+    if 'Block' in module.__class__.__name__:
+        if repr((last_image_size, image_size, module)) in dic.keys():
+            latency = latency + dic[repr((last_image_size, image_size, module))]['value']
+        else:
+            print("no such key: ", repr((last_image_size, image_size, module)))
+        strided = False
+
+    if has_children is False and block is False:
+        if repr((last_image_size, image_size, module)) in dic.keys():
+            latency = latency + dic[repr((last_image_size, image_size, module))]['value']
+        else:
+            print("no such key: ", repr((last_image_size, image_size, module)))
+        strided = False
+            
+    return  image_size, strided, latency
 
 class NasEnv():
     def __init__(self,
@@ -58,8 +87,7 @@ class NasEnv():
         self.resolution = resolution
         self.lr = lr
         if device is 'default':
-            self.device = torch.device(
-                "cuda" if torch.cuda.is_available() else "cpu")
+            self.device = "cpu"
         else:
             self.device = device
 
@@ -87,31 +115,22 @@ class NasEnv():
         estimated_mem = float(report.split('\n')[-3].split(' ')[-1])  # (MB)
         return estimated_mem
 
+
     def eval_latency(self, model):
-        path = (self.modelName + '_latency/' 
-               + self.platform + '_' + self.device 
+        path = ('latency_data/'+self.platform+'/' 
+               + self.modelName + '/' + self.device 
                + '/image_' + str(self.resolution) + '.yaml')
         latency = 0
         try:
             with open(path, 'r') as f:
                 dic = yaml.load(f, Loader=yaml.FullLoader)
                 for mod in model.modules():
-                    for chs, chm in mod.named_children():
-                        if "block" in chs:
-                            for bi, bm in chm.named_children():
-                                if repr(bm) in dic.keys():
-                                    latency = latency + dic[repr(bm)]['value']
-                                else:
-                                    print("no key: ", repr(bm))
-                        else:
-                            if repr(chm) in dic.keys():
-                                latency = latency + dic[repr(chm)]['value']
-                            else:
-                                print("no key: ", repr(chm))
+                    _1, _2, latency = latency_cal(dic, mod, False, False, self.resolution)
                     break
             print("model latency is ", latency ," us")
-        except:
-            print(path,": no such file")
+        except Exception as ex:
+            print(ex)
+            #print(path,": no such file")
 
         return latency
 

@@ -7,56 +7,67 @@ from efficientnet_utils import GlobalParams
 from data import dataloader
 import torch
 from torchprof.display import _flatten_tree, _build_measure_tuple, group_by
-from collections import OrderedDict
 import yaml
+import models
+import os
 
+def latencyAdd(latency_dic, key, added_count, added_value):
+    if 'str' not in key.__class__.__name__:
+        key = repr(key)
+    if key not in latency_dic.keys():
+        latency_dic[key] = {'count': 0, 'value': 0}
+    last_count = latency_dic[key]['count']
+    last_value = latency_dic[key]['value']
+    latency_dic[key]['count'] = last_count + added_count
+    latency_dic[key]['value'] = (last_count * last_value + added_value)/(last_count + added_count)
 
-def latencyTraces(model, traces, trace_events):
-    tree = OrderedDict()
+def latencyTraces(traces, trace_events, image_size):
+    latency_dic = {}
+    temp_latency_dic = {}
+    last_block = 'first'
+    cur_block = None
+    cur_module = None
+    value = 0
+    temp_image_size = image_size
+
     for trace in traces:
         [path, leaf, module] = trace
-        current_tree = tree
-        # unwrap all of the events, in case model is called multiple times
-        events = [te for t_events in trace_events[path] for te in t_events]
-        for depth, name in enumerate(path, 1):
-            if name not in current_tree:
-                current_tree[name] = OrderedDict()
-            if depth == len(path) and (leaf):
-                for event_name, event_group in group_by(
+        if cur_block is not None and not (len([e for e in cur_block if e in path]) is len(cur_block)):
+            latencyAdd(latency_dic, (last_image_size, image_size, cur_module), 1, value)
+            temp_latency_dic = {}
+            value = 0
+            cur_block = None
+        if 'Block' in module.__class__.__name__:
+            cur_block = path
+            cur_module = module
+        if 'stride' in dir(module) and cur_block is not last_block:
+            last_image_size = image_size
+            image_size = max(1,image_size/module.stride[0])
+            temp_last_image_size = last_image_size
+            temp_image_size = image_size
+            if cur_block is not None :
+                last_block = cur_block
+        if leaf:
+            temp_value = 0
+            events = [te for t_events in trace_events[path] for te in t_events]
+            for event_name, event_group in group_by(
                         events, lambda e: e.name):
-                    event_group = list(event_group)
-                    current_tree[name][event_name] = {
-                        None: _build_measure_tuple(event_group,
-                                                   len(event_group))
-                    }
-            current_tree = current_tree[name]
-    tree_lines = _flatten_tree(tree)
-
-    #format_lines = []
-    candidates = {}
-    for mod in model.modules():
-        for chs, chm in mod.named_children():
-            if "block" in chs:
-                for bi, bm in chm.named_children():
-                    candidates[bi] = bm
-            else:
-                candidates[chs] = chm
-        break
-    candidate = ''
-    value = 0
-    latency_dic = {}
-    for idx, tree_line in enumerate(tree_lines):
-        depth, name, measures = tree_line
-        if name in candidates.keys() and int(depth) < 3:
-            if candidate != '':
-                latency_dic[repr(candidates[candidate])] = value
+                event_group = list(event_group)
+                measures = _build_measure_tuple(event_group,len(event_group))
+                temp_value += measures.cpu_total if measures else 0
+                temp_value += measures.cuda_total if measures else 0
+            value = value + temp_value
+            if cur_block is None:
+                latencyAdd(latency_dic, (last_image_size, image_size, module), 1, value)
+                temp_latency_dic = {}
+                last_image_size = image_size
                 value = 0
-            candidate = name
-        #cpu_total = measures.cpu_total if measures else None
-        #cuda_total = measures.cuda_total if measures else None
-        #format_lines.append([depth, name, cpu_total, cuda_total])
-        value += measures.cpu_total if measures else 0
-        value += measures.cuda_total if measures else 0
+            else:
+                latencyAdd(temp_latency_dic, (last_image_size, image_size, module), 1, temp_value)
+                temp_last_image_size = temp_image_size
+    for key in temp_latency_dic.keys():
+        latencyAdd(latency_dic, key, temp_latency_dic[key]['count'], temp_latency_dic[key]['value'])
+
     return latency_dic
 
 
@@ -95,7 +106,7 @@ def latency_efficientnet(width_coefficient=None,
     return blocks_args, global_params
 
 
-def latencyTest(model, dataloader, device):
+def latencyTest(model, dataloader, device, image):
     model.eval()
     if device == "cuda":
         model.cuda()
@@ -103,51 +114,59 @@ def latencyTest(model, dataloader, device):
         for inputs, targets in dataloader:
             inputs = inputs.to(device)
             targets = targets.to(device)
-            with torchprof.Profile(model, use_cuda=True,
-                                   profile_memory=True) as prof:
+            with torchprof.Profile(model, use_cuda=True) as prof:
                 logits = model(inputs)
                 preds = logits.softmax(dim=1)
-
             if prof.exited:
-                return latencyTraces(model, prof.traces,
-                                     prof.trace_profile_events)
+                return latencyTraces(prof.traces,
+                                     prof.trace_profile_events, image)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', "--device", type=str, default="desktop")
-    parser.add_argument('-p', "--processor", type=str, default="cpu")
+    parser.add_argument('-p', "--platform", type=str, default="desktop")
+    parser.add_argument('-d', "--device", type=str, default="cpu")
+    parser.add_argument('-m', "--model", type=str, default="efficientnet")
     args = parser.parse_args()
+    dir_path = 'latency_data/' + args.platform + '/' + args.model + '/' + args.device + '/'
     print(args)
+    repetition = 20
+    if not os.path.exists(dir_path):
+        os.makedirs(dir_path)
     for image in range(32, 225, 4):
-        latency_dic = {}
-        for wc in range(10, 51, 1):
-            block_args, global_params = latency_efficientnet(
-                width_coefficient=wc / 10, image_size=image)
-            model = EfficientNet(block_args, global_params).to(args.processor)
-            final_filters = 1280
-            new_filters = round_filters(final_filters, model._global_params)
-            model._fc = torch.nn.Linear(new_filters, 100,
-                                        bias=True).to(args.processor)
-            trainloader, validloader, testloader = dataloader(
+        trainloader, validloader, testloader = dataloader(
                 batch_size=64, input_resolution=image, n_valid=9999)
-            cur_latency_dic_list = []
-            for i in range(5):
-                cur_latency_dic_list.append(
-                    latencyTest(model, testloader, args.processor))
-            for k in cur_latency_dic_list[0].keys():
-                for i in range(5):
-                    if k in latency_dic.keys():
-                        latency_dic[k]['value'] = (
-                            (latency_dic[k]['value'] * latency_dic[k]['count'])
-                            + cur_latency_dic_list[i][k]) / (
-                                latency_dic[k]['count'] + 1)
-                        latency_dic[k]['count'] += 1
-                    else:
-                        latency_dic[k] = {}
-                        latency_dic[k]['value'] = cur_latency_dic_list[i][k]
-                        latency_dic[k]['count'] = 1
+        file_path = dir_path + 'image_' + str(image) + '.yaml'
+        for wc in range(10, 51, 1):
             print("image: ", image, ", wc: ", wc)
-        f = open(args.device + '/image_' + str(image) + '.yaml', 'w')
-        yaml.dump(latency_dic, f)
-        f.close()
+            # make model
+            if 'efficientnet' in args.model:
+                block_args, global_params = latency_efficientnet(
+                    width_coefficient=wc / 10, image_size=image)
+                model = EfficientNet(block_args, global_params).to(args.device)
+                new_filters = round_filters(1280, model._global_params)
+                model._fc = torch.nn.Linear(new_filters, 100,
+                                            bias=True).to(args.device)
+            elif 'preactresnet' in args.model:
+                model = models.__dict__[args.model](100, False, 1, wc / 10,
+                                                    1.0).to(args.device)
+            # latency measure
+            for i in range(repetition):
+                if repetition - 1 is i:
+                    print("repetition : ", i+1)
+                else:
+                    print("repetition : ", i+1, end='\r')
+                cur_latency_dic = latencyTest(model, testloader, args.device, image)
+                if os.path.exists(file_path):
+                    f = open(file_path, 'r')
+                    latency_dic = yaml.load(f, Loader=yaml.FullLoader)
+                    f.close()
+                else:
+                    latency_dic = {}
+                for key in cur_latency_dic.keys():
+                    latencyAdd(latency_dic, key, cur_latency_dic[key]['count'], cur_latency_dic[key]['value'])
+                f = open(file_path, 'w')
+                yaml.dump(latency_dic, f)
+                f.flush()
+                f.close()
+                del latency_dic
