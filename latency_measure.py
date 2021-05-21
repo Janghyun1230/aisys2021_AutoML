@@ -42,7 +42,7 @@ def latencyTraces(traces, trace_events, image_size):
             cur_module = module
         if 'stride' in dir(module) and cur_block is not last_block:
             last_image_size = image_size
-            image_size = max(1,image_size/module.stride[0])
+            image_size = max(1,image_size//module.stride[0])
             temp_last_image_size = last_image_size
             temp_image_size = image_size
             if cur_block is not None :

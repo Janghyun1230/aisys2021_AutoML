@@ -45,7 +45,7 @@ def latency_cal(dic, module, block, strided, image_size):
     if 'Block' in module.__class__.__name__:
         block = True
     if ('stride' in dir(module)) and not strided:
-        image_size = max(1,image_size/module.stride[0])
+        image_size = max(1,image_size//module.stride[0])
         if block is True:
             strided = True
     has_children = False
