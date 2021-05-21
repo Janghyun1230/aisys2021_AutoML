@@ -114,7 +114,12 @@ def latencyTest(model, dataloader, device, image):
         for inputs, targets in dataloader:
             inputs = inputs.to(device)
             targets = targets.to(device)
-            with torchprof.Profile(model, use_cuda=True) as prof:
+            use_cuda = True
+            if 'cpu' in device:
+                use_cuda = False
+            else:
+                use_cuda = True
+            with torchprof.Profile(model, use_cuda=use_cuda) as prof:
                 logits = model(inputs)
                 preds = logits.softmax(dim=1)
             if prof.exited:
