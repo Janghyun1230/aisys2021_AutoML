@@ -1,5 +1,5 @@
 import torch
-from algorithm import search
+from algorithm import RLOptim
 
 
 class ToyEnv():
@@ -20,18 +20,23 @@ class ToyEnv():
         return mem
 
     def eval_latency(self, inp_arg):
-        latency = torch.max(inp_arg[:2])
+        # latency = torch.max(inp_arg[:2])
+        latency = inp_arg[0]**2 + inp_arg[1]**2
         return latency
 
     def eval_acc(self, inp_arg):
-        acc = torch.sum(inp_arg[:2])
+        # acc = torch.sum(inp_arg[:2])
+        # acc = 2 * inp_arg[0] + inp_arg[1]
+        acc = 2 - (inp_arg[0] - 0.5).abs() - (inp_arg[1] - 0.3).abs()
         return acc
 
 
 if __name__ == '__main__':
-    expl_step = 20
+    expl_step = 100
     update_step = 1000
     toy_env = ToyEnv()
 
     obs_init = torch.tensor([2.0, 2.0, 1.0], device='cuda')
-    search(toy_env, obs_init, expl_step, update_step)
+    rl_optim = RLOptim(toy_env, latency_th=1.0, mem_th=10.0)
+
+    rl_optim.search(obs_init, expl_step, update_step)
