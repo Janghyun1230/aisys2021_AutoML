@@ -21,12 +21,7 @@ class PreActBlock(nn.Module):
                                padding=1,
                                bias=False)
         self.bn2 = nn.BatchNorm2d(planes)
-        self.conv2 = nn.Conv2d(planes,
-                               planes,
-                               kernel_size=3,
-                               stride=1,
-                               padding=1,
-                               bias=False)
+        self.conv2 = nn.Conv2d(planes, planes, kernel_size=3, stride=1, padding=1, bias=False)
 
         if stride != 1 or in_planes != self.expansion * planes:
             self.shortcut = nn.Sequential(
@@ -54,17 +49,9 @@ class PreActBottleneck(nn.Module):
         self.bn1 = nn.BatchNorm2d(in_planes)
         self.conv1 = nn.Conv2d(in_planes, planes, kernel_size=1, bias=False)
         self.bn2 = nn.BatchNorm2d(planes)
-        self.conv2 = nn.Conv2d(planes,
-                               planes,
-                               kernel_size=3,
-                               stride=stride,
-                               padding=1,
-                               bias=False)
+        self.conv2 = nn.Conv2d(planes, planes, kernel_size=3, stride=stride, padding=1, bias=False)
         self.bn3 = nn.BatchNorm2d(planes)
-        self.conv3 = nn.Conv2d(planes,
-                               self.expansion * planes,
-                               kernel_size=1,
-                               bias=False)
+        self.conv3 = nn.Conv2d(planes, self.expansion * planes, kernel_size=1, bias=False)
 
         if stride != 1 or in_planes != self.expansion * planes:
             self.shortcut = nn.Sequential(
@@ -104,28 +91,23 @@ class PreActResNet(nn.Module):
                                padding=1,
                                bias=False)
         self.layer1 = self._make_layer(block,
-                                       round_filters(initial_channels,
-                                                     width_multiplier),
+                                       round_filters(initial_channels, width_multiplier),
                                        int(depth_multiplier * num_blocks[0]),
                                        stride=1)
         self.layer2 = self._make_layer(block,
-                                       round_filters(initial_channels * 2,
-                                                     width_multiplier),
+                                       round_filters(initial_channels * 2, width_multiplier),
                                        int(num_blocks[1] * depth_multiplier),
                                        stride=2)
         self.layer3 = self._make_layer(block,
-                                       round_filters(initial_channels * 4,
-                                                     width_multiplier),
+                                       round_filters(initial_channels * 4, width_multiplier),
                                        int(num_blocks[2] * depth_multiplier),
                                        stride=2)
         self.layer4 = self._make_layer(block,
-                                       round_filters(initial_channels * 8,
-                                                     width_multiplier),
+                                       round_filters(initial_channels * 8, width_multiplier),
                                        int(num_blocks[3] * depth_multiplier),
                                        stride=2)
         self.linear = nn.Linear(
-            round_filters(initial_channels * 8, width_multiplier) *
-            block.expansion, num_classes)
+            round_filters(initial_channels * 8, width_multiplier) * block.expansion, num_classes)
 
     def _make_layer(self, block, planes, num_blocks, stride):
         strides = [stride] + [1] * (num_blocks - 1)
@@ -156,8 +138,8 @@ class PreActResNet(nn.Module):
         out = self.layer2(out)
         out = self.layer3(out)
         out = self.layer4(out)
-        out = F.avg_pool2d(out, 4)
-        out = out.view(out.size(0), -1)
+        out = F.avg_pool2d(out, out.shape[-1])
+        out = out.view(out.shape[0], -1)
         out = self.linear(out)
 
         return out
@@ -253,8 +235,7 @@ def round_filters(filters, multiplier=None):
     min_depth = None
     filters *= multiplier
     min_depth = min_depth or divisor  # pay attention to this line when using min_depth
-    new_filters = max(min_depth,
-                      int(filters + divisor / 2) // divisor * divisor)
+    new_filters = max(min_depth, int(filters + divisor / 2) // divisor * divisor)
     if new_filters < 0.9 * filters:  # prevent rounding by more than 10%
         new_filters += divisor
     return int(new_filters)
