@@ -1,0 +1,1816 @@
+(10, 10, Linear(in_features=1024, out_features=100, bias=True)):
+  count: 10
+  value: 1065.4730999999997
+(10, 10, Linear(in_features=1072, out_features=100, bias=True)):
+  count: 10
+  value: 1054.2514999999999
+(10, 10, Linear(in_features=1128, out_features=100, bias=True)):
+  count: 10
+  value: 1071.7658000000001
+(10, 10, Linear(in_features=1176, out_features=100, bias=True)):
+  count: 10
+  value: 1100.8842
+(10, 10, Linear(in_features=1232, out_features=100, bias=True)):
+  count: 10
+  value: 1113.9453
+(10, 10, Linear(in_features=1280, out_features=100, bias=True)):
+  count: 10
+  value: 1122.2125
+(10, 10, Linear(in_features=1328, out_features=100, bias=True)):
+  count: 10
+  value: 1140.3974999999998
+(10, 10, Linear(in_features=1384, out_features=100, bias=True)):
+  count: 10
+  value: 1133.6295000000002
+(10, 10, Linear(in_features=1432, out_features=100, bias=True)):
+  count: 10
+  value: 1196.0674999999999
+(10, 10, Linear(in_features=1488, out_features=100, bias=True)):
+  count: 10
+  value: 1202.5208000000002
+(10, 10, Linear(in_features=1536, out_features=100, bias=True)):
+  count: 10
+  value: 1238.1562
+(10, 10, Linear(in_features=1584, out_features=100, bias=True)):
+  count: 10
+  value: 1235.7513999999996
+(10, 10, Linear(in_features=1640, out_features=100, bias=True)):
+  count: 10
+  value: 1277.5753
+(10, 10, Linear(in_features=1688, out_features=100, bias=True)):
+  count: 10
+  value: 1292.371
+(10, 10, Linear(in_features=1744, out_features=100, bias=True)):
+  count: 10
+  value: 1282.4546
+(10, 10, Linear(in_features=1792, out_features=100, bias=True)):
+  count: 10
+  value: 1336.0185999999999
+(10, 10, Linear(in_features=1840, out_features=100, bias=True)):
+  count: 10
+  value: 1330.2722
+(10, 10, Linear(in_features=1896, out_features=100, bias=True)):
+  count: 10
+  value: 1341.3577
+(10, 10, Linear(in_features=1944, out_features=100, bias=True)):
+  count: 10
+  value: 1425.4506999999999
+(10, 10, Linear(in_features=2000, out_features=100, bias=True)):
+  count: 10
+  value: 1409.1681
+(10, 10, Linear(in_features=512, out_features=100, bias=True)):
+  count: 10
+  value: 848.6364
+(10, 10, Linear(in_features=560, out_features=100, bias=True)):
+  count: 10
+  value: 837.7945000000002
+(10, 10, Linear(in_features=616, out_features=100, bias=True)):
+  count: 10
+  value: 882.2575
+(10, 10, Linear(in_features=664, out_features=100, bias=True)):
+  count: 10
+  value: 910.5894000000001
+(10, 10, Linear(in_features=720, out_features=100, bias=True)):
+  count: 10
+  value: 918.3186
+(10, 10, Linear(in_features=768, out_features=100, bias=True)):
+  count: 10
+  value: 940.6532000000001
+(10, 10, Linear(in_features=816, out_features=100, bias=True)):
+  count: 10
+  value: 958.3527999999999
+(10, 10, Linear(in_features=872, out_features=100, bias=True)):
+  count: 10
+  value: 987.1106
+(10, 10, Linear(in_features=920, out_features=100, bias=True)):
+  count: 10
+  value: 1008.1560000000002
+(10, 10, Linear(in_features=976, out_features=100, bias=True)):
+  count: 10
+  value: 1078.0608
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1024, 1024, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1024, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1024, 1024, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2820274.9773999997
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1072, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1072, 1072, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1072, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1072, 1072, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 3071647.9793000002
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1128, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1128, 1128, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1128, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1128, 1128, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 3415681.7852
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1176, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1176, 1176, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1176, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1176, 1176, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 3692153.1939999997
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1232, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1232, 1232, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1232, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1232, 1232, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 4019081.9924999997
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1280, 1280, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1280, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1280, 1280, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 4290949.9624
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1328, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1328, 1328, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1328, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1328, 1328, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 4620682.803499999
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1384, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1384, 1384, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1384, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1384, 1384, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 5033086.147400001
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1432, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1432, 1432, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1432, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1432, 1432, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 5378620.181600001
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1488, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1488, 1488, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1488, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1488, 1488, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 5773146.7001
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1536, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1536, 1536, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1536, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1536, 1536, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 6095873.8761
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1584, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1584, 1584, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1584, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1584, 1584, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 6504544.7062
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1640, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1640, 1640, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1640, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1640, 1640, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 6985999.344
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1688, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1688, 1688, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1688, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1688, 1688, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 7396933.7264
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1744, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1744, 1744, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1744, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1744, 1744, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 7882728.249499999
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1792, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1792, 1792, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1792, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1792, 1792, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 8352546.693400001
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1840, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1840, 1840, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1840, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1840, 1840, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 8869629.179900002
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1896, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1896, 1896, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1896, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1896, 1896, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 9325378.6468
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(1944, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1944, 1944, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1944, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1944, 1944, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 9704235.9363
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(2000, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(2000, 2000, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(2000, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(2000, 2000, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 10214219.1373
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(512, 512, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 782242.2320000001
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(560, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(560, 560, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(560, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(560, 560, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 926397.8271
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(616, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(616, 616, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(616, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(616, 616, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1112718.9609999997
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(664, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(664, 664, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(664, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(664, 664, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1276361.6445
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(720, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(720, 720, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(720, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(720, 720, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1467732.4408
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(768, 768, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(768, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(768, 768, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1640657.0538
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(816, 816, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(816, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(816, 816, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1860614.2221000001
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(872, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(872, 872, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(872, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(872, 872, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2138252.4173999997
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(920, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(920, 920, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(920, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(920, 920, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2398868.9075999996
+? "(10, 10, PreActBlock(\n  (bn1): BatchNorm2d(976, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(976, 976, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(976, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(976, 976, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2612955.1130000004
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(1000, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1000, 2000, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(2000, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(2000, 2000, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(1000, 2000, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 8056340.924
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(512, 512, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 641030.7342999999
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(280, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(280, 560, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(560, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(560, 560, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(280, 560, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 744284.0292
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(304, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(304, 616, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(616, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(616, 616, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(304, 616, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 898794.7239
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(336, 664, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(664, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(664, 664, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(336, 664, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1024218.7111
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(360, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(360, 720, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(720, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(720, 720, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(360, 720, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1184270.3841
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(384, 768, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(768, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(768, 768, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(384, 768, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1325616.5793999997
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(408, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(408, 816, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(816, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(816, 816, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(408, 816, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1492290.6543
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(432, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(432, 872, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(872, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(872, 872, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(432, 872, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1693513.1311
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(464, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(464, 920, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(920, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(920, 920, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(464, 920, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1904516.0022999998
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(488, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(488, 976, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(976, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(976, 976, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(488, 976, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 2075605.322
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(512, 1024, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1024, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1024, 1024, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 2238202.7124999994
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(536, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(536, 1072, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1072, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1072, 1072, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(536, 1072, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 2432404.0471
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(560, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(560, 1128, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1128, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1128, 1128, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(560, 1128, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 2706248.5308000003
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(592, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(592, 1176, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1176, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1176, 1176, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(592, 1176, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 2941348.0456
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(616, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(616, 1232, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1232, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1232, 1232, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(616, 1232, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 3187904.5478
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(640, 1280, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1280, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1280, 1280, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(640, 1280, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 3395884.0736000002
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(664, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(664, 1328, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1328, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1328, 1328, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(664, 1328, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 3642926.3034999995
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(688, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(688, 1384, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1384, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1384, 1384, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(688, 1384, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 3968522.2028000006
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(720, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(720, 1432, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1432, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1432, 1432, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(720, 1432, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 4250002.739400001
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(744, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(744, 1488, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1488, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1488, 1488, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(744, 1488, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 4545310.056
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(768, 1536, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1536, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1536, 1536, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(768, 1536, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 4812580.625700002
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(792, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(792, 1584, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1584, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1584, 1584, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(792, 1584, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 5143541.4771
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(816, 1640, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1640, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1640, 1640, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(816, 1640, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 5503578.8292000005
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(848, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(848, 1688, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1688, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1688, 1688, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(848, 1688, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 5863869.635999999
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(872, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(872, 1744, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1744, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1744, 1744, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(872, 1744, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 6235862.8892
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(896, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(896, 1792, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1792, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1792, 1792, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(896, 1792, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 6579987.0386
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(920, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(920, 1840, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1840, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1840, 1840, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(920, 1840, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 6991533.4103
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(944, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(944, 1896, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1896, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1896, 1896, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(944, 1896, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 7333612.0047
+? "(21, 10, PreActBlock(\n  (bn1): BatchNorm2d(976, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(976, 1944, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1944, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1944, 1944, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(976, 1944, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 7666057.612899999
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(1000, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(1000, 1000, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1000, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1000, 1000, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 8539204.0423
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(256, 256, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 742220.3024
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(280, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(280, 280, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(280, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(280, 280, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 871061.9039
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(304, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(304, 304, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(304, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(304, 304, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 985949.4332000001
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(336, 336, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(336, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(336, 336, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1169654.6768
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(360, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(360, 360, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(360, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(360, 360, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1345008.5573
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(384, 384, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(384, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(384, 384, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1476081.6845999998
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(408, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(408, 408, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(408, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(408, 408, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1646317.8313
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(432, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(432, 432, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(432, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(432, 432, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1811438.8037999999
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(464, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(464, 464, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(464, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(464, 464, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2040897.4436
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(488, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(488, 488, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(488, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(488, 488, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2253099.971399999
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(512, 512, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2433917.5017000004
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(536, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(536, 536, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(536, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(536, 536, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2679049.0637999997
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(560, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(560, 560, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(560, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(560, 560, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2867019.0565
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(592, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(592, 592, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(592, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(592, 592, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 3193785.9199
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(616, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(616, 616, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(616, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(616, 616, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 3452318.4384999997
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(640, 640, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(640, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(640, 640, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 3660441.5865999996
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(664, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(664, 664, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(664, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(664, 664, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 3977586.3878999995
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(688, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(688, 688, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(688, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(688, 688, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 4191297.3001
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(720, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(720, 720, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(720, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(720, 720, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 4569825.157199999
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(744, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(744, 744, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(744, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(744, 744, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 4905317.2762
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(768, 768, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(768, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(768, 768, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 5132742.3113
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(792, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(792, 792, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(792, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(792, 792, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 5510081.290200001
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(816, 816, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(816, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(816, 816, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 5745937.389599999
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(848, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(848, 848, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(848, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(848, 848, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 6225049.489400001
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(872, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(872, 872, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(872, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(872, 872, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 6641353.371900001
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(896, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(896, 896, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(896, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(896, 896, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 6909724.1831
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(920, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(920, 920, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(920, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(920, 920, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 7347046.4515
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(944, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(944, 944, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(944, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(944, 944, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 7608575.409400001
+? "(21, 21, PreActBlock(\n  (bn1): BatchNorm2d(976, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(976, 976, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(976, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(976, 976, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 8116474.426999999
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(256, 256, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 660926.6525000001
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(144, 280, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(280, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(280, 280, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(144, 280, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 748788.1026999999
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(152, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(152, 304, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(304, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(304, 304, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(152, 304, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 837618.3861
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(168, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(168, 336, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(336, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(336, 336, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(168, 336, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 979236.4054000002
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(176, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(176, 360, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(360, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(360, 360, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(176, 360, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1098097.5251000002
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(192, 384, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(384, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(384, 384, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(192, 384, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1232606.9191
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(208, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(208, 408, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(408, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(408, 408, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(208, 408, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1368426.3413
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(216, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(216, 432, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(432, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(432, 432, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(216, 432, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1479387.1027000002
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(232, 464, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(464, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(464, 464, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(232, 464, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1681861.7430999998
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(240, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(240, 488, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(488, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(488, 488, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(240, 488, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1841564.0289
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(512, 512, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1986716.7030000002
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(272, 536, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(536, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(536, 536, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(272, 536, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 2202862.7095000003
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(280, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(280, 560, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(560, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(560, 560, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(280, 560, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 2346500.359599999
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(296, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(296, 592, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(592, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(592, 592, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(296, 592, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 2603816.6058
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(304, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(304, 616, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(616, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(616, 616, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(304, 616, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 2797745.2
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(320, 640, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(640, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(640, 640, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(320, 640, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 2974615.188
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(336, 664, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(664, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(664, 664, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(336, 664, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 3230856.631499999
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(344, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(344, 688, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(688, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(688, 688, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(344, 688, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 3393316.1031000004
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(360, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(360, 720, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(720, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(720, 720, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(360, 720, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 3692616.222499999
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(368, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(368, 744, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(744, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(744, 744, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(368, 744, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 3939225.0052
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(384, 768, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(768, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(768, 768, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(384, 768, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 4133311.386999999
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(400, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(400, 792, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(792, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(792, 792, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(400, 792, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 4460612.0199
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(408, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(408, 816, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(816, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(816, 816, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(408, 816, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 4625051.3228
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(424, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(424, 848, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(848, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(848, 848, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(424, 848, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 5061651.9298
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(432, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(432, 872, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(872, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(872, 872, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(432, 872, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 5310992.770300001
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(448, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(448, 896, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(896, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(896, 896, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(448, 896, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 5537034.621300001
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(464, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(464, 920, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(920, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(920, 920, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(464, 920, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 5896293.995400001
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(472, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(472, 944, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(944, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(944, 944, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(472, 944, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 6085134.735099999
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(488, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(488, 976, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(976, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(976, 976, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(488, 976, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 6494784.008300001
+? "(42, 21, PreActBlock(\n  (bn1): BatchNorm2d(496, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(496, 1000, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(1000, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(1000, 1000, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(496, 1000, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n\
+  ))"
+: count: 10
+  value: 6786772.6121000005
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(128, 128, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1009936.6129999999
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(144, 144, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(144, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(144, 144, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1161861.0496999999
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(152, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(152, 152, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(152, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(152, 152, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1295678.1083999998
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(168, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(168, 168, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(168, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(168, 168, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1501475.202
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(176, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(176, 176, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(176, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(176, 176, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1653257.5488999996
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(192, 192, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(192, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(192, 192, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1782335.6124000002
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(208, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(208, 208, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(208, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(208, 208, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2094457.7777
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(216, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(216, 216, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(216, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(216, 216, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2190489.5135
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(232, 232, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(232, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(232, 232, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2481402.840000001
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(240, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(240, 240, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(240, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(240, 240, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2631216.8544
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(256, 256, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2867838.13
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(272, 272, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(272, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(272, 272, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 3174880.7845
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(280, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(280, 280, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(280, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(280, 280, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 3522744.4784000004
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(296, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(296, 296, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(296, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(296, 296, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 3702991.7251000004
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(304, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(304, 304, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(304, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(304, 304, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 3796828.0791
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(320, 320, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(320, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(320, 320, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 4242043.436599999
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(336, 336, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(336, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(336, 336, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 4668974.448499999
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(344, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(344, 344, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(344, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(344, 344, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 4880362.356900001
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(360, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(360, 360, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(360, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(360, 360, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 5293054.2477
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(368, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(368, 368, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(368, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(368, 368, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 5379391.957599999
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(384, 384, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(384, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(384, 384, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 5728683.5781
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(400, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(400, 400, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(400, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(400, 400, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 6247937.5804
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(408, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(408, 408, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(408, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(408, 408, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 6396221.214699999
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(424, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(424, 424, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(424, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(424, 424, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 6955907.2556
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(432, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(432, 432, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(432, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(432, 432, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 7079392.965599999
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(448, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(448, 448, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(448, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(448, 448, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 7589001.2877
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(464, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(464, 464, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(464, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(464, 464, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 7964445.127700001
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(472, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(472, 472, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(472, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(472, 472, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 8227604.7486000005
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(488, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(488, 488, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(488, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(488, 488, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 8801717.9756
+? "(42, 42, PreActBlock(\n  (bn1): BatchNorm2d(496, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(496, 496, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(496, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(496, 496, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 8903893.6648
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(104, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(104, 208, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(208, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(208, 208, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(104, 208, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1844947.7875
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(112, 216, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(216, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(216, 216, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(112, 216, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1894746.8062000002
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(112, 232, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(232, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(232, 232, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(112, 232, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 2154739.6158
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(120, 240, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(240, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(240, 240, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(120, 240, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 2187657.4976
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(256, 256, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 2454231.8067
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(136, 272, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(272, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(272, 272, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(136, 272, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 2863551.7096999995
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(144, 280, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(280, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(280, 280, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(144, 280, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 2890181.4733999996
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(144, 296, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(296, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(296, 296, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(144, 296, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 3217225.1928
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(152, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(152, 304, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(304, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(304, 304, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(152, 304, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 3375181.6975999996
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(160, 320, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(320, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(320, 320, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(160, 320, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 3513100.2041
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(168, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(168, 336, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(336, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(336, 336, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(168, 336, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 3807855.6304000006
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(176, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(176, 344, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(344, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(344, 344, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(176, 344, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 4208672.4328
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(176, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(176, 360, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(360, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(360, 360, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(176, 360, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 4301202.4983
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(184, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(184, 368, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(368, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(368, 368, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(184, 368, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 4568512.3864
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(192, 384, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(384, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(384, 384, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(192, 384, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 4835422.0977
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(200, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(200, 400, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(400, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(400, 400, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(200, 400, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 5085019.8588
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(208, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(208, 408, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(408, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(408, 408, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(208, 408, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 5529944.9327
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(208, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(208, 424, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(424, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(424, 424, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(208, 424, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 5936794.739
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(216, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(216, 432, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(432, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(432, 432, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(216, 432, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 6020691.430300001
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(224, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(224, 448, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(448, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(448, 448, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(224, 448, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 6231373.021699999
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(232, 464, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(464, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(464, 464, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(232, 464, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 6772748.845300001
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(240, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(240, 472, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(472, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(472, 472, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(240, 472, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 7103547.6957
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(240, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(240, 488, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(488, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(488, 488, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(240, 488, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 7271098.4986999985
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(248, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(248, 496, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(496, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(496, 496, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(248, 496, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 7363387.38
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(128, 128, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1181691.9806999997
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(72, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(72, 144, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(144, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(144, 144, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(72, 144, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1310223.3461
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(80, 152, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(152, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(152, 152, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(80, 152, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1215379.1209000002
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(80, 168, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(168, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(168, 168, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(80, 168, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1611411.3397000001
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(88, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(88, 176, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(176, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(176, 176, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(88, 176, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1396756.9250000003
+? "(84, 42, PreActBlock(\n  (bn1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(96, 192, kernel_size=(3, 3), stride=(2,\
+  \ 2), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(192, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(192, 192, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(96, 192, kernel_size=(1, 1), stride=(2, 2), bias=False)\n  )\n))"
+: count: 10
+  value: 1615137.6955
+(84, 84, Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)):
+  count: 300
+  value: 261570.94265999983
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(104, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(104, 104, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(104, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(104, 104, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2904096.7115
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(112, 112, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(112, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(112, 112, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 20
+  value: 3041511.937499999
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(120, 120, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(120, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(120, 120, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 3653179.7489
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(128, 128, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 3804569.4662
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(136, 136, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(136, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(136, 136, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 4113217.1766999997
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(144, 144, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(144, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(144, 144, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 20
+  value: 4666146.199500001
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(152, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(152, 152, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(152, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(152, 152, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 4995758.912800001
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(160, 160, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(160, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(160, 160, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 5277003.665
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(168, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(168, 168, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(168, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(168, 168, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 6020369.8597
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(176, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(176, 176, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(176, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(176, 176, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 20
+  value: 6118686.008199999
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(184, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(184, 184, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(184, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(184, 184, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 6692503.691699998
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(192, 192, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(192, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(192, 192, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 7101910.8377
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(200, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(200, 200, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(200, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(200, 200, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 7640381.385600001
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(208, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(208, 208, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(208, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(208, 208, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 20
+  value: 7931238.4092999995
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(216, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(216, 216, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(216, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(216, 216, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 8514797.895100001
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(224, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(224, 224, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(224, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(224, 224, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 8992909.120299999
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(232, 232, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(232, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(232, 232, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 9696303.927700002
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(240, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(240, 240, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(240, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(240, 240, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 20
+  value: 9865261.563399997
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(248, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(248, 248, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(248, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(248, 248, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 10701532.069999998
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 104, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(104, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(104, 104, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 104, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 2575428.6832000003
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 112, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(112, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(112, 112, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 20
+  value: 2802555.701400001
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 120, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(120, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(120, 120, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 3185001.2103000004
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(128, 128, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 3164133.0837000003
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 136, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(136, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(136, 136, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 136, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 3313562.102
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 144, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(144, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(144, 144, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 144, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 20
+  value: 3701770.2153499997
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 152, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(152, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(152, 152, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 152, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 3886763.9480000003
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 160, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(160, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(160, 160, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 3786527.7316
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 168, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(168, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(168, 168, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 168, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 4506135.382800001
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 176, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(176, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(176, 176, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 176, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 20
+  value: 4535929.20315
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 184, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(184, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(184, 184, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 184, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 4858383.0735
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 192, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(192, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(192, 192, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 5197198.801200001
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 200, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(200, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(200, 200, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 200, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 5502246.011399999
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 208, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(208, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(208, 208, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 208, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 20
+  value: 5687818.5764000015
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 216, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(216, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(216, 216, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 216, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 5923717.8835
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 224, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(224, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(224, 224, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 224, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 6072787.2787
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 232, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(232, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(232, 232, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 232, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 6410679.8271
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 240, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(240, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(240, 240, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 240, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 20
+  value: 6595474.0552
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 248, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(248, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(248, 248, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 248, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 7213212.651699999
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(64, 64, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 20
+  value: 720534.633675
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 72, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(72, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(72, 72, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 72, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 2056804.7526
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 80, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(80, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(80, 80, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 80, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 20
+  value: 2038335.15485
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 88, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(88, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(88, 88, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 88, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 2276416.9934
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(64, 96, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(96, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(96, 96, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n  (shortcut): Sequential(\n  \
+  \  (0): Conv2d(64, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  )\n))"
+: count: 10
+  value: 2305981.6831
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(72, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(72, 72, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(72, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(72, 72, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 1872888.4678999998
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(80, 80, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(80, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(80, 80, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 20
+  value: 2010447.6011000003
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(88, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(88, 88, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(88, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(88, 88, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2351932.9951
+? "(84, 84, PreActBlock(\n  (bn1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True,\
+  \ track_running_stats=True)\n  (conv1): Conv2d(96, 96, kernel_size=(3, 3), stride=(1,\
+  \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(96, eps=1e-05, momentum=0.1,\
+  \ affine=True, track_running_stats=True)\n  (conv2): Conv2d(96, 96, kernel_size=(3,\
+  \ 3), stride=(1, 1), padding=(1, 1), bias=False)\n))"
+: count: 10
+  value: 2420195.0835
