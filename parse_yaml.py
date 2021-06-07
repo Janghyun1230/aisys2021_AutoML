@@ -119,9 +119,9 @@ paths.append("latency_data/raspberrypi/preactresnet18/cpu")
 
 for path in paths:
     filelist = [join(path,f) for f in listdir(path) if isfile(join(path, f)) and ("image" in f)]
-    data = list()
-    latency = list()
     for parser, name, params in pre_blocks:
+        data = list()
+        latency = list()
         print("Parsing {} in {} ...".format(name,path))
         for filename in filelist:
             f = open(filename)
