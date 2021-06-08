@@ -98,52 +98,60 @@ pre_block_2 = compile("""({c0:d}, {c1:d}, Linear(in_features={c2:d}, out_feature
 
 pre_block_3 = compile("""({d0:d}, {d1:d}, Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False))""")
 
-pre_blocks = [(pre_block_0,"pre_block_0",['a0','a2']),
-        (pre_block_1,"pre_block_1",['b0','b2','b4','b5']),
-        (pre_block_2,"pre_block_2",['c0','c2']),
-        (pre_block_3,"pre_block_3",['d0'])]
+pre_blocks = [(pre_block_0,"block_0",['a0','a1','a2']),
+        (pre_block_1,"block_1",['b0','b1','b2','b4','b5']),
+        (pre_block_2,"block_2",['c0','c1','c2']),
+        (pre_block_3,"block_3",['d0','d1'])]
 
-def pattern_matching(network_type, in_str):
-    if network_type == "efficientnet":
-        for block in eff_blocks:
-            block.parse(in_str)
-    elif network_type == "preactresnet":
-        return
+def parse(key):
+    for parser in pre_blocks:
+        result = parser[0].parse(key)
+        if result == None:
+            continue
+        else:
+            return [ result[param] for param in parser[2] ], parser[1]
+    print("No Matching Key Found")
+    return [0], "block_non"
 
-paths = list()
-paths.append("latency_data/desktop/preactresnet18/cpu")
-paths.append("latency_data/desktop/preactresnet18/cuda")
-paths.append("latency_data/jetson/preactresnet18/cpu")
-paths.append("latency_data/jetson/preactresnet18/cuda")
-paths.append("latency_data/raspberrypi/preactresnet18/cpu")
+def main():
+    paths = list()
+    paths.append("latency_data/desktop/preactresnet18/cpu")
+    paths.append("latency_data/desktop/preactresnet18/cuda")
+    paths.append("latency_data/jetson/preactresnet18/cpu")
+    paths.append("latency_data/jetson/preactresnet18/cuda")
+    paths.append("latency_data/raspberrypi/preactresnet18/cpu")
+    
+    for path in paths:
+        filelist = [join(path,f) for f in listdir(path) if isfile(join(path, f)) and ("image" in f)]
+        for parser, name, params in pre_blocks:
+            data = list()
+            latency = list()
+            print("Parsing {} in {} ...".format(name,path))
+            for filename in filelist:
+                f = open(filename)
+                c = yaml.load(f, Loader=yaml.FullLoader)
+                for el in c:
+                        parsed = parser.parse(el)
+                        if parsed != None:
+                            tup = parsed.named
+                            tup = [tup[param] for param in params]
+                            #tup_ = list(tup_)
+                            data.append(tup)
+                            latency.append(c[el]["value"])
+                        else:
+                            continue
+                f.close() #after finishing el
+            data_filename = "{}/{}_data.pickle".format(path,name)
+            latency_filename = "{}/{}_latency.pickle".format(path,name)
+            d = open(data_filename, 'wb')
+            l = open(latency_filename, 'wb')
+            print(len(data)," ",len(latency))
+            pickle.dump(data,d)
+            pickle.dump(latency,l)
+            print("Writing Pickle On {} ...".format(latency_filename))
+            d.close()
+            l.close()
 
-for path in paths:
-    filelist = [join(path,f) for f in listdir(path) if isfile(join(path, f)) and ("image" in f)]
-    for parser, name, params in pre_blocks:
-        data = list()
-        latency = list()
-        print("Parsing {} in {} ...".format(name,path))
-        for filename in filelist:
-            f = open(filename)
-            c = yaml.load(f, Loader=yaml.FullLoader)
-            for el in c:
-                    parsed = parser.parse(el)
-                    if parsed != None:
-                        tup = parsed.named
-                        tup = [tup[param] for param in params]
-                        #tup_ = list(tup_)
-                        data.append(tup)
-                        latency.append(c[el]["value"])
-                    else:
-                        continue
-            f.close() #after finishing el
-        data_filename = "{}/{}_data.pickle".format(path,name)
-        latency_filename = "{}/{}_latency.pickle".format(path,name)
-        d = open(data_filename, 'wb')
-        l = open(latency_filename, 'wb')
-        pickle.dump(data,d)
-        pickle.dump(latency,l)
-        print("Writing Pickle On {} ...".format(latency_filename))
-        d.close()
-        l.close()
+if __name__ == "__main__":
+    main()
 
