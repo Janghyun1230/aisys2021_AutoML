@@ -145,7 +145,7 @@ class NasEnv():
         estimated_mem = float(report.split('\n')[-3].split(' ')[-1])  # (MB)
         return estimated_mem
 
-    def eval_latency(self, model, resolution, test_predictor = True):
+    def eval_latency(self, model, resolution, test_predictor = False):
         path = ('latency_data/' + self.platform + '/' + self.modelName + '/' + self.device +
                 '/image_' + str(resolution) + '.yaml')
         latency = 0
