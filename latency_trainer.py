@@ -28,12 +28,18 @@ def make_dataloader(file_name, batch_size = 16, device = "cuda"):
     g = open(latency_path, "rb")
 
     x = pickle.load(f) # (data_num, 2) => each row is (image resolution, width)
-    x = torch.FloatTensor(x).to(device)
+    x = torch.FloatTensor(x)
+    x = x.to(device)
 
     y = pickle.load(g) # (data_num) => each row is latency
     y = torch.tensor(y).to(device)
+    
+    f.close()
+    g.close()
 
-    x = (x - x.min(dim=0).values) / (x.max(dim=0).values - x.min(dim=0).values)
+    x_min = x.min(dim=0).values
+    x_max = x.max(dim=0).values
+    x = (x - x_min) / (x_max - x_min)
 
     dataset = CustomDataset(x, y)
 
@@ -49,16 +55,16 @@ def make_dataloader(file_name, batch_size = 16, device = "cuda"):
     valid_loader = torch.utils.data.DataLoader(val_set, batch_size = batch_size, shuffle = True)
     test_loader = torch.utils.data.DataLoader(test_set, batch_size = batch_size, shuffle = True)
 
-    return train_loader, valid_loader, test_loader, train_len, valid_len, test_len
+    return train_loader, valid_loader, test_loader, train_len, valid_len, test_len, x_min, x_max
 
-def main(file_name):
+def main(file_name, save_path):
     if torch.cuda.is_available():
         device = "cuda"
     else:
         device = "cpu"
 
 
-    train_loader, valid_loader, test_loader, train_len, valid_len, test_len = make_dataloader(file_name = file_name, batch_size = 16, device = device)
+    train_loader, valid_loader, test_loader, train_len, valid_len, test_len, x_min, x_max = make_dataloader(file_name = file_name, batch_size = 16, device = device)
 
     input_size = train_loader.dataset[0][0].shape[0]
 
@@ -72,6 +78,9 @@ def main(file_name):
         torch.nn.Linear(32, 1)
     )
     # 4 layer input_size, 128 => 128,64 => 64,16 => 16, 1
+    
+    model.min = x_min
+    model.max = x_max
 
     model.to(device)
     best_model = None
@@ -79,7 +88,7 @@ def main(file_name):
 
     learning_rate = 1e-2
     weight_decay = 0.1
-    epochs = 250
+    epochs = 300
 
     loss_fn = torch.nn.MSELoss(reduction='sum')
     optimizer = torch.optim.Adam(model.parameters(), lr = learning_rate, weight_decay=weight_decay)
@@ -122,18 +131,40 @@ def main(file_name):
             best_model = copy.deepcopy(model)
             best_err = Avg_valid_err
 
-        print("train_err: {}%, valid_err: {}%".format(Avg_train_err, Avg_valid_err))
+        #print("train_err: {}%, valid_err: {}%".format(Avg_train_err, Avg_valid_err))
         exp_lr_scheduler.step()
         best_model.eval()
 
     ## Evaluation on testset
-    print("========== Test ==========")
+    #print("========== Test ==========")
     total_err = 0
     for x, y in test_loader:
         y_pred = np.squeeze(best_model(x), axis = 1)
         err = sum((y_pred - y) / y)*100
         total_err = total_err + abs(err)
     print("Average err: {}%".format(total_err / test_len))
+    print("Saving {}".format(save_path))
+    print("")
+    torch.save(best_model,save_path)
 
 if __name__ == "__main__":
-    main("./latency_data/block_1")
+   main("./latency_data/desktop/preactresnet18/cpu/block_0", "./trained_model/desktop_cpu/block_0.pt")
+   main("./latency_data/desktop/preactresnet18/cpu/block_1", "./trained_model/desktop_cpu/block_1.pt")
+   main("./latency_data/desktop/preactresnet18/cpu/block_2", "./trained_model/desktop_cpu/block_2.pt")
+   main("./latency_data/desktop/preactresnet18/cpu/block_3", "./trained_model/desktop_cpu/block_3.pt")
+   main("./latency_data/desktop/preactresnet18/cuda/block_0", "./trained_model/desktop_gpu/block_0.pt")
+   main("./latency_data/desktop/preactresnet18/cuda/block_1", "./trained_model/desktop_gpu/block_1.pt")
+   main("./latency_data/desktop/preactresnet18/cuda/block_2", "./trained_model/desktop_gpu/block_2.pt")
+   main("./latency_data/desktop/preactresnet18/cuda/block_3", "./trained_model/desktop_gpu/block_3.pt")
+   main("./latency_data/jetson/preactresnet18/cpu/block_0", "./trained_model/jetson_cpu/block_0.pt")
+   main("./latency_data/jetson/preactresnet18/cpu/block_1", "./trained_model/jetson_cpu/block_1.pt")
+   main("./latency_data/jetson/preactresnet18/cpu/block_2", "./trained_model/jetson_cpu/block_2.pt")
+   main("./latency_data/jetson/preactresnet18/cpu/block_3", "./trained_model/jetson_cpu/block_3.pt")
+   main("./latency_data/jetson/preactresnet18/cuda/block_0", "./trained_model/jetson_gpu/block_0.pt")
+   main("./latency_data/jetson/preactresnet18/cuda/block_1", "./trained_model/jetson_gpu/block_1.pt")
+   main("./latency_data/jetson/preactresnet18/cuda/block_2", "./trained_model/jetson_gpu/block_2.pt")
+   main("./latency_data/jetson/preactresnet18/cuda/block_3", "./trained_model/jetson_gpu/block_3.pt")
+   main("./latency_data/raspberrypi/preactresnet18/cpu/block_0", "./trained_model/raspberrypi_cpu/block_0.pt")
+   main("./latency_data/raspberrypi/preactresnet18/cpu/block_1", "./trained_model/raspberrypi_cpu/block_1.pt")
+   main("./latency_data/raspberrypi/preactresnet18/cpu/block_2", "./trained_model/raspberrypi_cpu/block_2.pt")
+   main("./latency_data/raspberrypi/preactresnet18/cpu/block_3", "./trained_model/raspberrypi_cpu/block_3.pt")
