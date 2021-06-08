@@ -20,7 +20,7 @@ def accuracy(output, target, topk=(1, )):
     return res
 
 
-def train(train_loader, model, optimizer, device, loss_fn, eval_fn):
+def train(train_loader, model, optimizer, device, loss_fn, eval_fn, epoch):
     '''train given model and dataloader'''
     batch_time = AverageMeter()
     data_time = AverageMeter()
@@ -34,7 +34,7 @@ def train(train_loader, model, optimizer, device, loss_fn, eval_fn):
     i = 0
 
     for input, target in train_loader:
-        print("train input index: ", i, end='\r')
+        print(f"[epoch {epoch}] train input index: ", i, end='\r')
         data_time.update(time.time() - end)
         optimizer.zero_grad()
 
@@ -58,7 +58,7 @@ def train(train_loader, model, optimizer, device, loss_fn, eval_fn):
         # measure elapsed time
         batch_time.update(time.time() - end)
         end = time.time()
-        i+=1
+        i += 1
 
     return top1.avg, top5.avg, losses.avg
 
@@ -91,6 +91,6 @@ def validate(val_loader, model, device, loss_fn, eval_fn):
         losses.update(loss.item(), input.size(0))
         top1.update(prec1.item(), input.size(0))
         top5.update(prec5.item(), input.size(0))
-        i+=1
+        i += 1
 
     return top1.avg, top5.avg, losses.avg
