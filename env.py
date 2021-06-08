@@ -8,19 +8,26 @@ from trainer import train, validate, accuracy
 from data import dataloader
 from efficientnet_utils import round_filters
 import yaml
-import copy
 
 
-def arg2model(inp_arg, modelName='preactresnet18', device='cuda', from_pretrained=False):
+def arg2model(inp_arg,
+              modelName='preactresnet18',
+              device='cuda',
+              from_pretrained=False,
+              _print=False):
     w, d, r = inp_arg
     path = "./" + str(w) + "_" + str(d) + "_" + str(r)
+
     if os.path.exists(path):
-        print("Load existing model: " + path)
+        if _print:
+            print("Load existing model: " + path)
         model = torch.load(path)
     elif from_pretrained:
-        print("Currently, no pretrained weight")
+        if _print:
+            print("Currently, no pretrained weight")
     else:
-        print("Create new model: ", modelName)
+        if _print:
+            print("Create new model: ", modelName)
         if 'preactresnet' in modelName:
             model = models.__dict__[modelName](100, False, 1, w, d).to(device)
         elif 'efficientnet' in modelName:
@@ -31,6 +38,7 @@ def arg2model(inp_arg, modelName='preactresnet18', device='cuda', from_pretraine
             final_filters = 1280
             new_filters = round_filters(final_filters, model._global_params)
             model._fc = torch.nn.Linear(new_filters, 100, bias=True).to(device)
+
     return model
 
 
@@ -77,18 +85,13 @@ class NasEnv():
     def __init__(self,
                  modelName='preactresnet18',
                  platform='desktop',
-                 device='default',
+                 device='cuda',
                  batch_size=64,
                  lr=1e-2,
-                 resolution=32,
-                 n_train=45000,
                  n_epoch=30):
-        self.trainloader, self.validloader, self.testloader = dataloader(
-            batch_size=batch_size, input_resolution=resolution)
         self.modelName = modelName
         self.platform = platform
         self.batch_size = batch_size
-        self.resolution = resolution
         self.lr = lr
         if device is 'default':
             self.device = "cpu"
@@ -100,41 +103,51 @@ class NasEnv():
         self.epoch = n_epoch
 
     def eval_arg(self, inp_arg, print_model=False, eval_acc=True):
-        if eval_acc:
-            print("\nStart evaluating ", inp_arg)
-        model = arg2model(inp_arg, modelName=self.modelName, device=self.device)
+        if torch.is_tensor(inp_arg):
+            inp_arg = inp_arg.cpu().detach().numpy()
+
+        resolution = int(inp_arg[-1])  # resolution
+        self.trainloader, self.validloader, self.testloader = dataloader(
+            batch_size=self.batch_size, input_resolution=resolution, _print=print_model)
+
+        print("\nStart evaluating ", inp_arg)
+        model = arg2model(inp_arg, modelName=self.modelName, device=self.device, _print=print_model)
         if print_model:
-            _print_model(model, self.resolution, device=self.device)
-        mem = self.eval_mem(model)
+            _print_model(model, resolution, device=self.device)
+
+        mem = self.eval_mem(model, resolution)
         latency = self.eval_latency(model)
+        # latency = 0.
+
         if eval_acc:
             acc = self.eval_acc(model)
+            print(f'acc: {acc:.2f}%, mem: {mem}MB, latency: {latency:.2f}us')
             return mem, acc, latency
         else:
+            print(f'mem: {mem}MB, latency: {latency:.2f}us')
             return mem, latency
 
-    def eval_mem(self, model):
-        report, _ = logger.summary_string(model, (3, self.resolution, self.resolution),
-                                          batch_size=self.batch_size,
+    def eval_mem(self, model, resolution):
+        report, _ = logger.summary_string(model, (3, resolution, resolution),
+                                          batch_size=1,
                                           device=self.device)
 
         estimated_mem = float(report.split('\n')[-3].split(' ')[-1])  # (MB)
         return estimated_mem
 
-    def eval_latency(self, model):
+    def eval_latency(self, model, resolution):
         path = ('latency_data/' + self.platform + '/' + self.modelName + '/' + self.device +
-                '/image_' + str(self.resolution) + '.yaml')
+                '/image_' + str(resolution) + '.yaml')
         latency = 0
         try:
             with open(path, 'r') as f:
                 dic = yaml.load(f, Loader=yaml.FullLoader)
                 for mod in model.modules():
-                    _1, _2, latency = latency_cal(dic, mod, False, False, self.resolution)
+                    _1, _2, latency = latency_cal(dic, mod, False, False, resolution)
                     break
             print("model latency is ", latency, " us")
         except Exception as ex:
             print(ex)
-            #print(path,": no such file")
 
         return latency
 
@@ -154,23 +167,24 @@ class NasEnv():
 
         for i in range(self.epoch):
             s = time()
-            train_top1, train_top5, train_loss = self._train_epoch(model, optimizer)
-            valid_top1, valid_top5, valid_loss = self._valid(model)
+            train_top1, _, train_loss = self._train_epoch(model, optimizer, i)
+            valid_top1, _, valid_loss = self._valid(model)
 
             if valid_top1 > best_test_acc:
                 best_test_acc = valid_top1
-            scheduler.step()
+
+            if self.epoch > 1:
+                scheduler.step()
 
         print(
-            f'[epoch {i} ({time()-s:.2f})] (train) loss {train_loss:.2f}, top1 {train_top1:.2f}%, top5 {train_top5:.2f}%',
+            f'[epoch {i+1} ({time()-s:.2f})] (train) loss {train_loss:.2f}, top1 {train_top1:.2f}%',
             end=' | ')
-        print(
-            f'(valid) loss = {valid_loss:.2f}, top1 = {valid_top1:.2f}%, top5 = {valid_top5:.2f}%')
+        print(f'(valid) loss = {valid_loss:.2f}, top1 = {valid_top1:.2f}%')
         return best_test_acc
 
-    def _train_epoch(self, model, optimizer):
+    def _train_epoch(self, model, optimizer, i):
         top1, top5, loss = train(self.trainloader, model, optimizer, self.device, self.loss_fn,
-                                 self.eval_fn)
+                                 self.eval_fn, i)
         return top1, top5, loss
 
     def _valid(self, model):
@@ -184,18 +198,18 @@ if __name__ == "__main__":
     '''Environment'''
     parser.add_argument('-m', "--model", type=str, default='preactresnet18')
     parser.add_argument('-p', "--platform", type=str, default='desktop')
-    parser.add_argument('-v', "--device", type=str, default='default')
+    parser.add_argument('-v', "--device", type=str, default='cuda')
     parser.add_argument('-w', "--width", type=float, default=1.0)
     parser.add_argument('-d', "--depth", type=float, default=1.0)
     parser.add_argument('-r', "--resolution", type=int, default=32)
+    parser.add_argument('-e', "--epoch", type=int, default=1)
     args = parser.parse_args()
 
     inp_argument = (args.width, args.depth, args.resolution)
 
-    env = NasEnv(n_train=45000,
-                 modelName=args.model,
+    env = NasEnv(modelName=args.model,
                  platform=args.platform,
                  device=args.device,
-                 resolution=args.resolution)
+                 n_epoch=args.epoch)
     mem, acc, latency = env.eval_arg(inp_argument, print_model=True)
-    print(f'acc: {acc:.2f}%, mem: {mem} MB, latency: {latency:.2f} us')
+    print(f'acc: {acc:.2f}%, mem: {mem}MB, latency: {latency:.2f}us')

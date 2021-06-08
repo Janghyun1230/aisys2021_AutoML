@@ -3,8 +3,7 @@ import torch
 import torchvision
 
 
-def dataloader(batch_size=64, input_resolution=32, n_train=50000,
-               n_valid=5000):
+def dataloader(batch_size=64, input_resolution=32, n_train=50000, n_valid=5000, _print=True):
     mean = [x / 255 for x in [129.3, 124.1, 112.4]]
     std = [x / 255 for x in [68.2, 65.4, 70.4]]
 
@@ -24,7 +23,7 @@ def dataloader(batch_size=64, input_resolution=32, n_train=50000,
     indices = torch.arange(n_train)
     trainset = torchvision.datasets.CIFAR100(root='./data',
                                              train=True,
-                                             download=True,
+                                             download=False,
                                              transform=train_transform)
     small_trainset = torch.utils.data.Subset(trainset, indices)
     trainloader = torch.utils.data.DataLoader(small_trainset,
@@ -34,7 +33,7 @@ def dataloader(batch_size=64, input_resolution=32, n_train=50000,
 
     testset = torchvision.datasets.CIFAR100(root='./data',
                                             train=False,
-                                            download=True,
+                                            download=False,
                                             transform=test_transform)
     indices = torch.arange(n_valid)
     validset = torch.utils.data.Subset(testset, indices)
@@ -50,8 +49,7 @@ def dataloader(batch_size=64, input_resolution=32, n_train=50000,
                                              shuffle=False,
                                              num_workers=0)
 
-    print("\nDataloader is defined!")
-    print(
-        f"=> train {len(trainset)}, valid {len(validset)}, test {len(testsubset)}"
-    )
+    if _print:
+        print("\nDataloader is defined!")
+        print(f"=> train {len(trainset)}, valid {len(validset)}, test {len(testsubset)}")
     return trainloader, validloader, testloader

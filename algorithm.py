@@ -78,11 +78,12 @@ class Policy(torch.nn.Module):
 
 
 class RLOptim():
-    def __init__(self, env, latency_th, mem_th, device='cuda'):
+    def __init__(self, env, latency_th, mem_th, expl_interval, device='cuda'):
         self.env = env
         self.device = device
         self.latency_th = latency_th
         self.mem_th = mem_th
+        self.expl_intervals = expl_interval
 
     def obs_contraction(self, obs_init):
         """Reduce obs_init towards a valid solution
@@ -96,6 +97,7 @@ class RLOptim():
             mem, latency = self.env.eval_arg(obs_cur, eval_acc=False)
 
         _, acc_cur, _ = self.env.eval_arg(obs_cur, eval_acc=True)
+        print('\n', "=" * 50)
         print("After contraction current obs: ", obs_cur.cpu().numpy(), f"(acc: {acc_cur:.2f})")
 
         return obs_cur, acc_cur
@@ -104,13 +106,12 @@ class RLOptim():
                obs_init,
                expl_step,
                update_step,
-               reward_scale=10.,
+               reward_scale=1.,
                expl_eps=0.3,
                expl_ths=500,
                epoch=500,
                batch_size=256,
                lr=1e-3):
-        expl_intervals = [0.01, 0.01, 0.]
 
         policy = Policy(3, 128).to(self.device)
         optimizer = optim.SGD(policy.parameters(), lr=lr)
@@ -124,45 +125,47 @@ class RLOptim():
         best_config = torch.clone(obs_cur)
         for i in range(epoch):
             # Explore
-            with torch.no_grad():
-                for _ in range(expl_step):
-                    # Move on next obs
+            for _ in range(expl_step):
+                # Move on next obs
+                with torch.no_grad():
                     prob = policy(obs_cur.unsqueeze(0), expl=True, eps=expl_eps)[0]
-                    obs_next = torch.clone(obs_cur)
-                    action = torch.zeros([3], device=self.device, dtype=torch.long)
+                obs_next = torch.clone(obs_cur)
+                action = torch.zeros([3], device=self.device, dtype=torch.long)
 
-                    for k, p in enumerate(prob):
-                        action_feature = Categorical(p).sample()
-                        action[k] = action_feature
-                        if action_feature == 0:
-                            obs_next[k] -= expl_intervals[k]
-                        elif action_feature == 1:
-                            pass
-                        else:
-                            obs_next[k] += expl_intervals[k]
-
-                    # Evaluate and add to buffer
-                    if not replay_buffer.check_exist(obs_cur, action):
-                        mem, acc, latency = self.env.eval_arg(obs_next, eval_acc=True)
-                        if (mem > self.mem_th) or (latency > self.latency_th):
-                            reward = torch.tensor(-1., device=self.device)
-                            obs_next = obs_cur
-                            acc = acc_cur
-                        else:
-                            reward = (acc - acc_cur) * reward_scale
-                            if acc > best_val:
-                                best_val = torch.max(acc, best_val)
-                                best_config = torch.clone(obs_cur)
-
-                            replay_buffer.add_sample(obs_cur, action, reward)
+                for k, p in enumerate(prob):
+                    action_feature = Categorical(p).sample()
+                    action[k] = action_feature
+                    if action_feature == 0:
+                        obs_next[k] -= self.expl_intervals[k]
+                    elif action_feature == 1:
+                        pass
                     else:
-                        mem, latency = self.env.eval_arg(obs_next, eval_acc=False)
-                        if (mem > self.mem_th) or (latency > self.latency_th):
-                            obs_next = obs_cur
-                            acc = acc_cur
+                        obs_next[k] += self.expl_intervals[k]
 
-                    obs_cur = obs_next
-                    acc_cur = acc
+                invalid_flag = (obs_next < 0.1).float().sum()
+
+                # Evaluate and add to buffer
+                if not replay_buffer.check_exist(obs_cur, action):
+                    mem, acc, latency = self.env.eval_arg(obs_next, eval_acc=True)
+                    if (mem > self.mem_th) or (latency > self.latency_th) or (invalid_flag > 0):
+                        reward = torch.tensor(-1., device=self.device)
+                        obs_next = obs_cur
+                        acc = acc_cur
+                    else:
+                        reward = torch.tensor((acc - acc_cur) * reward_scale, device=self.device)
+                        if acc > best_val:
+                            best_val = max(acc, best_val)
+                            best_config = torch.clone(obs_cur)
+
+                        replay_buffer.add_sample(obs_cur, action, reward)
+                else:
+                    mem, latency = self.env.eval_arg(obs_next, eval_acc=False)
+                    if (mem > self.mem_th) or (latency > self.latency_th):
+                        obs_next = obs_cur
+                        acc = acc_cur
+
+                obs_cur = obs_next
+                acc_cur = acc
 
             # Update policy
             for _ in range(update_step):
@@ -183,5 +186,7 @@ class RLOptim():
                 expl_eps /= 2
                 expl_ths += 500
 
-            print(f"[Epoch {i}] best acc: {best_val:.2f} with {best_config.cpu().numpy()}", end='')
+            print('\n', "=" * 50)
+            print(f"[Search Epoch {i+1}] best acc: {best_val:.2f} with {best_config.cpu().numpy()}",
+                  end='')
             print(f", Buffer size: {replay_buffer._top}, current: {obs_cur.cpu().numpy()}")
