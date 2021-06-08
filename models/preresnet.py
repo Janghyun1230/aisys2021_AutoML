@@ -1,8 +1,5 @@
-import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
-from torch.autograd import Variable
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
@@ -210,12 +207,6 @@ def preactresnet152(num_classes=10,
                         depth_multiplier=depth_multiplier)
 
 
-def test():
-    net = PreActResNet152(True, 10)
-    y = net(Variable(torch.randn(1, 3, 32, 32)))
-    print(y.size())
-
-
 def round_filters(filters, multiplier=None):
     """Calculate and round number of filters based on width multiplier.
     Args:
@@ -239,9 +230,3 @@ def round_filters(filters, multiplier=None):
     if new_filters < 0.9 * filters:  # prevent rounding by more than 10%
         new_filters += divisor
     return int(new_filters)
-
-
-if __name__ == "__main__":
-    test()
-
-# test()

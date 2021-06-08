@@ -100,7 +100,8 @@ class NasEnv():
         self.epoch = n_epoch
 
     def eval_arg(self, inp_arg, print_model=False, eval_acc=True):
-        print("\nStart evaluating ", inp_arg)
+        if eval_acc:
+            print("\nStart evaluating ", inp_arg)
         model = arg2model(inp_arg, modelName=self.modelName, device=self.device)
         if print_model:
             _print_model(model, self.resolution, device=self.device)
@@ -159,12 +160,12 @@ class NasEnv():
             if valid_top1 > best_test_acc:
                 best_test_acc = valid_top1
             scheduler.step()
-            print(
-                f'[epoch {i} ({time()-s:.2f})] (train) loss {train_loss:.2f}, top1 {train_top1:.2f}%, top5 {train_top5:.2f}%',
-                end=' | ')
-            print(
-                f'(valid) loss = {valid_loss:.2f}, top1 = {valid_top1:.2f}%, top5 = {valid_top5:.2f}%'
-            )
+
+        print(
+            f'[epoch {i} ({time()-s:.2f})] (train) loss {train_loss:.2f}, top1 {train_top1:.2f}%, top5 {train_top5:.2f}%',
+            end=' | ')
+        print(
+            f'(valid) loss = {valid_loss:.2f}, top1 = {valid_top1:.2f}%, top5 = {valid_top5:.2f}%')
         return best_test_acc
 
     def _train_epoch(self, model, optimizer):
