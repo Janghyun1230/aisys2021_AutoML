@@ -145,9 +145,14 @@ class RLOptim():
                 invalid_flag = (obs_next < 0.1).float().sum()
 
                 # Evaluate and add to buffer
-                if not replay_buffer.check_exist(obs_cur, action):
+                if invalid_flag > 0:
+                    reward = torch.tensor(-1., device=self.device)
+                    obs_next = obs_cur
+                    acc = acc_cur
+                    replay_buffer.add_sample(obs_cur, action, reward)
+                elif not replay_buffer.check_exist(obs_cur, action):
                     mem, acc, latency = self.env.eval_arg(obs_next, eval_acc=True)
-                    if (mem > self.mem_th) or (latency > self.latency_th) or (invalid_flag > 0):
+                    if (mem > self.mem_th) or (latency > self.latency_th):
                         reward = torch.tensor(-1., device=self.device)
                         obs_next = obs_cur
                         acc = acc_cur
@@ -157,7 +162,7 @@ class RLOptim():
                             best_val = max(acc, best_val)
                             best_config = torch.clone(obs_cur)
 
-                        replay_buffer.add_sample(obs_cur, action, reward)
+                    replay_buffer.add_sample(obs_cur, action, reward)
                 else:
                     mem, latency = self.env.eval_arg(obs_next, eval_acc=False)
                     if (mem > self.mem_th) or (latency > self.latency_th):
