@@ -117,7 +117,6 @@ class NasEnv():
 
         mem = self.eval_mem(model, resolution)
         latency = self.eval_latency(model)
-        # latency = 0.
 
         if eval_acc:
             acc = self.eval_acc(model)
@@ -155,7 +154,7 @@ class NasEnv():
         """
         Make model according to the input argument and return the accuracy and memory of the model.
         Args
-        inp_arg: tuple(width_scale, depth_scale, resolution) e.g., (1.0, 1.0, 224)
+        inp_arg: tuple(width_scale, depth_scale, resolution) e.g., (1.0, 1.0, 32)
 
         Return
         accuracy, memory of the model

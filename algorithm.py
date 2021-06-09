@@ -149,7 +149,9 @@ class RLOptim():
                     reward = torch.tensor(-1., device=self.device)
                     obs_next = obs_cur
                     acc = acc_cur
-                    replay_buffer.add_sample(obs_cur, action, reward)
+                    if not replay_buffer.check_exist(obs_cur, action):
+                        replay_buffer.add_sample(obs_cur, action, reward)
+
                 elif not replay_buffer.check_exist(obs_cur, action):
                     mem, acc, latency = self.env.eval_arg(obs_next, eval_acc=True)
                     if (mem > self.mem_th) or (latency > self.latency_th):
@@ -163,6 +165,7 @@ class RLOptim():
                             best_config = torch.clone(obs_cur)
 
                     replay_buffer.add_sample(obs_cur, action, reward)
+
                 else:
                     mem, latency = self.env.eval_arg(obs_next, eval_acc=False)
                     if (mem > self.mem_th) or (latency > self.latency_th):
