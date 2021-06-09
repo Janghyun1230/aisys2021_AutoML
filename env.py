@@ -8,6 +8,7 @@ from trainer import train, validate, accuracy
 from data import dataloader
 from efficientnet_utils import round_filters
 import yaml
+from latency_predictor import LatencyPredictor
 
 
 def arg2model(inp_arg,
@@ -49,8 +50,9 @@ def _print_model(model, resolution, device='cuda'):
     print(report)
 
 
-def latency_cal(dic, module, block, strided, image_size):
+def latency_cal(dic, module, block, strided, image_size, latency_model, test_predictor):
     latency = 0
+    predicted_latency = 0
     last_image_size = image_size
     if 'Block' in module.__class__.__name__:
         block = True
@@ -60,26 +62,32 @@ def latency_cal(dic, module, block, strided, image_size):
             strided = True
     has_children = False
     for child_name, child_module in module.named_children():
-        image_size, strided, temp_latency = latency_cal(dic, child_module, block, strided,
-                                                        image_size)
+        image_size, strided, temp_latency, temp_predicted_latency = latency_cal(dic, child_module, block, strided,
+                                                        image_size, latency_model, test_predictor)
         latency = latency + temp_latency
+        predicted_latency = predicted_latency + temp_predicted_latency
         has_children = True
     if 'Block' in module.__class__.__name__:
         if repr((last_image_size, image_size, module)) in dic.keys():
             latency = latency + dic[repr((last_image_size, image_size, module))]['value']
+            if test_predictor:
+                predicted_latency = predicted_latency + latency_model.predict(last_image_size, image_size, module)
         else:
-            print("no such key: ", repr((last_image_size, image_size, module)))
+            latency = latency + latency_model.predict(last_image_size, image_size, module)
+            #print("no such key: ", repr((last_image_size, image_size, module)))
         strided = False
 
     if has_children is False and block is False:
         if repr((last_image_size, image_size, module)) in dic.keys():
             latency = latency + dic[repr((last_image_size, image_size, module))]['value']
+            if test_predictor:
+                predicted_latency = predicted_latency + latency_model.predict(last_image_size, image_size, module)
         else:
-            print("no such key: ", repr((last_image_size, image_size, module)))
+            latency = latency + latency_model.predict(last_image_size, image_size, module)
+            #print("no such key: ", repr((last_image_size, image_size, module)))
         strided = False
 
-    return image_size, strided, latency
-
+    return image_size, strided, latency, predicted_latency
 
 class NasEnv():
     def __init__(self,
@@ -88,7 +96,8 @@ class NasEnv():
                  device='cuda',
                  batch_size=64,
                  lr=1e-2,
-                 n_epoch=30):
+                 n_epoch=30
+                 ):
         self.modelName = modelName
         self.platform = platform
         self.batch_size = batch_size
@@ -101,6 +110,7 @@ class NasEnv():
         self.loss_fn = torch.nn.CrossEntropyLoss()
         self.eval_fn = accuracy
         self.epoch = n_epoch
+        self.latency_model = LatencyPredictor(platform=self.platform, device=self.device)
 
     def eval_arg(self, inp_arg, print_model=False, eval_acc=True):
         if torch.is_tensor(inp_arg):
@@ -134,20 +144,29 @@ class NasEnv():
         estimated_mem = float(report.split('\n')[-3].split(' ')[-1])  # (MB)
         return estimated_mem
 
-    def eval_latency(self, model, resolution):
+    def eval_latency(self, model, resolution, test_predictor = False):
         path = ('latency_data/' + self.platform + '/' + self.modelName + '/' + self.device +
                 '/image_' + str(resolution) + '.yaml')
         latency = 0
+        dic = {}
         try:
             with open(path, 'r') as f:
                 dic = yaml.load(f, Loader=yaml.FullLoader)
                 for mod in model.modules():
-                    _1, _2, latency = latency_cal(dic, mod, False, False, resolution)
+                    _, _, latency, predicted_latency = latency_cal(dic, mod, False, False,
+                            resolution, self.latency_model, test_predictor = test_predictor)
                     break
-            print("model latency is ", latency, " us")
+            #print("model latency is ", latency, " us")
         except Exception as ex:
-            print(ex)
+            for mod in model.modules():
+                _, _, latency, predicted_latency = latency_cal(dic, mod, False, False,
+                        resolution, self.latency_model, test_predictor = test_predictor)
+                break
 
+            #print(path,": no such file")
+        if test_predictor == True:
+            err = (latency - predicted_latency) / latency * 100
+            print("latency: {} us, predicted: {} us, err {}%".format(latency, predicted_latency, err))
         return latency
 
     def eval_acc(self, model):
