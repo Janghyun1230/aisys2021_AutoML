@@ -1,6 +1,3 @@
-(156, 156, Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)):
-  count: 410
-  value: 15902.368575609757
 ? "(156, 156, PreActBlock(\n  (bn1): BatchNorm2d(104, eps=1e-05, momentum=0.1, affine=True,\
   \ track_running_stats=True)\n  (conv1): Conv2d(104, 104, kernel_size=(3, 3), stride=(1,\
   \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(104, eps=1e-05, momentum=0.1,\
@@ -876,39 +873,12 @@
 (19, 19, Linear(in_features=2000, out_features=100, bias=True)):
   count: 10
   value: 81.42200000000003
-(19, 19, Linear(in_features=2048, out_features=100, bias=True)):
-  count: 10
-  value: 4971.230699999998
-(19, 19, Linear(in_features=2096, out_features=100, bias=True)):
-  count: 10
-  value: 26555.499099999997
-(19, 19, Linear(in_features=2152, out_features=100, bias=True)):
-  count: 10
-  value: 10906.891499999996
-(19, 19, Linear(in_features=2200, out_features=100, bias=True)):
-  count: 10
-  value: 10604.376900000001
-(19, 19, Linear(in_features=2256, out_features=100, bias=True)):
-  count: 10
-  value: 13799.655900000003
-(19, 19, Linear(in_features=2304, out_features=100, bias=True)):
-  count: 10
-  value: 4081.2817999999993
 (19, 19, Linear(in_features=2352, out_features=100, bias=True)):
   count: 10
   value: 113.0368
-(19, 19, Linear(in_features=2408, out_features=100, bias=True)):
-  count: 10
-  value: 16894.842200000006
 (19, 19, Linear(in_features=2456, out_features=100, bias=True)):
   count: 10
   value: 88.21830000000001
-(19, 19, Linear(in_features=2512, out_features=100, bias=True)):
-  count: 10
-  value: 12431.588200000002
-(19, 19, Linear(in_features=2560, out_features=100, bias=True)):
-  count: 10
-  value: 12441.699799999999
 (19, 19, Linear(in_features=512, out_features=100, bias=True)):
   count: 10
   value: 44.4201

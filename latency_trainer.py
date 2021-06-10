@@ -30,10 +30,11 @@ def make_dataloader(file_name, batch_size = 16, device = "cuda"):
     x = pickle.load(f) # (data_num, 2) => each row is (image resolution, width)
     x = torch.FloatTensor(x)
     x = x.to(device)
+    print(x.shape)
 
     y = pickle.load(g) # (data_num) => each row is latency
     y = torch.tensor(y).to(device)
-    
+    print(y.shape)
     f.close()
     g.close()
 
@@ -129,7 +130,7 @@ def main(epochs, milestones, file_name, save_path):
         if best_err == -1 or best_err >= Avg_valid_err:
             best_model = copy.deepcopy(model)
             best_err = Avg_valid_err
-        if(epoch > epochs-20):
+        if(epoch > epochs-5):
             print("train_err: {}%, valid_err: {}%".format(Avg_train_err, Avg_valid_err))
         exp_lr_scheduler.step()
         best_model.eval()
@@ -147,23 +148,23 @@ def main(epochs, milestones, file_name, save_path):
     torch.save(best_model,save_path)
 
 if __name__ == "__main__":
-   #main(300, [150,200],"./latency_data/desktop/preactresnet18/cpu/block_0", "./trained_model/desktop_cpu/block_0.pt")
-   #main(300, [150,200],"./latency_data/desktop/preactresnet18/cpu/block_1", "./trained_model/desktop_cpu/block_1.pt")
-   #main(300, [150,200],"./latency_data/desktop/preactresnet18/cpu/block_2", "./trained_model/desktop_cpu/block_2.pt")
-   #main(300, [800,900],"./latency_data/desktop/preactresnet18/cpu/block_3", "./trained_model/desktop_cpu/block_3.pt")
-   #main(300, [150,200],"./latency_data/desktop/preactresnet18/cuda/block_0", "./trained_model/desktop_gpu/block_0.pt")
-   #main(300, [150,200],"./latency_data/desktop/preactresnet18/cuda/block_1", "./trained_model/desktop_gpu/block_1.pt")
-   #main(300, [150,200],"./latency_data/desktop/preactresnet18/cuda/block_2", "./trained_model/desktop_gpu/block_2.pt")
-   #main(300, [800,900],"./latency_data/desktop/preactresnet18/cuda/block_3", "./trained_model/desktop_gpu/block_3.pt")
-   #main(600, [200,300],"./latency_data/jetson/preactresnet18/cpu/block_0", "./trained_model/jetson_cpu/block_0.pt")
-   #main(300, [150,200],"./latency_data/jetson/preactresnet18/cpu/block_1", "./trained_model/jetson_cpu/block_1.pt")
-   #main(300, [150,200],"./latency_data/jetson/preactresnet18/cpu/block_2", "./trained_model/jetson_cpu/block_2.pt")
-   #main(300, [800,900],"./latency_data/jetson/preactresnet18/cpu/block_3", "./trained_model/jetson_cpu/block_3.pt")
-   #main(300, [150,200],"./latency_data/jetson/preactresnet18/cuda/block_0", "./trained_model/jetson_gpu/block_0.pt")
-   #main(300, [150,200],"./latency_data/jetson/preactresnet18/cuda/block_1", "./trained_model/jetson_gpu/block_1.pt")
-   #main(300, [150,200],"./latency_data/jetson/preactresnet18/cuda/block_2", "./trained_model/jetson_gpu/block_2.pt")
-   #main(300, [800,900],"./latency_data/jetson/preactresnet18/cuda/block_3", "./trained_model/jetson_gpu/block_3.pt")
+   main(300, [150,200],"./latency_data/desktop/preactresnet18/cpu/block_0", "./trained_model/desktop_cpu/block_0.pt")
+   main(300, [150,200],"./latency_data/desktop/preactresnet18/cpu/block_1", "./trained_model/desktop_cpu/block_1.pt")
+   main(600, [200,300],"./latency_data/desktop/preactresnet18/cpu/block_2", "./trained_model/desktop_cpu/block_2.pt")
+   main(1000, [800,900],"./latency_data/desktop/preactresnet18/cpu/block_3", "./trained_model/desktop_cpu/block_3.pt")
+   main(300, [150,200],"./latency_data/desktop/preactresnet18/cuda/block_0", "./trained_model/desktop_gpu/block_0.pt")
+   main(300, [150,200],"./latency_data/desktop/preactresnet18/cuda/block_1", "./trained_model/desktop_gpu/block_1.pt")
+   main(600, [150,200],"./latency_data/desktop/preactresnet18/cuda/block_2", "./trained_model/desktop_gpu/block_2.pt")
+   main(1000, [800,900],"./latency_data/desktop/preactresnet18/cuda/block_3", "./trained_model/desktop_gpu/block_3.pt")
+   main(500, [300,400],"./latency_data/jetson/preactresnet18/cpu/block_0", "./trained_model/jetson_cpu/block_0.pt")
+   main(600, [300,400],"./latency_data/jetson/preactresnet18/cpu/block_1", "./trained_model/jetson_cpu/block_1.pt")
+   main(600, [150,200],"./latency_data/jetson/preactresnet18/cpu/block_2", "./trained_model/jetson_cpu/block_2.pt")
+   main(1000, [800,900],"./latency_data/jetson/preactresnet18/cpu/block_3", "./trained_model/jetson_cpu/block_3.pt")
+   main(500, [200,300],"./latency_data/jetson/preactresnet18/cuda/block_0", "./trained_model/jetson_gpu/block_0.pt")
+   main(500, [300,400],"./latency_data/jetson/preactresnet18/cuda/block_1", "./trained_model/jetson_gpu/block_1.pt")
+   main(600, [150,200],"./latency_data/jetson/preactresnet18/cuda/block_2", "./trained_model/jetson_gpu/block_2.pt")
+   main(1000, [800,900],"./latency_data/jetson/preactresnet18/cuda/block_3", "./trained_model/jetson_gpu/block_3.pt")
    main(500, [200,300],"./latency_data/raspberrypi/preactresnet18/cpu/block_0", "./trained_model/raspberrypi_cpu/block_0.pt")
-   #main(300, [150,200],"./latency_data/raspberrypi/preactresnet18/cpu/block_1", "./trained_model/raspberrypi_cpu/block_1.pt")
-   #main(300, [150,200],"./latency_data/raspberrypi/preactresnet18/cpu/block_2", "./trained_model/raspberrypi_cpu/block_2.pt")
-   #main(300, [800,900],"./latency_data/raspberrypi/preactresnet18/cpu/block_3", "./trained_model/raspberrypi_cpu/block_3.pt")
+   main(300, [150,200],"./latency_data/raspberrypi/preactresnet18/cpu/block_1", "./trained_model/raspberrypi_cpu/block_1.pt")
+   main(600, [150,200],"./latency_data/raspberrypi/preactresnet18/cpu/block_2", "./trained_model/raspberrypi_cpu/block_2.pt")
+   main(1000, [800,900],"./latency_data/raspberrypi/preactresnet18/cpu/block_3", "./trained_model/raspberrypi_cpu/block_3.pt")

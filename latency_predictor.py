@@ -3,9 +3,6 @@ import os.path as os_path
 import torch
 import parse_yaml
 
-model_name = "preactresnet18"
-model = models.__dict__[model_name](100, False, 1, 30 / 10, 1.0).to('cpu')
-
 
 class LatencyPredictor():
     def __init__(self, platform = "desktop", device= "cpu", load_path = "./trained_model/"):

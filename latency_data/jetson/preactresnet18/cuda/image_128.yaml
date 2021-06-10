@@ -1,6 +1,3 @@
-(128, 128, Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)):
-  count: 105
-  value: 23661.31474693779
 ? "(128, 128, PreActBlock(\n  (bn1): BatchNorm2d(104, eps=1e-05, momentum=0.1, affine=True,\
   \ track_running_stats=True)\n  (conv1): Conv2d(104, 104, kernel_size=(3, 3), stride=(1,\
   \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(104, eps=1e-05, momentum=0.1,\
@@ -449,9 +446,6 @@
 (16, 16, Linear(in_features=1536, out_features=100, bias=True)):
   count: 5
   value: 732.7631917968749
-(16, 16, Linear(in_features=512, out_features=100, bias=True)):
-  count: 5
-  value: 92592.40217163088
 (16, 16, Linear(in_features=560, out_features=100, bias=True)):
   count: 5
   value: 966.3697989501954
