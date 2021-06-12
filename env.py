@@ -240,5 +240,5 @@ if __name__ == "__main__":
                  platform=args.platform,
                  device=args.device,
                  n_epoch=args.epoch)
-    env.eval_arg(inp_argument, print_model=False, eval_acc=False)
-    # env.eval_arg(inp_argument, print_model=True, eval_acc=True)
+    # env.eval_arg(inp_argument, print_model=False, eval_acc=False)
+    env.eval_arg(inp_argument, print_model=True, eval_acc=True)
