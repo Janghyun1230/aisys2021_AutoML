@@ -1,5 +1,7 @@
 import torch
 import numpy as np
+import os
+import glob
 import torch.optim as optim
 from torch.distributions.categorical import Categorical
 np.set_printoptions(precision=3)
@@ -19,6 +21,7 @@ class Buffer():
         self._size = size
         self._top = 0
         self._cur = 0
+        self.total_added = 0
 
     def check_exist(self, obs, action):
         """Check obs action pair is existing 
@@ -41,6 +44,8 @@ class Buffer():
         self._top = min(self._top + 1, self._size)
         self._cur = (self._cur + 1) % self._size
 
+        self.total_added += 1
+
     def sample(self, batch_size):
         batch_size = min(batch_size, self._top)
         indices = np.random.randint(0, self._top, batch_size)
@@ -50,6 +55,23 @@ class Buffer():
 
         return obs, action, reward
 
+    def save(self, path, id):
+        data_dict = {'obs': self.obs, 'actions': self.actions, 'rewards': self.rewards}
+        torch.save(data_dict, os.path.join(path, f'buffer{id}.pt'))
+        print("Buffer saved! ", os.path.join(path, f'buffer{id}.pt'))
+
+    def load(self, path):
+        file_list = glob.glob(os.path.join(path, 'buffer*.pt'))
+        for file in file_list:
+            data_dict = torch.load(file)
+            n = data_dict['obs'].shape[0]
+            for i in range(n):
+                dup = self.check_exist(data_dict['obs'][i], data_dict['actions'][i])
+                if not dup:
+                    self.add_sample(data_dict['obs'][i], data_dict['actions'][i],
+                                    data_dict['rewards'][i])
+        print("Buffer is loaded from ", file_list)
+
 
 class Policy(torch.nn.Module):
     def __init__(self, input_dim, hidden_dim):
@@ -57,6 +79,7 @@ class Policy(torch.nn.Module):
         self.fc1 = torch.nn.Linear(input_dim, hidden_dim)
         self.fc2 = torch.nn.Linear(hidden_dim, hidden_dim)
         self.fc3 = torch.nn.Linear(hidden_dim, input_dim * 3)
+        self.act = torch.nn.LeakyReLU(negative_slope=0.2)
 
         self.input_dim = input_dim
 
@@ -64,8 +87,9 @@ class Policy(torch.nn.Module):
         """
         Return ([batch x feature x 3]): action probability (decrease, stay, increase) per feature 
         """
-        h = torch.relu(self.fc1(obs))
-        h = torch.relu(self.fc2(h))
+
+        h = self.act(self.fc1(obs))
+        h = self.act(self.fc2(h))
         h = self.fc3(h)
         output = h.reshape(obs.shape[0], self.input_dim, 3)
         prob = torch.softmax(output, -1)  # batch x feature x 3
@@ -78,12 +102,22 @@ class Policy(torch.nn.Module):
 
 
 class RLOptim():
-    def __init__(self, env, latency_th, mem_th, expl_interval, device='cuda'):
+    def __init__(self,
+                 env,
+                 latency_th,
+                 mem_th,
+                 expl_interval,
+                 path='./buffer',
+                 idx=0,
+                 device='cuda'):
         self.env = env
         self.device = device
         self.latency_th = latency_th
         self.mem_th = mem_th
         self.expl_intervals = expl_interval
+
+        self.path = path
+        self.idx = idx
 
     def obs_contraction(self, obs_init):
         """Reduce obs_init towards a valid solution
@@ -107,15 +141,16 @@ class RLOptim():
                expl_step,
                update_step,
                reward_scale=1.,
-               expl_eps=0.3,
-               expl_ths=500,
+               expl_eps=1.0,
+               expl_ths=1000,
                epoch=500,
                batch_size=256,
-               lr=1e-3):
+               lr=1e-3,
+               test=False):
 
         policy = Policy(3, 128).to(self.device)
-        optimizer = optim.SGD(policy.parameters(), lr=lr)
-        # optimizer = optim.Adam(policy.parameters(), lr=lr)
+        # optimizer = optim.SGD(policy.parameters(), lr=lr)
+        optimizer = optim.Adam(policy.parameters(), lr=lr)
         replay_buffer = Buffer(3, device=self.device)
 
         print("Obs init: ", obs_init.cpu().numpy())
@@ -123,9 +158,16 @@ class RLOptim():
 
         best_val = acc_cur
         best_config = torch.clone(obs_cur)
+        best_acc_list = []
+        cur_obs_list = []
         for i in range(epoch):
+            print('\n', "=" * 50)
             # Explore
             for _ in range(expl_step):
+                with torch.no_grad():
+                    best_acc_list.append(best_val)
+                    cur_obs_list.append(obs_cur)
+
                 # Move on next obs
                 with torch.no_grad():
                     prob = policy(obs_cur.unsqueeze(0), expl=True, eps=expl_eps)[0]
@@ -142,11 +184,16 @@ class RLOptim():
                     else:
                         obs_next[k] += self.expl_intervals[k]
 
-                invalid_flag = (obs_next < 0.1).float().sum()
+                # Chect whether the next obs is a valid argument
+                if test:
+                    invalid_flag = 0.
+                else:
+                    invalid_flag = (obs_next[:2] < 0.1).float().sum()
+                    invalid_flag += (obs_next[-1] < 4).float().sum()
 
                 # Evaluate and add to buffer
                 if invalid_flag > 0:
-                    reward = torch.tensor(-1., device=self.device)
+                    reward = torch.tensor(-0.5, device=self.device)
                     obs_next = obs_cur
                     acc = acc_cur
                     if not replay_buffer.check_exist(obs_cur, action):
@@ -155,14 +202,11 @@ class RLOptim():
                 elif not replay_buffer.check_exist(obs_cur, action):
                     mem, acc, latency = self.env.eval_arg(obs_next, eval_acc=True)
                     if (mem > self.mem_th) or (latency > self.latency_th):
-                        reward = torch.tensor(-1., device=self.device)
+                        reward = torch.tensor(-0.5, device=self.device)
                         obs_next = obs_cur
                         acc = acc_cur
                     else:
                         reward = torch.tensor((acc - acc_cur) * reward_scale, device=self.device)
-                        if acc > best_val:
-                            best_val = max(acc, best_val)
-                            best_config = torch.clone(obs_cur)
 
                     replay_buffer.add_sample(obs_cur, action, reward)
 
@@ -174,6 +218,13 @@ class RLOptim():
 
                 obs_cur = obs_next
                 acc_cur = acc
+                if acc > best_val:
+                    best_val = max(acc, best_val)
+                    best_config = torch.clone(obs_cur)
+
+            # Save buffer and synchronize
+            replay_buffer.save(self.path, self.idx)
+            replay_buffer.load(self.path)
 
             # Update policy
             for _ in range(update_step):
@@ -193,8 +244,13 @@ class RLOptim():
             if replay_buffer._top > expl_ths:
                 expl_eps /= 2
                 expl_ths += 500
+                print("Expl eps is decayed! ", expl_eps)
 
-            print('\n', "=" * 50)
             print(f"[Search Epoch {i+1}] best acc: {best_val:.2f} with {best_config.cpu().numpy()}",
                   end='')
-            print(f", Buffer size: {replay_buffer._top}, current: {obs_cur.cpu().numpy()}")
+            print(f", Buffer total: {replay_buffer.total_added}, current: {obs_cur.cpu().numpy()}")
+
+            torch.save({
+                'acc': best_acc_list,
+                'obs': cur_obs_list
+            }, os.path.join(self.path, f'data{self.idx}.pt'))

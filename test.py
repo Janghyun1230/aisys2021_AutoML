@@ -1,5 +1,7 @@
 import torch
 from algorithm import RLOptim
+import os
+import argparse
 
 
 class ToyEnv():
@@ -27,16 +29,28 @@ class ToyEnv():
     def eval_acc(self, inp_arg):
         # acc = torch.sum(inp_arg[:2])
         # acc = 2 * inp_arg[0] + inp_arg[1]
-        acc = 2 - (inp_arg[0] - 0.5).abs() - (inp_arg[1] - 0.3).abs()
+        dist = torch.sqrt((inp_arg[0] - 0.5)**2 + (inp_arg[1] - 0.3)**2)
+        dist += (inp_arg[0] - 0.5).abs() + (inp_arg[1] - 0.3).abs()
+
+        acc = 1 - dist / 2
         return acc.item()
 
 
 if __name__ == '__main__':
-    expl_step = 100
-    update_step = 1000
+    parser = argparse.ArgumentParser()
+    '''Environment'''
+    parser.add_argument("--id", type=int, default=0)
+    args = parser.parse_args()
+
     toy_env = ToyEnv()
+    path = os.path.join('./buffer', 'test')
+    os.makedirs(path, exist_ok=True)
 
-    obs_init = torch.tensor([2.0, 2.0, 1.0], device='cuda')
-    rl_optim = RLOptim(toy_env, latency_th=1.0, mem_th=10.0, expl_interval=(0.1, 0.1, 0.))
-
-    rl_optim.search(obs_init, expl_step, update_step)
+    rl_optim = RLOptim(toy_env,
+                       latency_th=1.0,
+                       mem_th=10.0,
+                       expl_interval=(0.01, 0.01, 0.),
+                       path=path,
+                       idx=args.id)
+    obs_init = torch.tensor([2.0, 2.0, 0.0], device='cuda')
+    rl_optim.search(obs_init, expl_step=100, update_step=1000, reward_scale=10., test=True)

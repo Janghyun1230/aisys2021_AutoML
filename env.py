@@ -123,9 +123,9 @@ class NasEnv():
             batch_size=self.batch_size, input_resolution=resolution, _print=print_model)
 
         print("\nStart evaluating ", inp_arg)
-        model = arg2model(inp_arg, modelName=self.modelName, device=self.device, _print=print_model)
+        model = arg2model(inp_arg, modelName=self.modelName, _print=print_model)
         if print_model:
-            _print_model(model, resolution, device=self.device)
+            _print_model(model, resolution)
 
         mem = self.eval_mem(model, resolution)
         # latency (second)
@@ -140,9 +140,7 @@ class NasEnv():
             return mem, latency
 
     def eval_mem(self, model, resolution):
-        report, _ = logger.summary_string(model, (3, resolution, resolution),
-                                          batch_size=1,
-                                          device=self.device)
+        report, _ = logger.summary_string(model, (3, resolution, resolution), batch_size=1)
 
         estimated_mem = float(report.split('\n')[-3].split(' ')[-1])  # (MB)
         return estimated_mem
@@ -243,3 +241,4 @@ if __name__ == "__main__":
                  device=args.device,
                  n_epoch=args.epoch)
     env.eval_arg(inp_argument, print_model=False, eval_acc=False)
+    # env.eval_arg(inp_argument, print_model=True, eval_acc=True)
