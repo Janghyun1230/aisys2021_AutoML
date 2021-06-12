@@ -1,6 +1,3 @@
-(192, 192, Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)):
-  count: 410
-  value: 29657.771607317056
 ? "(192, 192, PreActBlock(\n  (bn1): BatchNorm2d(104, eps=1e-05, momentum=0.1, affine=True,\
   \ track_running_stats=True)\n  (conv1): Conv2d(104, 104, kernel_size=(3, 3), stride=(1,\
   \ 1), padding=(1, 1), bias=False)\n  (bn2): BatchNorm2d(104, eps=1e-05, momentum=0.1,\
@@ -849,15 +846,9 @@
 (24, 24, Linear(in_features=1536, out_features=100, bias=True)):
   count: 10
   value: 72.6125
-(24, 24, Linear(in_features=1584, out_features=100, bias=True)):
-  count: 10
-  value: 3720.4996
 (24, 24, Linear(in_features=1640, out_features=100, bias=True)):
   count: 10
   value: 73.49439999999998
-(24, 24, Linear(in_features=1688, out_features=100, bias=True)):
-  count: 10
-  value: 2401.2009
 (24, 24, Linear(in_features=1744, out_features=100, bias=True)):
   count: 10
   value: 74.8581
@@ -879,36 +870,12 @@
 (24, 24, Linear(in_features=2048, out_features=100, bias=True)):
   count: 10
   value: 88.40509999999999
-(24, 24, Linear(in_features=2096, out_features=100, bias=True)):
-  count: 10
-  value: 7680.867199999998
-(24, 24, Linear(in_features=2152, out_features=100, bias=True)):
-  count: 10
-  value: 15449.953500000003
-(24, 24, Linear(in_features=2200, out_features=100, bias=True)):
-  count: 10
-  value: 17538.022199999996
-(24, 24, Linear(in_features=2256, out_features=100, bias=True)):
-  count: 10
-  value: 13310.420399999999
 (24, 24, Linear(in_features=2304, out_features=100, bias=True)):
   count: 10
   value: 88.3355
 (24, 24, Linear(in_features=2352, out_features=100, bias=True)):
   count: 10
   value: 84.8214
-(24, 24, Linear(in_features=2408, out_features=100, bias=True)):
-  count: 10
-  value: 17281.5707
-(24, 24, Linear(in_features=2456, out_features=100, bias=True)):
-  count: 10
-  value: 14038.469500000001
-(24, 24, Linear(in_features=2512, out_features=100, bias=True)):
-  count: 10
-  value: 14349.064800000002
-(24, 24, Linear(in_features=2560, out_features=100, bias=True)):
-  count: 10
-  value: 15753.378100000002
 (24, 24, Linear(in_features=512, out_features=100, bias=True)):
   count: 10
   value: 48.03929999999999
