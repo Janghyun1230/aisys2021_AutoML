@@ -1,7 +1,7 @@
 # aisys2021_AutoML
 AutoML System team project page (AI system 2021 class).
 
-The main objective of this project is to build **automatic RL search algorithm** for network scaling. 
+The main objective of this project is to build an **automatic RL search algorithm** for network scaling. 
 
 ### Requirements 
 These codes are tested with
