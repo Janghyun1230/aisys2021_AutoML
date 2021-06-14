@@ -74,7 +74,9 @@ def latency_cal(dic, module, block, strided, image_size, latency_model, test_pre
                 predicted_latency = predicted_latency + latency_model.predict(
                     last_image_size, image_size, module)
         else:
-            latency = latency + latency_model.predict(last_image_size, image_size, module)
+            predict = latency_model.predict(last_image_size, image_size, module)
+            latency = latency + predict
+            predicted_latency = predicted_latency + predict
             #print("no such key: ", repr((last_image_size, image_size, module)))
         strided = False
 
@@ -85,7 +87,9 @@ def latency_cal(dic, module, block, strided, image_size, latency_model, test_pre
                 predicted_latency = predicted_latency + latency_model.predict(
                     last_image_size, image_size, module)
         else:
-            latency = latency + latency_model.predict(last_image_size, image_size, module)
+            predict = latency_model.predict(last_image_size, image_size, module)
+            latency = latency + predict
+            predicted_latency = predicted_latency + predict
             #print("no such key: ", repr((last_image_size, image_size, module)))
         strided = False
 
