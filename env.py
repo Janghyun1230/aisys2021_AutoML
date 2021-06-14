@@ -113,6 +113,13 @@ class NasEnv():
         self.eval_fn = accuracy
         self.epoch = n_epoch
         self.latency_model = LatencyPredictor(platform=self.platform, device=self.device)
+    
+    def change_env(self, platform=None, device=None):
+        if platform is not None:
+            self.platform = platform
+        if device is not None:
+            self.device = device
+        self.latency_model = LatencyPredictor(platform=self.platform, device=self.device)
 
     def eval_arg(self, inp_arg, print_model=False, eval_acc=True):
         if torch.is_tensor(inp_arg):
