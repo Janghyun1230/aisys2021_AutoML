@@ -26,8 +26,9 @@ If running multi-process for the certain experimental setting (platform, device,
 
 ### To test a certain model
 ```
-python env.py -p [platform] -v [device] -w [width] -d [depth] -r [resolution]
+python env.py -p [platform] -v [device] -w [width] -d [depth] -r [resolution] -e [training epoch]
 ```
+This command will print model and return evaluation results including validation accuracy, latency, and memory.
 
 ### To test a search algorithgm on Toy Env
 ```
