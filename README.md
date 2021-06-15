@@ -16,8 +16,11 @@ CUDA == 10.2
 ```
 python main.py -p [platform] -v [device] --latency [latency bound] --mem [memory bound] --id [process number]
 ```
-platforms: raspberrypi, jetson, desktop   
-device: cpu, cuda (only for jetson, desktop)
+**Arguments**  
+- platforms: raspberrypi, jetson, desktop   
+- device: cpu, cuda (only for jetson, desktop)
+- latency: required latency bound in second (s)
+- mem: required memory bound in MB 
 
 If running multi-process for the certain experimental setting (platform, device, latency, mem bounds), each process should have different id.
 
