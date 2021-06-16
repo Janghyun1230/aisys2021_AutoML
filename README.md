@@ -15,7 +15,7 @@ CUDA == 10.2
 ```
 
 ### Environment Setup Commands
-The below commands were verified on clean **ubuntu 20.04 container** (link: https://hub.docker.com/\_/ubuntu , tag: *latest*)
+The below commands were verified on clean **ubuntu 20.04 container** (link: https://hub.docker.com/_/ubuntu , tag: *latest*)
 ```
 apt-get update
 apt-get install python3 python3-pip git
