@@ -160,7 +160,7 @@ class NasEnv():
             return mem, latency
 
     def eval_mem(self, model, resolution):
-        report, _ = logger.summary_string(model, (3, resolution, resolution), batch_size=1)
+        report, _ = logger.summary_string(model, (3, resolution, resolution), batch_size=1, device=self.run_on)
 
         estimated_mem = float(report.split('\n')[-3].split(' ')[-1])  # (MB)
         return estimated_mem
