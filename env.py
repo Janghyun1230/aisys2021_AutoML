@@ -103,7 +103,7 @@ class NasEnv():
                  device='cuda',
                  batch_size=64,
                  lr=1e-2,
-                 n_epoch=30
+                 n_epoch=30,
                  run_on=None):
 
         if run_on == None:
