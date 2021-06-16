@@ -14,8 +14,8 @@ CUDA == 10.2
 [Python Packages] PyYAML, parse
 ```
 
-### Installation Commands
-The below commands were verified on clean **ubuntu 20.04 container** (tag: *latest*)
+### Environment Setup Commands
+The below commands were verified on clean **ubuntu 20.04 container** (link: https://hub.docker.com/\_/ubuntu , tag: *latest*)
 ```
 apt-get update
 apt-get install python3 python3-pip git
@@ -28,10 +28,10 @@ git clone https://github.com/Janghyun1230/aisys2021_AutoML.git
 python3 main.py -p [platform] -v [device] --latency [latency bound] --mem [memory bound] --id [process number]
 ```
 **Arguments**  
-- platforms: raspberrypi, jetson, desktop   
-- device: cpu, cuda (only for jetson, desktop)
-- latency: required latency bound in second (s)
-- mem: required memory bound in MB 
+- platforms: ***raspberrypi*** , ***jetson*** , ***desktop***   
+- device: ***cpu*** , ***cuda*** (only for jetson, desktop)
+- latency: required latency bound in second (**s**)
+- mem: required memory bound in **MB** 
 
 If running multi-process for the certain experimental setting (platform, device, latency, mem bounds), each process should have different id.
 
