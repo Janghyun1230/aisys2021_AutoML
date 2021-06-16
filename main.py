@@ -34,6 +34,7 @@ rl_optim = RLOptim(env,
                    mem_th=args.mem,
                    expl_interval=(0.1, 0.1, 1),
                    path=path,
-                   idx=args.id)
+                   idx=args.id,
+                   device=run_on)
 obs_init = torch.tensor([args.width, args.depth, args.resolution], device=run_on)
 rl_optim.search(obs_init, expl_step=10, update_step=100)
