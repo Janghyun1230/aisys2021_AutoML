@@ -108,7 +108,7 @@ class NasEnv():
         self.platform = platform
         self.batch_size = batch_size
         self.lr = lr
-        if device is 'default':
+        if device == 'default':
             self.device = "cpu"
         else:
             self.device = device
