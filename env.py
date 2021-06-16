@@ -103,7 +103,16 @@ class NasEnv():
                  device='cuda',
                  batch_size=64,
                  lr=1e-2,
-                 n_epoch=30):
+                 n_epoch=30
+                 run_on=None):
+
+        if run_on == None:
+            if torch.cuda.is_available():
+                run_on = "cuda"
+            else:
+                run_on = "cpu"
+
+        self.run_on = run_on
         self.modelName = modelName
         self.platform = platform
         self.batch_size = batch_size
@@ -134,9 +143,9 @@ class NasEnv():
             batch_size=self.batch_size, input_resolution=resolution, _print=print_model)
 
         print("\nStart evaluating ", inp_arg)
-        model = arg2model(inp_arg, modelName=self.modelName, _print=print_model)
+        model = arg2model(inp_arg, modelName=self.modelName, _print=print_model, device=self.run_on)
         if print_model:
-            _print_model(model, resolution)
+            _print_model(model, resolution, device = self.run_on)
 
         mem = self.eval_mem(model, resolution)
         # latency (second)
