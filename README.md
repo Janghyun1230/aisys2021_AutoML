@@ -6,6 +6,7 @@ The main objective of this project is to build an **automatic RL search algorith
 ### Requirements 
 These codes are tested with
 ```
+Python3 == 3.8.5
 PyTorch == 1.7.0
 torchvision == 0.8.0
 CUDA == 10.2
@@ -14,7 +15,7 @@ CUDA == 10.2
 ```
 
 ### Installation Commands
-The below commands are verified on clean **ubuntu 20.04 container**
+The below commands were verified on clean **ubuntu 20.04 container** (tag: *latest*)
 ```
 apt-get update
 apt-get install python3 python3-pip git
