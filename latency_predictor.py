@@ -17,7 +17,7 @@ class LatencyPredictor():
         for name in self.models:
             self.models[name].eval()
     
-    def predict(self, last_image_size, image_size, module, device = "cuda"):
+    def predict(self, last_image_size, image_size, module, device = "cpu"):
         x, block_type = parse_yaml.parse(repr((last_image_size, image_size, module)))
         model = self.models[block_type]
         x = torch.FloatTensor(x).to(device)
