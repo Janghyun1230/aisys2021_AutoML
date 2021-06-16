@@ -42,6 +42,11 @@ if __name__ == '__main__':
     parser.add_argument("--id", type=int, default=0)
     args = parser.parse_args()
 
+    if torch.cuda.is_available():
+        run_on = "cuda"
+    else:
+        run_on = "cpu"
+
     toy_env = ToyEnv()
     path = os.path.join('./buffer', 'test')
     os.makedirs(path, exist_ok=True)
@@ -51,6 +56,7 @@ if __name__ == '__main__':
                        mem_th=10.0,
                        expl_interval=(0.01, 0.01, 0.),
                        path=path,
-                       idx=args.id)
-    obs_init = torch.tensor([2.0, 2.0, 0.0], device='cuda')
+                       idx=args.id,
+                       device=run_on)
+    obs_init = torch.tensor([2.0, 2.0, 0.0], device=run_on)
     rl_optim.search(obs_init, expl_step=100, update_step=1000, reward_scale=10., test=True)
