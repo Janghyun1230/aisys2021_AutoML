@@ -19,6 +19,11 @@ parser.add_argument("--mem", type=float, default=100, help='memory bound (MB)')
 parser.add_argument("--id", type=int, default=0)
 args = parser.parse_args()
 
+if torch.cuda.is_available():
+    run_on = "cuda"
+else:
+    run_on = "cpu"
+
 env = NasEnv(modelName=args.model, platform=args.platform, device=args.device, n_epoch=args.epoch)
 
 path = os.path.join('./buffer', f'{args.platform}_{args.device}_l{args.latency}_m{args.mem}')
@@ -30,5 +35,5 @@ rl_optim = RLOptim(env,
                    expl_interval=(0.1, 0.1, 1),
                    path=path,
                    idx=args.id)
-obs_init = torch.tensor([args.width, args.depth, args.resolution], device='cuda')
+obs_init = torch.tensor([args.width, args.depth, args.resolution], device=run_on)
 rl_optim.search(obs_init, expl_step=10, update_step=100)
