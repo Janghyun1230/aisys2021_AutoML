@@ -5,19 +5,29 @@ import parse_yaml
 
 
 class LatencyPredictor():
-    def __init__(self, platform = "desktop", device= "cpu", load_path = "./trained_model/"):
+    def __init__(self, platform = "desktop", device= "cpu", load_path = "./trained_model/", run_on=None):
         if device == "cuda":
             device = "gpu"
+
+        if run_on == None:
+            if torch.cuda.is_available():
+                run_on = "cuda"
+            else:
+                run_on = "cpu"
+
+        self.run_on = run_on
 
         modelnames = ["block_0", "block_1", "block_2", "block_3"]
         filenames = [name+".pt" for name in modelnames]
         dirname = "{}_{}".format(platform,device)
         load_paths = [os_path.join(load_path,dirname,filename) for filename in filenames]
-        self.models = {name:torch.load(load_path) for load_path, name in zip(load_paths, modelnames)}
+        self.models = {name:torch.load(load_path,map_location=self.run_on) for load_path, name in zip(load_paths, modelnames)}
         for name in self.models:
             self.models[name].eval()
     
-    def predict(self, last_image_size, image_size, module, device = "cpu"):
+    def predict(self, last_image_size, image_size, module, device = None):
+        if device == None:
+            device = self.run_on
         x, block_type = parse_yaml.parse(repr((last_image_size, image_size, module)))
         model = self.models[block_type]
         x = torch.FloatTensor(x).to(device)
