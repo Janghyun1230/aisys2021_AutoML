@@ -233,12 +233,12 @@ class NasEnv():
         return best_test_acc
 
     def _train_epoch(self, model, optimizer, i):
-        top1, top5, loss = train(self.trainloader, model, optimizer, 'cuda', self.loss_fn,
+        top1, top5, loss = train(self.trainloader, model, optimizer, self.run_on, self.loss_fn,
                                  self.eval_fn, i)
         return top1, top5, loss
 
     def _valid(self, model):
-        top1, top5, loss = validate(self.validloader, model, 'cuda', self.loss_fn, self.eval_fn)
+        top1, top5, loss = validate(self.validloader, model, self.run_on , self.loss_fn, self.eval_fn)
         return top1, top5, loss
 
 
