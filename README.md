@@ -40,7 +40,7 @@ The code will return the *best scale parameter* and its *validation accuracy* fr
 
 Note, the state (in the log, there are *'Start evaluating [state]'*) corresponds to a **scale parameter (width, depth, resolution)**.
 
-**Our experiment on raspberrypi**, 
+**Our experiment on raspberrypi**
 ```
 python main.py -p raspberrypi -v cpu --latency 5 --mem 10   
 python main.py -p raspberrypi -v cpu --latency 5 --mem 100
@@ -50,7 +50,7 @@ python main.py -p raspberrypi -v cpu --latency 5 --mem 100
 | latency 5s, mem 10MB | (0.6, 0.6, 32) | 66.6 % | 3.01 s | 9.05 MB |
 | latency 5s, mem 100MB | (1.0, 1.0, 32) | 71.3 % | 1.96 s | 48.18MB |
 
-**Our experiment on Jeston** run, 
+**Our experiment on Jeston** 
 ```
 python main.py -p jetson -v cpu --latency 1 --mem 500 -d 2.0 -w 2.0
 python main.py -p jetson -v gpu --latency 1 --mem 500 -d 2.0 -w 2.0
