@@ -62,7 +62,7 @@ python3 main.py -p jetson -v gpu --latency 1 --mem 500 -d 2.0 -w 2.0
 
 
 **Notes**
-- Using the default setting (training on 30 epochs), it will take about **10 min ~ 1h** (tested on single RTX-2080Ti, depends on the model scale) **for each evaluation of scale parameters**. 
+- Using the default setting (training on 30 epochs), it will take about **10 min ~ 1h for each evaluation of scale parameters** (tested on single RTX-2080Ti, depends on the model scale). 
 - How much time to run the search will depend on the constraints and device settings. (generally **1~2 weeks on single GPU** will be sufficient)
 - The minimal search scale parameter is (0.1, 0.1, 4). If there are no parameter satisfying the constraints, "*There are no possible architecture satisfying constraints!*" will be returned. 
 
