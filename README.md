@@ -71,7 +71,10 @@ python main.py -p jetson -v gpu --latency 1 --mem 500 -d 2.0 -w 2.0
 ```
 python3 env.py -p [platform] -v [device] -w [width] -d [depth] -r [resolution] -e [training epoch]
 ```
-This command will print model and return evaluation results including validation accuracy, latency, and memory.
+This command will print model and return evaluation results including validation accuracy, latency, and memory. For the case of the initial state, run
+```
+python3 env.py -p desktop -v cuda -w 1.0 -d 1.0 -r 32 -e 1
+```
 
 
 ### To test a search algorithgm on Toy Env
