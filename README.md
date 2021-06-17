@@ -42,8 +42,8 @@ Note, the state (in the log, there are *'Start evaluating [state]'*) corresponds
 
 **Our experiment on raspberrypi**
 ```
-python main.py -p raspberrypi -v cpu --latency 5 --mem 10   
-python main.py -p raspberrypi -v cpu --latency 5 --mem 100
+python3 main.py -p raspberrypi -v cpu --latency 5 --mem 10   
+python3 main.py -p raspberrypi -v cpu --latency 5 --mem 100
 ```
 | Setting  | Best state parameter (w,d,r) | Accuracy | Latency | Memory | 
 | ------------- | ------------- | ------------- | ------------- | ------------- |
@@ -52,8 +52,8 @@ python main.py -p raspberrypi -v cpu --latency 5 --mem 100
 
 **Our experiment on Jeston** 
 ```
-python main.py -p jetson -v cpu --latency 1 --mem 500 -d 2.0 -w 2.0
-python main.py -p jetson -v gpu --latency 1 --mem 500 -d 2.0 -w 2.0
+python3 main.py -p jetson -v cpu --latency 1 --mem 500 -d 2.0 -w 2.0
+python3 main.py -p jetson -v gpu --latency 1 --mem 500 -d 2.0 -w 2.0
 ```
 | Setting  | Best state parameter (w,d,r) | Accuracy | Latency | Memory | 
 | ------------- | ------------- | ------------- | ------------- | ------------- |
