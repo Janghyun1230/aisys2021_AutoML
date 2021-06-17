@@ -130,6 +130,18 @@ class RLOptim():
             obs_cur += contraction
             mem, latency = self.env.eval_arg(obs_cur, eval_acc=False)
 
+            if (obs_cur[0] < 0.1):
+                obs_cur[0] = 0.1
+                contraction[0] = 0.
+            if (obs_cur[1] < 0.1):
+                obs_cur[1] = 0.1
+                contraction[1] = 0.
+            if (obs_cur[0] == 0.1) and (obs_cur[1] == 0.1):
+                contraction[2] = -1
+            if (obs_cur[2] < 4):
+                print("\nThere are no possible architecture satisfying constraints!")
+                return obs_cur, 0
+
         _, acc_cur, _ = self.env.eval_arg(obs_cur, eval_acc=True)
         print('\n', "=" * 50)
         print("After contraction current obs: ", obs_cur.cpu().numpy(), f"(acc: {acc_cur:.2f})")
@@ -155,6 +167,8 @@ class RLOptim():
 
         print("Obs init: ", obs_init.cpu().numpy())
         obs_cur, acc_cur = self.obs_contraction(obs_init)
+        if obs_cur[2] < 4:
+            return
 
         best_val = acc_cur
         best_config = torch.clone(obs_cur)

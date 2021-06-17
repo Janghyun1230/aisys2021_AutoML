@@ -126,7 +126,8 @@ class NasEnv():
         self.eval_fn = accuracy
         self.epoch = n_epoch
         self.latency_model = LatencyPredictor(platform=self.platform, device=self.device)
-    
+        self.download = True
+
     def change_env(self, platform=None, device=None):
         if platform is not None:
             self.platform = platform
@@ -140,12 +141,16 @@ class NasEnv():
 
         resolution = int(inp_arg[-1])  # resolution
         self.trainloader, self.validloader, self.testloader = dataloader(
-            batch_size=self.batch_size, input_resolution=resolution, _print=print_model)
+            batch_size=self.batch_size,
+            input_resolution=resolution,
+            _print=print_model,
+            download=self.download)
+        self.download = False
 
         print("\nStart evaluating ", inp_arg)
         model = arg2model(inp_arg, modelName=self.modelName, _print=print_model, device=self.run_on)
         if print_model:
-            _print_model(model, resolution, device = self.run_on)
+            _print_model(model, resolution, device=self.run_on)
 
         mem = self.eval_mem(model, resolution)
         # latency (second)
@@ -160,7 +165,9 @@ class NasEnv():
             return mem, latency
 
     def eval_mem(self, model, resolution):
-        report, _ = logger.summary_string(model, (3, resolution, resolution), batch_size=1, device=self.run_on)
+        report, _ = logger.summary_string(model, (3, resolution, resolution),
+                                          batch_size=1,
+                                          device=self.run_on)
 
         estimated_mem = float(report.split('\n')[-3].split(' ')[-1])  # (MB)
         return estimated_mem
@@ -238,7 +245,8 @@ class NasEnv():
         return top1, top5, loss
 
     def _valid(self, model):
-        top1, top5, loss = validate(self.validloader, model, self.run_on , self.loss_fn, self.eval_fn)
+        top1, top5, loss = validate(self.validloader, model, self.run_on, self.loss_fn,
+                                    self.eval_fn)
         return top1, top5, loss
 
 
