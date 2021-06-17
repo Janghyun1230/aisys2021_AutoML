@@ -35,13 +35,47 @@ python3 main.py -p [platform] -v [device] --latency [latency bound] --mem [memor
 
 If running multi-process for the certain experimental setting (platform, device, latency, mem bounds), each process should have different id.
 
-### To test a certain model
+The code will return the *best scale parameter* and its *validation accuracy* from the search so far. The log will be
+![log](./images/log.png)
+
+Note, the state correspond to a **scale parameter (width, depth, resolution)**.
+
+**Our experiment on raspberrypi**, 
+```
+python main.py -p raspberrypi -v cpu --latency 5 --mem 10   
+python main.py -p raspberrypi -v cpu --latency 5 --mem 100
+```
+| Setting  | Best state parameter (w,d,r) | Accuracy | Latency | Memory | 
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| latency 5s, mem 10MB | (0.6, 0.6, 32) | 66.6 % | 3.01 s | 9.05 MB |
+| latency 5s, mem 100MB | (1.0, 1.0, 32) | 71.3 % | 1.96 s | 48.18MB |
+
+**Our experiment on Jeston** run, 
+```
+python main.py -p jetson -v cpu --latency 1 --mem 500 -d 2.0 -w 2.0
+python main.py -p jetson -v gpu --latency 1 --mem 500 -d 2.0 -w 2.0
+```
+| Setting  | Best state parameter (w,d,r) | Accuracy | Latency | Memory | 
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| CPU latency 1s, mem 500MB | (1.4, 1.5, 32) | 71.18 % | 0.89 s | 91.7 MB |
+| GPU latency 1s, mem 500MB | (1.9, 1.1, 36) | 71.34 % | 0.35s | 167.5 MB |
+
+
+**Notes**
+- Using the default setting (training on 30 epochs), it will take about 20 min (tested on single RTX-2080Ti) for each evaluation of scale parameters. 
+- How much time to run the search will depend on the constraints and device settings. (generally 1~2 weeks on single GPU is sufficient)
+- The minimal search scale parameter is (0.1, 0.1, 4). If there are no parameter satisfying the constraints, "*There are no possible architecture satisfying constraints!*" will be returned. 
+
+
+### To test a certain scale parameter
 ```
 python3 env.py -p [platform] -v [device] -w [width] -d [depth] -r [resolution] -e [training epoch]
 ```
 This command will print model and return evaluation results including validation accuracy, latency, and memory.
 
+
 ### To test a search algorithgm on Toy Env
 ```
 python3 test.py 
 ```
+For details, please refer to our ppt slides 7, 8.
