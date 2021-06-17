@@ -38,7 +38,7 @@ If running multi-process for the certain experimental setting (platform, device,
 The code will return the *best scale parameter* and its *validation accuracy* from the search so far. The log will be
 ![log](./images/log.png)
 
-Note, the state correspond to a **scale parameter (width, depth, resolution)**.
+Note, the state corresponds to a **scale parameter (width, depth, resolution)**.
 
 **Our experiment on raspberrypi**, 
 ```
